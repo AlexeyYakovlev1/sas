@@ -1,0 +1,13 @@
+@extends("layouts.main")
+@section("title")
+	Вход
+@stop
+@section("styles")
+	@vite(["resources/sass/pages/login.sass"])
+@stop
+@section("content")
+	<h1>Логин</h1>
+@stop
+@section("scripts")
+	@vite(["resources/js/pages/auth/login.js"])
+@stop
