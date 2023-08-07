@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Role extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
 	protected $guarded = false;
 	protected $fillable = [];
 
-	public function role()
+	public function user()
 	{
-		return $this->belongsTo(Role::class);
+		return $this->belongsTo(User::class);
 	}
 }
