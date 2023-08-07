@@ -10,4 +10,9 @@ class Students extends Controller
 	{
 		return view("pages.home.students");
 	}
+
+	public function view_student_list(Request $request)
+	{
+		return view("pages.studentList");
+	}
 }

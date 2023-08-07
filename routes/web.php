@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GeneralInformation;
 use App\Http\Controllers\StudentMovement;
 use App\Http\Controllers\Students;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // AUTH
@@ -14,11 +13,6 @@ Route::prefix("/auth")->group(function() {
 	Route::get("/as_employee", [AuthController::class, "view_employee"])->middleware("redirect_if_token_exists");
 	Route::get("/as_student", [AuthController::class, "view_student"])->middleware("redirect_if_token_exists");
 	Route::get("/as_director", [AuthController::class, "view_director"])->middleware("redirect_if_token_exists");
-});
-
-// Users
-Route::prefix("/users")->group(function() {
-	Route::post("/create", [UserController::class, "create"]);
 });
 
 // General Information
@@ -39,4 +33,5 @@ Route::prefix("/student_movement")->group(function() {
 // Students
 Route::prefix("/students")->group(function() {
 	Route::get("/", [Students::class, "view_students"]);
+	Route::get("/list", [Students::class, "view_student_list"]);
 });
