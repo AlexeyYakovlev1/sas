@@ -1,0 +1,22 @@
+@import "../_global.sass"
+
+.home
+	padding: 20px 0
+	& .container
+		display: grid
+		grid-template-columns: 200px 1fr
+		gap: 0 20px
+		align-items: flex-start
+	&__nav
+		&-list
+			display: flex
+			flex-direction: column
+			gap: 10px 0
+			&-item
+				color: $gray
+				&.active
+					color: $black
+					font-weight: 600
+	&__sections
+		border-right: 1px solid $green
+		padding-right: 20px

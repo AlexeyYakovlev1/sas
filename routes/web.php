@@ -23,20 +23,20 @@ Route::prefix("/users")->group(function() {
 
 // General Information
 Route::prefix("/general_information")->group(function() {
-	Route::get("/", [GeneralInformation::class, "view_general_information"])->middleware("redirect_if_token_not_exists");
+	Route::get("/", [GeneralInformation::class, "view_general_information"]);
 });
 
 // Action Plan
 Route::prefix("/action_plan")->group(function() {
-	Route::get("/", [ActionPlan::class, "view_action_plan"])->middleware("redirect_if_token_not_exists");
+	Route::get("/", [ActionPlan::class, "view_action_plan"]);
 });
 
 // Student Movement
 Route::prefix("/student_movement")->group(function() {
-	Route::get("/", [StudentMovement::class, "view_student_movement"])->middleware("redirect_if_token_not_exists");
+	Route::get("/", [StudentMovement::class, "view_student_movement"]);
 });
 
 // Students
 Route::prefix("/students")->group(function() {
-	Route::get("/", [Students::class, "view_students"])->middleware("redirect_if_token_not_exists");
+	Route::get("/", [Students::class, "view_students"]);
 });

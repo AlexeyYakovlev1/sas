@@ -1,3 +1,16 @@
+<?php
+	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+		$link = "https"; 
+	else
+		$link = "http";
+
+	$link .= "://"; 
+	$link .= $_SERVER['HTTP_HOST']; 
+	$link .= $_SERVER['REQUEST_URI']; 
+	$link_array = explode("/", $link);
+	$current_page = end($link_array);
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,30 +22,38 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@yield("title")</title>
 
-	@vite(["resources/sass/pages/home/index.sass"])
+	@vite(["resources/sass/pages/home.sass"])
 	@yield("styles")
 </head>
 <body>
-	<main class="main">
+	<main class="home">
 		<div class="container">
-			<header>
-				<nav>
-					<ul>
-						<li>
+			<aside class="home__sections">
+				<nav class="home__nav">
+					<ul class="home__nav-list">
+						<li
+							class="home__nav-list-item <?php if ($current_page === "general_information") echo "active"; else echo ""; ?>"
+						>
 							<a href="/general_information">Общая информация</a>
 						</li>
-						<li>
+						<li
+							class="home__nav-list-item <?php if ($current_page === "action_plan") echo "active"; else echo ""; ?>"
+						>
 							<a href="/action_plan">План мероприятий</a>
 						</li>
-						<li>
+						<li
+							class="home__nav-list-item <?php if ($current_page === "student_movement") echo "active"; else echo ""; ?>"
+						>
 							<a href="/student_movement">Движение студентов</a>
 						</li>
-						<li>
+						<li
+							class="home__nav-list-item <?php if ($current_page === "students") echo "active"; else echo ""; ?>"
+						>
 							<a href="/students">Студенты</a>
 						</li>
 					</ul>
 				</nav>
-			</header>
+			</aside>
 			@yield("content")
 		</div>
 	</main>

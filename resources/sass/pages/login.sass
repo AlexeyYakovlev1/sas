@@ -1,86 +1,76 @@
 @import "../_global"
 
 %border
-    border: 5px solid transparent
-    background-image: linear-gradient($background, $background), $main-gradient
-    background-origin: border-box
-    background-clip: content-box, border-box
-    box-sizing: border-box
-    border-radius: 10px
+	border: 5px solid transparent
+	background-image: linear-gradient($background, $background), $main-gradient
+	background-origin: border-box
+	background-clip: content-box, border-box
+	box-sizing: border-box
+	border-radius: 10px
 
 .login
-    width: 100%
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	&__border
+		width: 700px
+		height: 500px
+		@extend %border
+	&__container
+		width: 70%
+		height: 90%
+		margin-left: 15%
+		margin-top: 5%
+		display: flex
+		flex-direction: column
+	&__characters
+		display: flex
+		gap: 20px
+		height: fit-content
+		justify-content: space-between
+		width: 100%
+	&__character
+		padding: 10px 15px
+		background: white
+		border-radius: 10px
+		box-shadow: $box-shadow-white
+		font-weight: 600
+		font-size: 1em
+		cursor: pointer
+		&:hover
+			color: $green
+	&__form
+		margin-top: 70px
 
-.login__border
-    width: 700px
-    height: 500px
-    @extend %border
-
-.login__container
-    width: 70%
-    height: 90%
-    margin-left: 15%
-    margin-top: 5%
-    display: flex
-    flex-direction: column
-
-.login__characters
-    display: flex
-    gap: 20px
-    height: fit-content
-    justify-content: space-between
-    width: 100%
-
-.login__character
-    padding: 10px 15px
-    background: white
-    border-radius: 10px
-    box-shadow: $box-shadow-white
-    font-weight: 600
-    font-size: 1em
-    cursor: pointer
-
-.login__character:hover
-    color: $green
-
-
-.login__form
-    margin-top:70px
-
-.form__container
-    width: 90%
-    height: 100%
-    padding-left: 10%
-    display: flex
-    flex-direction: column
-    gap: 30px
-
-.form__item
-    display: flex
-    flex-direction: column
-    gap: 10px
-    font-size: 20px
-
-.form__input
-    padding: 10px 15px
-    border: 2px solid $green
-    border-radius: 10px
-
-.form__button
-    width: fit-content
-    padding: 15px 20px
-    border-radius: 10px
-    border: 1px solid $green
-    box-shadow: $box-shadow
-    color: rgba(22, 21, 21, 0.637)
-    background-color: $background
-    font-weight: 600
-    font-size: 1em
-    cursor: pointer
-
-.form__button:hover
-    background-color: rgb(214, 214, 214)
+.form
+	&__container
+		width: 90%
+		height: 100%
+		padding-left: 10%
+		display: flex
+		flex-direction: column
+		gap: 30px
+	&__item
+		display: flex
+		flex-direction: column
+		gap: 10px
+		font-size: 20px
+	&__input
+		padding: 10px 15px
+		border: 2px solid $green
+		border-radius: 10px
+	&__button
+		width: fit-content
+		padding: 15px 20px
+		border-radius: 10px
+		border: 1px solid $green
+		box-shadow: $box-shadow
+		color: rgba(22, 21, 21, 0.637)
+		background-color: $background
+		font-weight: 600
+		font-size: 1em
+		cursor: pointer
+		&:hover
+			background-color: rgb(214, 214, 214)
