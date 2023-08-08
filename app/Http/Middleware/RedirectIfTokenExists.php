@@ -17,7 +17,7 @@ class RedirectIfTokenExists
     {
 		if (array_key_exists("token", $_COOKIE))
 		{
-			return redirect("/general_information");
+			return redirect("/home/general_information");
 		}
 
         return $next($request);

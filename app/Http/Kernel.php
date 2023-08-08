@@ -43,6 +43,12 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+		'home' => [
+			\App\Http\Middleware\RedirectIfTokenNotExists::class, // added
+			\App\Http\Middleware\CheckForStudent::class, // added
+			\App\Http\Middleware\CheckPerson::class // added
+		]
     ];
 
     /**
@@ -64,7 +70,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-		"redirect_if_token_not_exists" => \App\Http\Middleware\RedirectIfTokenNotExists::class, // add
-		"redirect_if_token_exists" => \App\Http\Middleware\RedirectIfTokenExists::class // add
+		"redirect_if_token_not_exists" => \App\Http\Middleware\RedirectIfTokenNotExists::class, // added
+		"redirect_if_token_exists" => \App\Http\Middleware\RedirectIfTokenExists::class, // added
+		"check_for_student" => \App\Http\Middleware\CheckForStudent::class // added
     ];
 }

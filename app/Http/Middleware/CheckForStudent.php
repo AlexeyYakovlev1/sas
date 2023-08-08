@@ -5,9 +5,10 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use ReallySimpleJWT\Token;
 use Symfony\Component\HttpFoundation\Response;
 
-class RedirectIfTokenNotExists
+class CheckForStudent
 {
     /**
      * Handle an incoming request.
@@ -16,11 +17,19 @@ class RedirectIfTokenNotExists
      */
     public function handle(Request $request, Closure $next): Response
     {
-		if (!array_key_exists("token", $_COOKIE))
+		$token = $request->cookie("token");
+		$validate_token = Token::validate($token, env("SECRET_KEY"));
+
+		if (!$validate_token)
 		{
 			return redirect("/auth/login");
 		}
 
-        return $next($request);
+		$payload = Token::getPayload($token);
+		$person = $payload["person"];
+
+		$request->merge(["person" => $person]);
+		
+		return $next($request);
     }
 }

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ActionPlan extends Controller
+class ActionPlanController extends Controller
 {
     public function view_action_plan(Request $request)
 	{
-		return view("pages.home.actionPlan");
+		return view("pages.home.actionPlan", $request->payload);
 	}
 }

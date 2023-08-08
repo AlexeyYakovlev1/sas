@@ -1,6 +1,6 @@
-@extends("layouts.main")
+@extends("layouts.home")
 @section("title")
-	Вход
+	Аттестационный лист
 @stop
 @section("styles")
 	

@@ -1,6 +1,6 @@
 <?php
-	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
-		$link = "https"; 
+	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+		$link = "https";
 	else
 		$link = "http";
 
@@ -34,23 +34,41 @@
 						<li
 							class="home__nav-list-item <?php if ($current_page === "general_information") echo "active"; else echo ""; ?>"
 						>
-							<a href="/general_information">Общая информация</a>
+							<a href="/home/general_information">Общая информация</a>
 						</li>
 						<li
 							class="home__nav-list-item <?php if ($current_page === "action_plan") echo "active"; else echo ""; ?>"
 						>
-							<a href="/action_plan">План мероприятий</a>
+							<a href="/home/action_plan">План мероприятий</a>
 						</li>
-						<li
-							class="home__nav-list-item <?php if ($current_page === "student_movement") echo "active"; else echo ""; ?>"
-						>
-							<a href="/student_movement">Движение студентов</a>
-						</li>
-						<li
-							class="home__nav-list-item <?php if ($current_page === "students") echo "active"; else echo ""; ?>"
-						>
-							<a href="/students">Студенты</a>
-						</li>
+						@if ($student_movement)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "student_movement") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/student_movement">Движение студентов</a>
+							</li>
+						@endif
+						@if ($employees)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "employees") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/employees">Сотрудники</a>
+							</li>
+						@endif
+						@if ($students)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "students") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/students">Студенты</a>
+							</li>
+						@endif
+						@if ($student_list)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "list") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/students/list">Аттестационный лист</a>
+							</li>
+						@endif
 					</ul>
 				</nav>
 			</aside>
