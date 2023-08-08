@@ -19,3 +19,44 @@
 					font-weight: 600
 	&__sections
 		border-right: 1px solid $green
+
+.actionPlan
+	display: flex
+	flex-direction: column
+	gap: 20px
+	&__sheet
+		margin-top: 30px
+		text-decoration: none
+		border-collapse: collapse
+		width: 100%
+		text-align: center
+		background-color: white
+		box-shadow: $box-shadow-white
+		& th
+			font-weight: normal
+			font-size: 14px
+			color: #ffffff
+			background-color: #354251
+		& td
+			font-size: 13px
+			color: #354251
+		& td, & th
+			white-space: pre-wrap
+			padding: 10px 5px
+			line-height: 13px
+			vertical-align: middle
+			border: 1px solid #354251
+		& tr:hover
+			background-color: #f9fafb
+		& tr:hover td
+			color: #354251
+			cursor: default
+	&__link
+		width: fit-content
+		padding: 10px 15px
+		border-radius: 10px
+		background-color: white
+		box-shadow: $box-shadow-white
+		cursor: pointer
+		&:hover
+			color: $green
