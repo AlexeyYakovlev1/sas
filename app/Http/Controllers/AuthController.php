@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function view_auth(Request $request)
 	{
-		$token = Token::customPayload(["person" => "student"], env("SECRET_KEY"), time() + 3600, "localhost");
+		$token = Token::customPayload(["person" => "director"], env("SECRET_KEY"), time() + 3600, "localhost");
 		Cookie::queue("token", $token);
 		return view("pages.auth.login");
 	}
