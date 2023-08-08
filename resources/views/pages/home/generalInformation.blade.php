@@ -6,7 +6,12 @@
 	
 @stop
 @section("content")
-	<h1>Необходимые документы</h1>
+	<div class="information">
+		<h1>Необходимые документы</h1>
+		<button class="btn__primary information__button">
+			Загрузить файлы
+		</button>
+	</div>
 @stop
 @section("scripts")
 

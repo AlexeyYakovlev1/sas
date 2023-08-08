@@ -17,7 +17,7 @@
 	&__border
 		width: 700px
 		height: 500px
-		@extend %border
+		// @extend %border
 	&__container
 		width: 70%
 		height: 90%
@@ -26,6 +26,7 @@
 		display: flex
 		flex-direction: column
 	&__characters
+		margin-top: 20px
 		display: flex
 		gap: 20px
 		height: fit-content
@@ -40,7 +41,7 @@
 		font-size: 1em
 		cursor: pointer
 		&:hover
-			color: $green
+			color: $blue
 	&__form
 		margin-top: 70px
 
@@ -59,13 +60,13 @@
 		font-size: 20px
 	&__input
 		padding: 10px 15px
-		border: 2px solid $green
+		border: 2px solid $blue
 		border-radius: 10px
 	&__button
 		width: fit-content
 		padding: 15px 20px
 		border-radius: 10px
-		border: 1px solid $green
+		border: 1px solid $blue
 		box-shadow: $box-shadow
 		color: rgb(0 0 0 / 73%)
 		background-color: $background

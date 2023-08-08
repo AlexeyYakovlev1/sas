@@ -1,12 +1,14 @@
 @import "../_global.sass"
 
 .home
-	padding: 20px 0
 	& .container
+		padding: 20px
+		background-color: $background
 		display: grid
-		grid-template-columns: 185px 1fr
+		grid-template-columns: 200px 1fr
 		gap: 0 20px
 		align-items: flex-start
+		grid-template-areas: "menu content content content" "menu content content content" "menu content content content"
 	&__nav
 		&-list
 			display: flex
@@ -14,18 +16,26 @@
 			gap: 10px 0
 			&-item
 				color: $gray
+				& a, span
+					display: block
+					padding: 10px
 				&.active
 					color: $black
-					font-weight: 600
+					background-color: $dark
+				&.logout
+					margin-top: 50px
+					color: red
 	&__sections
-		border-right: 1px solid $green
+		border-right: 1px solid $blue
+		height: 100%
+	&__content
+		min-height: 100vh
 
 .actionPlan
 	display: flex
 	flex-direction: column
 	gap: 20px
 	&__sheet
-		margin-top: 30px
 		text-decoration: none
 		border-collapse: collapse
 		width: 100%
@@ -59,4 +69,19 @@
 		box-shadow: $box-shadow-white
 		cursor: pointer
 		&:hover
-			color: $green
+			color: $blue
+
+.students
+	display: grid
+	grid-template-rows: auto 1fr
+	gap: 20px 0
+	&__header
+		display: grid
+		grid-template-columns: minmax(auto, 60%) auto
+		gap: 0 50px
+	&__input
+		font-size: 18px
+
+.information
+	&__button
+		margin-top: 20px

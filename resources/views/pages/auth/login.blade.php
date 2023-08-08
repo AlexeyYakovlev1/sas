@@ -9,7 +9,8 @@
 	<section class='login'>
         <div class="login__border">
             <div class="login__container">
-                <ul class="login__characters">
+                <h3 class="title__primary">Войти как</h3>
+				<ul class="login__characters">
                     <li class="login__character btn-active" data-person="employee">
                         <span>Сотрудник дирекции</span>
                     <li class="login__character" data-person="student">
@@ -25,7 +26,7 @@
                             <label for="">Логин</label>
                             <input
 								type="text"
-								class="form__input"
+								class="input__primary"
 								placeholder="Введите логин"
 								data-name="login"
 							>
@@ -34,12 +35,12 @@
                             <label for="">Пароль</label>
                             <input
 								type="password"
-								class="form__input"
+								class="input__primary"
 								placeholder="Введите пароль"
 								data-name="password"
 							>
                         </div>
-                        <button type="submit" class='form__button'>Отправить</button>
+                        <button type="submit" class='btn__primary'>Отправить</button>
                     </div>
                 </form>
             </div>

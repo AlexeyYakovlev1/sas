@@ -14,7 +14,6 @@ $array = array_map('str_getcsv', $csv);
 @stop
 @section("content")
     <div class="actionPlan">
-        <h1>Сетка мероприятий в формате таблицы</h1>
 		<table class="actionPlan__sheet">
 			<thead>
 				<tr>

@@ -1,4 +1,5 @@
 @import "./_vars"
+@import "./components/loader.sass"
 
 *, *::after, *::before
 	padding: 0
@@ -10,7 +11,6 @@
 body
 	font-family: $fontOpenSans
 	font-weight: 400
-	background-color: $background
 	height: 100vh
 
 main, .container
@@ -43,9 +43,38 @@ button
 	padding: 0 20px
 	margin: 0 auto
 
-.btn-active
-	background: $btn-active_color !important
-	color: white !important
+.btn
+	&-active
+		background: $btn-active_color !important
+		color: white !important
+		&:hover
+			background: $btn-active_hover !important
+	&__primary
+		border: 1px solid $blue
+		background-color: $blue-dark
+		color: $white
+		font-family: $fontManrope
+		font-weight: 600
+		padding: 10px
+		transition: all .2s ease
+		border-radius: 6px
+		&:hover
+			background-color: rgba($blue-dark, .7)
 
-.btn-active:hover
-	background: $btn-active_hover !important
+.input
+	&__primary
+		background: none
+		padding: 10px 0
+		border-bottom: 1px solid $blue
+		font-family: $fontManrope
+		font-weight: 400
+		transition: all .2s ease
+		&:focus
+			background-color: $dark
+			padding: 10px
+
+.title
+	&__primary
+		font-weight: 400
+		font-size: 25px
+		font-family: $fontManrope
