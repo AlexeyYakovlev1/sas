@@ -50,7 +50,9 @@ $array = array_map('str_getcsv', $csv);
 				?>
 			</tbody>
 		</table>
-		<a href="https://docs.google.com/spreadsheets/d/1AFTg4a4GzITr0MVj_YU36WRr1PFuu_2hMGJ3DFJkabM/edit?hl=ru#gid=0" class="actionPlan__link" target="_blank">Перейти в GoogleSheet</a>
+		<div class="actionPlan__link">
+			<a href="https://docs.google.com/spreadsheets/d/1AFTg4a4GzITr0MVj_YU36WRr1PFuu_2hMGJ3DFJkabM/edit?hl=ru#gid=0" target="_blank">Перейти в GoogleSheet</a>
+		</div>
     </div>
 @stop
 @section("scripts")

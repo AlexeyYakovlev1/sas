@@ -26,10 +26,13 @@
 	flex-direction: column
 	gap: 20px
 	&__sheet
+		margin-top: 30px
 		text-decoration: none
 		border-collapse: collapse
 		width: 100%
 		text-align: center
+		background-color: white
+		box-shadow: $box-shadow-white
 		& th
 			font-weight: normal
 			font-size: 14px
@@ -49,4 +52,12 @@
 		& tr:hover td
 			color: #354251
 			cursor: default
-
+	&__link
+		width: fit-content
+		padding: 10px 15px
+		border-radius: 10px
+		background-color: white
+		box-shadow: $box-shadow-white
+		cursor: pointer
+		&:hover
+			color: $green
