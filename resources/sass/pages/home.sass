@@ -1,5 +1,15 @@
 @import "../_global.sass"
 
+%button
+	width: fit-content
+	padding: 10px 15px
+	border-radius: 10px
+	background-color: white
+	box-shadow: $box-shadow-white
+	cursor: pointer
+	&:hover
+		color: $green
+
 .home
 	padding: 20px 0
 	& .container
@@ -24,6 +34,8 @@
 	display: flex
 	flex-direction: column
 	gap: 20px
+	& h1
+		text-align: center
 	&__sheet
 		margin-top: 30px
 		text-decoration: none
@@ -45,18 +57,74 @@
 			padding: 10px 5px
 			line-height: 13px
 			vertical-align: middle
-			border: 1px solid #354251
+			border: 1px solid #348f00
 		& tr:hover
 			background-color: #f9fafb
 		& tr:hover td
 			color: #354251
 			cursor: default
 	&__link
-		width: fit-content
-		padding: 10px 15px
-		border-radius: 10px
-		background-color: white
+		@extend %button
+
+.studentList
+	display: flex
+	justify-content: center
+	margin-top: 50px
+	&__sheet
+		text-decoration: none
+		border-collapse: collapse
+		width: 100%
+		text-align: center
+		max-width: 800px
 		box-shadow: $box-shadow-white
+		&_head td
+			font-size: 20px !important
+			font-weight: 700
+			text-align: center !important
+			padding: 12px 0px 12px 5px !important
+		& th
+			font-weight: normal
+			font-size: 16px
+			color: #ffffff
+			background-color: #348f00
+		& td
+			font-size: 14px
+			color: #000000
+			text-align: left
+		& td, & th
+			white-space: pre-wrap
+			padding: 12px 0px 12px 5px
+			width: 50%
+			height: 100%
+			vertical-align: middle
+			border: 1px solid #348f00
+			position: relative
+			background-color: white
+		& td>span
+			line-height: 1.5em
+		&_input
+			position: absolute
+			top: 0
+			right: 0
+			line-height: 1.5em
+			font-size: 14px
+			width: 99%
+			height: 100%
+			box-sizing: border-box
+			outline: none
+			border: none !important
+			resize: none
+	&__submit
+		margin-top: 20px
+		width: fit-content
+		padding: 15px 20px
+		border-radius: 10px
+		border: 1px solid #348f00
+		box-shadow: $box-shadow
+		color: rgb(0 0 0 / 73%)
+		background-color: white
+		font-weight: 600
+		font-size: 1em
 		cursor: pointer
 		&:hover
-			color: $green
+			background-color: rgb(241, 241, 241)
