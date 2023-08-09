@@ -1,6 +1,7 @@
 const studentsBtnFilter = document.querySelector(".students__btn-filter");
 const studentsFilters = document.querySelector(".students__filters");
 
+// Открыть/Закрыть фильтры
 studentsBtnFilter.addEventListener("click", () => {
 	studentsBtnFilter.textContent = "Открыть фильтры";
 
@@ -11,6 +12,7 @@ studentsBtnFilter.addEventListener("click", () => {
 	studentsFilters.classList.toggle("hidden");
 });
 
+// Визуализация активных checkbox
 const studentsFiltersCheckbox = document.querySelectorAll(".students__filters-checkbox");
 
 studentsFiltersCheckbox.forEach((checkbox) => {
