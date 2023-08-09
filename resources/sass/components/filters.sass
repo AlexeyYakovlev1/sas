@@ -1,0 +1,33 @@
+@import "../_vars"
+
+.students__filters
+	width: 100%
+	position: absolute
+	bottom: -470px
+	right: 0
+	background-color: rgba($white, .7)
+	backdrop-filter: blur(4px)
+	border-radius: 6px
+	padding: 20px
+	&-form
+		display: flex
+		flex-direction: column
+		gap: 10px 0
+		& label
+			cursor: pointer
+			display: flex
+			flex-direction: row-reverse
+			justify-content: flex-end
+			gap: 0 10px
+			font-size: 13px
+			user-select: none
+			font-family: $fontManrope
+			font-weight: 400
+			&.column
+				flex-direction: column
+				gap: 10px 0
+			&.active
+				color: $blue
+				border-right: 1px solid $gray
+	&-submit
+		margin-top: 10px

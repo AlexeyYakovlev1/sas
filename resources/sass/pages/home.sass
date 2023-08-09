@@ -1,8 +1,10 @@
 @import "../_global.sass"
+@import "../components/filters.sass"
+@import "../components/alert.sass"
 
 .home
 	& .container
-		padding: 20px
+		padding: 0 20px
 		background-color: $background
 		display: grid
 		grid-template-columns: 200px 1fr
@@ -30,6 +32,7 @@
 		height: 100%
 	&__content
 		min-height: 100vh
+		margin-top: 20px
 
 .actionPlan
 	display: flex
@@ -79,6 +82,11 @@
 		display: grid
 		grid-template-columns: minmax(auto, 60%) auto
 		gap: 0 50px
+		align-items: center
+		&-right
+			position: relative
+	&__btn-filter
+		width: 100%
 	&__input
 		font-size: 18px
 
