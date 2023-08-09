@@ -1,4 +1,6 @@
 @import "../_global.sass"
+@import "../components/filters.sass"
+@import "../components/alert.sass"
 
 %button
 	width: fit-content
@@ -12,7 +14,6 @@
 
 .home
 	& .container
-		padding: 20px
 		background-color: $background
 		display: grid
 		grid-template-columns: 200px 1fr
@@ -23,7 +24,6 @@
 		&-list
 			display: flex
 			flex-direction: column
-			gap: 10px 0
 			&-item
 				color: $gray
 				& a, span
@@ -40,6 +40,7 @@
 		height: 100%
 	&__content
 		min-height: 100vh
+		margin-top: 20px
 
 .actionPlan
 	display: flex
@@ -77,57 +78,21 @@
 		@extend %button
 
 .studentList
+	text-align: left
 	display: flex
-	justify-content: center
-	margin-top: 50px
-	&__sheet
-		text-decoration: none
-		border-collapse: collapse
-		width: 100%
-		text-align: center
-		max-width: 800px
-		box-shadow: $box-shadow-white
-		&_head td
-			font-size: 20px !important
-			font-weight: 700
-			text-align: center !important
-			padding: 12px 0px 12px 5px !important
-		& th
-			font-weight: normal
-			font-size: 16px
-			color: #ffffff
-		& td
-			font-size: 14px
-			color: #000000
-			text-align: left
-		& td, & th
-			white-space: pre-wrap
-			padding: 12px 0px 12px 5px
-			width: 50%
-			height: 100%
-			vertical-align: middle
-			border: 1px solid $blue-dark
-			position: relative
-			background-color: white
-		& td>span
-			line-height: 1.5em
-		&_input
-			position: absolute
-			top: 0
-			right: 0
-			line-height: 1.5em
-			font-size: 14px
-			width: 99%
-			height: 100%
-			box-sizing: border-box
-			outline: none
-			border: none !important
-			resize: none
+	flex-direction: column
+	gap: 40px 0
+	margin-bottom: 10px
+	&__form
+		display: flex
+		flex-direction: column
+		gap: 20px 0
+		& label
+			display: grid
+			grid-template-rows: auto 1fr
+			gap: 10px 0
 	&__submit
-		font-size: 16px
 		margin-top: 20px
-		padding: 15px 20px
-		@extend %button
 
 .students
 	display: grid
@@ -137,6 +102,11 @@
 		display: grid
 		grid-template-columns: minmax(auto, 60%) auto
 		gap: 0 50px
+		align-items: center
+		&-right
+			position: relative
+	&__btn-filter
+		width: 100%
 	&__input
 		font-size: 18px
 	&__content

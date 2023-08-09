@@ -1,0 +1,41 @@
+@import "../_vars.sass"
+
+.alert
+	display: none
+	position: absolute
+	top: 20px
+	right: 20px
+	z-index: 99
+	padding: 10px
+	border-radius: 3px
+	max-width: 400px
+	font-weight: 600
+	border: 1px solid transparent
+	&__img
+		display: flex
+		justify-content: center
+		align-items: center
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 0 10px
+		padding-right: 30px
+	&.success
+		background-color: $alertGreen
+		color: #617658
+		border-color: #617658
+	&.error
+		background-color: $alertRed
+		color: #AC6363
+		border-color: #AC6363
+	&__close
+		position: absolute
+		top: 14px
+		right: 8px
+		font-size: 10px
+		cursor: pointer
+		user-select: none
+	&__description
+		font-size: 15px
+		line-height: 22px

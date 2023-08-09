@@ -28,6 +28,7 @@
 </head>
 <body>
 	@include("../includes/loader")
+	@include("../includes/alert")
 	<main class="home">
 		<div class="container">
 			<aside class="home__sections">
@@ -84,5 +85,6 @@
 	</main>
 
 	@yield("scripts")
+	@vite(["resources/js/scripts/closeAlert.js"])
 </body>
 </html>
