@@ -115,49 +115,105 @@
 		display: flex
 		justify-content: space-between
 		background: white
-		padding: 20px
-		border-radius: 10px
 	&__list
 		display: flex
 		flex-direction: column
-		gap: 10px
+		width: 100%
 		& li
-			cursor: default
-			user-select: none
-			padding: 5px 10px
-			border-radius: 10px
+			width: 100%
+			padding: 20px
+			cursor: pointer
 			display: flex
 			gap: 20px
-	&__card
-		// display: none
-		width: 60%
-		height: 100%
-		border: 2px solid $blue
-		padding: 10px 15px
-		border-radius: 10px
+			align-items: center
+			user-select: none
+			&:nth-child(2n)
+				background-color: $dark
+			&:hover
+				color: $blue
+	&__modal
+		width: 100%
+		min-height: 100vh
+		background-color: rgba(0,0,0,.5)
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+
 .card
+	width: 60%
+	max-width: 1600px
+	position: absolute
+	top: 50%
+	left: 50%
+	max-height: 80%
+	overflow-y: auto
+	transform: translate(-50%, -50%)
+	background-color: $white
+	padding: 10px 15px
 	display: flex
 	flex-direction: column
 	gap: 10px
-	&__list
+	&__content
 		display: flex
 		flex-direction: column
-		gap: 10px
-	&__list ul
-		margin-bottom: 10px
-	&__item
-		padding-left: 20px
-		& li
+		gap: 20px 0
+	&__section
+		display: flex
+		flex-direction: column
+		gap: 10px 0
+		&-content
 			display: flex
-			gap: 15px
-			align-items: center
-		&_photo
-			display: inline
-		&_dot
-			background: $dark-gradient
-			border-radius: 50%
-			width: 5px
-			height: 5px
+			flex-direction: column
+			gap: 10px 0
+		& h4
+			margin-bottom: 10px
+		&-title
+			padding-bottom: 5px
+			border-bottom: 1px solid $dark
+			&::first-letter
+				color: $blue
+		& a
+			color: $blue
+			text-decoration: underline
+	&__main
+		&-top
+			display: flex
+			align-items: flex-start
+			gap: 0 20px
+			& img
+				width: 150px
+		&-info
+			&-name
+				font-size: 20px
+			&-list
+				display: flex
+				flex-direction: column
+				gap: 5px 0
+				margin-top: 10px
+				& li
+					&.status
+						&-bad
+							color: red
+						&-good
+							color: green
+		&-parents
+			& ul
+				margin-top: 5px
+				display: flex
+				flex-direction: column
+				gap: 10px 0
+	&__employee
+		&-job
+			display: flex
+			gap: 0 5px
+			flex-wrap: wrap
+			& li
+				font-size: 15px
+		&-description
+			font-size: 15px
+			line-height: 22px
 
 .information
 	&__button
