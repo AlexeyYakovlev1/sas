@@ -109,7 +109,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type='submit' class="studentList__submit">
+			<button type='submit' class="studentList__submit btn__primary">
 				Отправить
 			</button>
 		</form>
