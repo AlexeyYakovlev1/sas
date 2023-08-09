@@ -23,9 +23,11 @@
 	<title>@yield("title")</title>
 
 	@vite(["resources/sass/pages/home.sass"])
+	@vite(["resources/js/scripts/loader.js"])
 	@yield("styles")
 </head>
 <body>
+	@include("../includes/loader")
 	<main class="home">
 		<div class="container">
 			<aside class="home__sections">
@@ -69,10 +71,15 @@
 								<a href="/home/students/list">Аттестационный лист</a>
 							</li>
 						@endif
+						<li class="home__nav-list-item logout">
+							<a href="/auth/logout">Выйти</a>
+						</li>
 					</ul>
 				</nav>
 			</aside>
-			@yield("content")
+			<div class="home__content">
+				@yield("content")
+			</div>
 		</div>
 	</main>
 

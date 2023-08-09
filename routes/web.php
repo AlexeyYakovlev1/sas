@@ -14,7 +14,11 @@ Route::middleware(["redirect_if_token_exists"])->prefix("/auth")->group(function
 	Route::get("/as_employee", [AuthController::class, "view_employee"]);
 	Route::get("/as_student", [AuthController::class, "view_student"]);
 	Route::get("/as_director", [AuthController::class, "view_director"]);
+
+	Route::post("/login", [AuthController::class, "login"]);
 });
+
+Route::get("/auth/logout", [AuthController::class, "logout"]);
 
 // Home
 Route::prefix("/home")->middleware(["home"])->group(function() {

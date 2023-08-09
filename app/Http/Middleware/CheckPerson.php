@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckPerson
@@ -17,6 +18,7 @@ class CheckPerson
     {
 		$important_persons = ["employee", "director"];
 		$payload = [
+			"person" => $request->person,
 			"student_movement" => in_array($request->person, $important_persons), // движение студентов
 			"student_list" => $request->person === "student", // аттестационный лист
 			"employees" => $request->person === "director", // сотрудники
