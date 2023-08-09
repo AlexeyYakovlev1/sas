@@ -8,7 +8,7 @@
 	box-shadow: $box-shadow-white
 	cursor: pointer
 	&:hover
-		color: $green
+		color: $blue
 
 .home
 	& .container
@@ -67,7 +67,7 @@
 			padding: 10px 5px
 			line-height: 13px
 			vertical-align: middle
-			border: 1px solid #348f00
+			border: 1px solid $blue-dark
 		& tr:hover
 			background-color: #f9fafb
 		& tr:hover td
@@ -96,7 +96,6 @@
 			font-weight: normal
 			font-size: 16px
 			color: #ffffff
-			background-color: #348f00
 		& td
 			font-size: 14px
 			color: #000000
@@ -107,7 +106,7 @@
 			width: 50%
 			height: 100%
 			vertical-align: middle
-			border: 1px solid #348f00
+			border: 1px solid $blue-dark
 			position: relative
 			background-color: white
 		& td>span
@@ -125,19 +124,10 @@
 			border: none !important
 			resize: none
 	&__submit
+		font-size: 16px
 		margin-top: 20px
-		width: fit-content
 		padding: 15px 20px
-		border-radius: 10px
-		border: 1px solid #348f00
-		box-shadow: $box-shadow
-		color: rgb(0 0 0 / 73%)
-		background-color: white
-		font-weight: 600
-		font-size: 1em
-		cursor: pointer
-		&:hover
-			color: $blue
+		@extend %button
 
 .students
 	display: grid
