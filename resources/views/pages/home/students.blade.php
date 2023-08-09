@@ -9,7 +9,7 @@
 	<div class="students">
 		<div class="students__header">
 			<input
-				class="students__input input__primary"
+				class="students__search input__primary"
 				type="text"
 				placeholder="Искать студента по ФИО..."
 			/>
