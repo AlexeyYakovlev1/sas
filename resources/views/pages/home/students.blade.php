@@ -54,7 +54,7 @@ $array = array_map('str_getcsv', $csv);
 							<h2 class="card__section-title">Главная</h2>
 							<div class="card__main-top">
 								<img
-									src="https://corp.synergy.ru/upload/main/87f/ad_342349445.jpg"
+									src="https://corp.synergy.ru/upload/main/600/ad_1662235951.jpg"
 									alt="studentPhoto"
 								/>
 								<div class="card__main-info">
@@ -270,6 +270,7 @@ $array = array_map('str_getcsv', $csv);
 @section("scripts")
 	@vite([
 		"resources/js/pages/students/filter.js",
-		"resources/js/pages/students/modal.js"
+		"resources/js/pages/students/modal.js",
+		"resources/js/scripts/searchStudents.js"
 	])
 @stop

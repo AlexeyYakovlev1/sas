@@ -101,6 +101,10 @@
 	grid-template-rows: auto 1fr
 	gap: 20px 0
 	&__header
+		position: sticky
+		top: 10px
+		background-color: rgba($white, .6)
+		backdrop-filter: blur(2px)
 		display: grid
 		grid-template-columns: minmax(auto, 60%) auto
 		gap: 0 50px
@@ -216,5 +220,93 @@
 			line-height: 22px
 
 .information
-	&__button
+	// &__button
+	// 	margin-top: 20px
+	// &__content
+	// 	margin-top: 20px
+	// &__list
+	// 	margin-top: 20px
+	// 	display: flex
+	// 	flex-wrap: wrap
+	// 	align-items: center
+	// 	gap: 15px
+	// 	max-width: 800px
+	// 	&-item
+	// 		color: #fff
+	// 		background-color: $gray
+	// 		position: relative
+	// 		border-radius: 0 20% 0 0
+	// 		&::after
+	// 			content: ""
+	// 			position: absolute
+	// 			top: 0
+	// 			right: 0
+	// 			width: 30px
+	// 			height: 30px
+	// 			background-color: $dark
+	// 			border-radius: 0 100% 0 0
+	// 		& a
+	// 			width: 150px
+	// 			height: 200px
+	// 			display: block
+	// 			padding: 10px
+	// 		&.docx, .doc
+	// 			background-color: #65A8FF
+	// 		&.pdf
+	// 			background-color: #991E2D
+	// 		&.txt
+	// 			// background-color: 
+	// 		&.gif
+	// 			background-color: #FF7E65
+	// 		&.jpg
+	// 			background-color: #CE283D
+	// 		&.png
+	// 			background-color: #2F9780
+	// 		&-name
+	// 			margin-top: 20px
+	// 			line-height: 22px
+	// 			font-size: 15px
+	// 			color: $white
+	// 			word-break: break-all
+
+.information
+	&__list
 		margin-top: 20px
+		display: flex
+		flex-direction: column
+		&-arrow
+			transition: all .2s ease
+			&.rotate
+				transform: rotate(180deg)
+		&-item
+			display: flex
+			flex-direction: column
+			&:nth-child(2n)
+				background-color: $dark
+		&-header
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 20px
+			cursor: pointer
+			user-select: none
+			&:hover
+				color: $blue
+				background-color: $dark
+		&-content
+			border-top: 1px solid $black
+			padding: 10px 20px
+			background-color: $background
+			& table
+				width: 100%
+		&-documents
+			display: flex
+			flex-direction: column
+			gap: 10px 0
+			font-size: 15px
+			& li
+				display: flex
+				justify-content: space-between
+				align-items: center
+			&-do
+				display: flex

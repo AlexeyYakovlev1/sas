@@ -4,25 +4,16 @@
 							Год поступления
 							<input
 								class="checkbox__primary students__filters-checkbox"
-								type="date"
+								type="number"
 								name="yearOfAdmission"
 							/>
 						</label>
-						<label>
-							Статус "Уволен"
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="dismissed"
-							/>
-						</label>
-						<label>
-							Статус "Работает"
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="working"
-							/>
+						<label class="column">
+							Статус
+							<select name="status">
+								<option value="dismissed">Уволен</option>
+								<option value="working">Работает</option>
+							</select>
 						</label>
 						<label>
 							Иностранец
@@ -32,45 +23,15 @@
 								name="foreigner"
 							/>
 						</label>
-						<label>
-							Обучение на БАК (ВО)
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="trainingBAK"
-							/>
-						</label>
-						<label>
-							Обучение на ВВО
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="trainingVVO"
-							/>
-						</label>
-						<label>
-							Обучение на МАГ
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="trainingMAG"
-							/>
-						</label>
-						<label>
-							Обучение на АСП
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="trainingASP"
-							/>
-						</label>
-						<label>
-							Обучение на МВА
-							<input
-								class="checkbox__primary students__filters-checkbox"
-								type="checkbox"
-								name="trainingMBA"
-							/>
+						<label class="column">
+							Обучение
+							<select name="training">
+								<option value="training_BAK">БАК (ВО)</option>
+								<option value="training_VVO">ВВО</option>
+								<option value="training_MAG">МАГ</option>
+								<option value="training_ASP">АСП</option>
+								<option value="training_MBA">МВА</option>
+							</select>
 						</label>
 						<label class="column">
 							Структурное подразделение
@@ -78,10 +39,9 @@
 								class="checkbox__primary students__filters-checkbox"
 								name="structuralDivision"
 							>
-								<option value="Подразделение 1">Подразделение 1</option>
-								<option value="Подразделение 2">Подразделение 2</option>
-								<option value="Подразделение 3">Подразделение 3</option>
-								<option value="Подразделение 4">Подразделение 4</option>
+								<option value="Подразделение 1">IT</option>
+								<option value="Подразделение 2">Дизайн</option>
+								<option value="Подразделение 3">Менеджмент</option>
 							</select>
 						</label>
 						<label>
