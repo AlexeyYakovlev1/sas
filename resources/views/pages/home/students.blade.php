@@ -125,11 +125,30 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 								<div class="card__employee-description">
 									<h4>Характеристика от руководителя</h4>
-									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officiis labore nisi, impedit facere repellendus repellat possimus ullam enim suscipit velit odit nostrum perspiciatis debitis iusto. Dicta neque aliquam sunt!</p>	
+									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officiis labore nisi, impedit facere repellendus repellat possimus ullam enim suscipit velit odit nostrum perspiciatis debitis iusto. Dicta neque aliquam sunt!</p>
 								</div>
 								<div class="card__feedback">
 									<h4>Обратная связь</h4>
-									<p>Тут должна быть таблица</p>
+									<table class='card__feedback-sheet'>
+										<thead>
+											<tr>
+												<td>Выполнено:</td>
+												<td>В работе:</td>
+												<td>Процесс реализации не запущен:</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="card__feedback-check">
+														<x-checkIcon />
+													</div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 								<div class="card__checkbox">
 									<h4>Чек бокс</h4>
@@ -137,7 +156,22 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 								<div class="card__checkbox">
 									<h4>Перспективы развития</h4>
-									<p>Тут должна быть таблица</p>
+									<table class='card__checkbox-sheet'>
+										<thead>
+											<tr>
+												<td>Направление</td>
+												<td>Подразделение</td>
+												<td>Приоритет сохранения</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" value='IT'></td>
+												<td><input type="text" value='Web-разработка'></td>
+												<td><input type="text" value="Наивысший"></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</section>
@@ -177,7 +211,7 @@ $array = array_map('str_getcsv', $csv);
 											Группа 3
 										</li>
 									</ul>
-								</div> 
+								</div>
 								<div class="card__student-debts">
 									<h4>Академические задолженности по каждой программе</h4>
 									<ul>
@@ -188,7 +222,7 @@ $array = array_map('str_getcsv', $csv);
 											Задолжность 2
 										</li>
 									</ul>
-								</div> 
+								</div>
 								<div class="card__student-diploma">
 									<h4>Дипломная работа</h4>
 									<a href="#">Ссылка на работу</a>
@@ -235,11 +269,37 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 								<div class="card__mode-achivments">
 									<h4>Спортивные достижения</h4>
-									<p>Здесь должна быть таблица, которую можно заполнять прямо здесь</p>
+									<table class='card__mode-achivments-sheet'>
+										<thead>
+											<tr>
+												<td>Название мероприятия</td>
+												<td>Результат</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text"></td>
+												<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 								<div class="card__mode-abilities">
 									<h4>Творческие способности</h4>
-									<p>Здесь должна быть таблица, которую можно заполнять прямо здесь</p>
+									<table class='card__mode-abilities-sheet'>
+										<thead>
+											<tr>
+												<td>Навыки на момент поступления</td>
+												<td>Развитие на программе</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text"></td>
+												<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</section>
@@ -248,7 +308,20 @@ $array = array_map('str_getcsv', $csv);
 							<div class="card__section-content">
 								<div class="card__achivments-company">
 									<h4>В рамках корпорации</h4>
-									<p>Здесь должна быть таблица, которую можно заполнять прямо здесь</p>
+									<table class='card__achivments-company-sheet'>
+										<thead>
+											<tr>
+												<td>Название</td>
+												<td>Описание</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text"></td>
+												<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</section>
@@ -257,7 +330,20 @@ $array = array_map('str_getcsv', $csv);
 							<div class="card__section-content">
 								<div class="card__volunteering-company">
 									<h4>Участие во внеучебной деятельности</h4>
-									<p>Здесь должна быть таблица, которую можно заполнять прямо здесь</p>
+									<table class='card__volunteering-company-sheet'>
+										<thead>
+											<tr>
+												<td>Название</td>
+												<td>Описание</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text"></td>
+												<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</section>
