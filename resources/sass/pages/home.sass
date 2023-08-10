@@ -12,6 +12,33 @@
 	&:hover
 		color: $blue
 
+%sheet
+	text-decoration: none
+	border-collapse: collapse
+	width: 100%
+	text-align: center
+	background-color: white
+	box-shadow: $box-shadow-white
+	& td, & th
+		padding: 10px 15px
+		border: 1px solid $blue
+%sheetInput
+	@extend %sheet
+	& td, & th
+		width: 50%
+		height: 40px
+		position: relative
+	& td input, & td textarea
+		width: 100%
+		height: 100%
+		position: absolute
+		text-align: center
+		left:0
+		top:0
+		border: none
+		resize: none
+
+
 .home
 	& .container
 		background-color: $background
@@ -214,6 +241,39 @@
 		&-description
 			font-size: 15px
 			line-height: 22px
+	&__feedback
+		&-sheet
+			@extend %sheet
+			& td, & th
+				width: 33.3%
+		&-check
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: center
+			& svg:last-child
+				position: absolute
+	&__checkbox
+		&-sheet
+			@extend %sheetInput
+			& td, & th
+				width: 33.3%
+	&__mode
+		&-achivments
+			&-sheet
+				@extend %sheetInput
+		&-abilities
+			&-sheet
+				@extend %sheetInput
+
+	&__achivments
+		&-company
+			&-sheet
+				@extend %sheetInput
+	&__volunteering
+		&-company
+			&-sheet
+				@extend %sheetInput
 
 .information
 	&__button
