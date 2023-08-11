@@ -167,29 +167,33 @@
 		@extend %list
 
 .employees
-	background-color: white
-	margin-top: 20px
-	gap: 0
-	&__list li
-		cursor: pointer
-	& .modal__content
-		& .card
-			display: flex
-			flex-direction: column
-			gap: 10px 0
-			&__header
-				position: sticky
-				top: 0
-				z-index: 99
-				background-color: $white
-				display: grid
-				grid-template-columns: repeat(3, auto)
-				gap: 0 10px
-				border-bottom: 1px solid $gray
-				padding-bottom: 10px
-				&-btn.active
-					color: $blue
+	&__header
+		grid-template-columns: none
+	&__main
+		background-color: white
+		margin-top: 20px
+		gap: 0
+		&__list
+			& li
+				cursor: pointer
+		& .modal__content
+			& .card
+				display: flex
+				flex-direction: column
+				gap: 10px 0
+				&__header
+					position: sticky
+					top: 0
+					z-index: 99
 					background-color: $white
+					display: grid
+					grid-template-columns: repeat(3, auto)
+					gap: 0 10px
+					border-bottom: 1px solid $gray
+					padding-bottom: 10px
+					&-btn.active
+						color: $blue
+						background-color: $white
 
 #directorForm
 	display: flex
