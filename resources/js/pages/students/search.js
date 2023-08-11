@@ -1,24 +1,16 @@
-const studentsSearch = document.querySelector(".students__search");
-const students = [
-	{ first_name: "Алексей", last_name: "Яковлев", patronymic: "Николаевич" },
-	{ first_name: "Виктор", last_name: "Смирнов", patronymic: "Петрович" }
-];
+function search(){
+	const input = document.querySelector('.students__search')
+	let filter = input.value.toLowerCase().replaceAll(' ', '');
+	const students = document.querySelectorAll('.students__name')
+	students.forEach(student => {
+		let [firstName, lastName, patronymic] = student.textContent.split(' ')
+		let fullName = `${firstName}${lastName}${patronymic}`.toLowerCase()
+		if (fullName.indexOf(filter) > -1) {
+			student.parentNode.style.display = ''
+		} else {
+			student.parentNode.style.display = 'none'
+		}
+	});
+}
 
-studentsSearch.addEventListener("input", () => {
-	if (studentsSearch.value.length >= 3) {
-		setTimeout(() => {
-			console.log(students.filter((student) => {
-				const { first_name, last_name, patronymic } = student;
-				const fullName = `${last_name}${first_name}${patronymic}`.toLowerCase();
-
-				return fullName.includes(studentsSearch.value.toLowerCase().split(" ").join(""));
-			}));
-		}, 500);
-	}
-});
-
-// let stdnts = document.querySelectorAll('.students__name')
-// stdnts.forEach(std => {
-// 	let [f , l, p] = std.textContent.split(' ')
-// 	console.log(f)
-// });
+document.addEventListener('input', search)
