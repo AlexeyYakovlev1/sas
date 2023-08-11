@@ -37,6 +37,23 @@
 		top:0
 		border: none
 		resize: none
+%list
+	display: flex
+	flex-direction: column
+	width: 100%
+	& li
+		width: 100%
+		padding: 20px
+		cursor: default
+		display: flex
+		gap: 20px
+		align-items: center
+		user-select: none
+		&:nth-child(2n)
+			background-color: $dark
+		&:hover
+			color: $blue
+
 
 
 .home
@@ -123,7 +140,7 @@
 	&__submit
 		margin-top: 20px
 
-.students
+.students, .employees
 	display: grid
 	grid-template-rows: auto 1fr
 	gap: 20px 0
@@ -143,21 +160,8 @@
 		justify-content: space-between
 		background: white
 	&__list
-		display: flex
-		flex-direction: column
-		width: 100%
-		& li
-			width: 100%
-			padding: 20px
-			cursor: pointer
-			display: flex
-			gap: 20px
-			align-items: center
-			user-select: none
-			&:nth-child(2n)
-				background-color: $dark
-			&:hover
-				color: $blue
+		@extend %list
+
 	&__modal
 		width: 100%
 		min-height: 100vh
@@ -167,6 +171,11 @@
 		bottom: 0
 		left: 0
 		right: 0
+
+.employees
+	background-color: white
+	margin-top: 20px
+	gap: 0
 
 .card
 	width: 60%
