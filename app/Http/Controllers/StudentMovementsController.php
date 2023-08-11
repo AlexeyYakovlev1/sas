@@ -8,8 +8,7 @@ class StudentMovementsController extends Controller
 {
     public function view_student_movement(Request $request)
 	{
-		if ($request->payload["redirect"])
-		{
+		if ($request->person !== "employee") {
 			return abort(404);
 		}
 		

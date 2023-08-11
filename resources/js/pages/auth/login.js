@@ -1,8 +1,10 @@
 import Loader from "../../classes/Loader";
 import Request from "../../classes/Request";
+import Utils from "../../classes/Utils";
 
 const loader = new Loader();
 const request = new Request();
+const utils = new Utils();
 
 const loginForm = document.querySelector(".login__form");
 
@@ -15,7 +17,7 @@ loginForm.addEventListener("submit", (event) => {
 	const { person } = activeLoginCharacter.dataset;
 	const data = { person };
 
-	// Заносим значения инпутов в formData
+	// Заносим значения инпутов в data
 	document.querySelectorAll(".form__item").forEach((formItem) => {
 		formItem.childNodes.forEach((child) => {
 			if (child.nodeName === "INPUT") data[child.dataset.name] = child.value;
@@ -25,9 +27,21 @@ loginForm.addEventListener("submit", (event) => {
 	// Отправляем данные
 	request.post("/auth/login", { data: JSON.stringify(data) })
 		.then((data) => {
+			const { person } = data;
+
 			loader.close();
 
-			window.location.href = "http://127.0.0.1:8000/home/general_information";
+			switch (person) {
+				case "student":
+					window.location.href = `${utils.getHost()}/home/students/list`;
+					break;
+				case "director":
+					window.location.href = `${utils.getHost()}/home/employees`;
+					break;
+				case "employee":
+					window.location.href = `${utils.getHost()}/home/general_information`;
+					break;
+			}
 		})
 		.catch((error) => {
 			loader.close();

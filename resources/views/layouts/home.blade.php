@@ -34,16 +34,20 @@
 			<aside class="home__sections">
 				<nav class="home__nav">
 					<ul class="home__nav-list">
-						<li
-							class="home__nav-list-item <?php if ($current_page === "general_information") echo "active"; else echo ""; ?>"
-						>
-							<a href="/home/general_information">Общая информация</a>
-						</li>
-						<li
-							class="home__nav-list-item <?php if ($current_page === "action_plan") echo "active"; else echo ""; ?>"
-						>
-							<a href="/home/action_plan">План мероприятий</a>
-						</li>
+						@if ($general_information)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "general_information") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/general_information">Общая информация</a>
+							</li>
+						@endif
+						@if ($action_plan)
+							<li
+								class="home__nav-list-item <?php if ($current_page === "action_plan") echo "active"; else echo ""; ?>"
+							>
+								<a href="/home/action_plan">План мероприятий</a>
+							</li>
+						@endif
 						@if ($student_movement)
 							<li
 								class="home__nav-list-item <?php if ($current_page === "student_movement") echo "active"; else echo ""; ?>"
