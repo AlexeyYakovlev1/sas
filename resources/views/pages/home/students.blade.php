@@ -357,6 +357,6 @@ $array = array_map('str_getcsv', $csv);
 	@vite([
 		"resources/js/pages/students/filter.js",
 		"resources/js/pages/students/modal.js",
-		"resources/js/scripts/searchStudents.js"
+		"resources/js/pages/students/search.js"
 	])
 @stop
