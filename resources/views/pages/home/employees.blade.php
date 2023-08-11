@@ -111,7 +111,20 @@ $array = array_map('str_getcsv', $csv);
 								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfMeeting">
-								<p>Здесь должна быть таблица</p>
+								<ul class="card__content-meetingResult">
+									<li>
+										<label for="completed">Выполнено:</label>
+										<input type="radio" name="completed">
+									</li>
+									<li>
+										<label for="completed">В работе:</label>
+										<input type="radio" name="completed">
+									</li>
+									<li>
+										<label for="completed">Процесс реализации не запущен:</label>
+										<input type="radio" name="completed">
+									</li>
+								</ul>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfPrevMeeting">
 								<p>Здесь должна быть таблица</p>
