@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Route;
 // AUTH
 Route::middleware(["redirect_if_token_exists"])->prefix("/auth")->group(function() {
 	Route::get("/login", [AuthController::class, "view_auth"]);
-	Route::get("/as_employee", [AuthController::class, "view_employee"]);
-	Route::get("/as_student", [AuthController::class, "view_student"]);
-	Route::get("/as_director", [AuthController::class, "view_director"]);
-
 	Route::post("/login", [AuthController::class, "login"]);
 });
 

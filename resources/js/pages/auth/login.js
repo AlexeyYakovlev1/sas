@@ -1,10 +1,12 @@
 import Loader from "../../classes/Loader";
 import Request from "../../classes/Request";
 import Utils from "../../classes/Utils";
+import Alert from "../../classes/Alert";
 
 const loader = new Loader();
 const request = new Request();
 const utils = new Utils();
+const alert = new Alert();
 
 const loginForm = document.querySelector(".login__form");
 
@@ -27,7 +29,9 @@ loginForm.addEventListener("submit", (event) => {
 	// Отправляем данные
 	request.post("/auth/login", { data: JSON.stringify(data) })
 		.then((data) => {
-			const { person } = data;
+			const { success, person, message } = data;
+
+			if (message) alert.show(success, message);
 
 			loader.close();
 

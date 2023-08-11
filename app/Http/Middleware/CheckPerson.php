@@ -19,13 +19,12 @@ class CheckPerson
 		$important_persons = ["employee", "director"];
 		$payload = [
 			"person" => $request->person,
-			"action_plan" => $request->person === "employee", // план мероприятий
+			"action_plan" => in_array($request->person, $important_persons), // план мероприятий
 			"general_information" => $request->person === "employee", // общая информация
 			"student_movement" => $request->person === "employee", // движение студентов
 			"student_list" => $request->person === "student", // аттестационный лист
 			"employees" => $request->person === "director", // сотрудники
 			"students" => $request->person === "employee", // студенты
-			"redirect" => !in_array($request->person, $important_persons) // редирект на страницу авторизиции
 		];
 
 		$request->merge(["payload" => $payload]);

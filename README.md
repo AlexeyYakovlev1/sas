@@ -1,1 +1,6 @@
-student accounting system
+Student Accounting System (sas)
+
+Laravel
+Javascript
+Sass
+GoogleSheet
