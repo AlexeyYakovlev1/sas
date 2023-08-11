@@ -47,9 +47,9 @@ $array = array_map('str_getcsv', $csv);
 				}
 				?>
 			</ul>
-			<div class="students__modal hidden">
-				<div class="card">
-					<div class="card__content">
+			<article class="modal hidden" id="student-modal">
+				<div class="modal__content" id="student-modal-content">
+					<div class="card">
 						<section class="card__main card__section">
 							<h2 class="card__section-title">Главная</h2>
 							<div class="card__main-top">
@@ -350,8 +350,9 @@ $array = array_map('str_getcsv', $csv);
 					</div>
 				</div>
 			</div>
-		</article>
-	</div>
+		</div>
+	</article>
+</div>
 @stop
 @section("scripts")
 	@vite([
