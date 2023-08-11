@@ -40,7 +40,7 @@ $array = array_map('str_getcsv', $csv);
 					$html = "<li data-id='$id'>";
 					$html .= '<span>'.$i.'</span>';
 					foreach ($item as $value) {
-						$html .= '<span>'.$value.'</span>';
+						$html .= "<span class='students__name'>".$value."</span>";
 					}
 					$html .= '</li>';
 					echo $html;

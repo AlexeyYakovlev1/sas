@@ -16,3 +16,9 @@ studentsSearch.addEventListener("input", () => {
 		}, 500);
 	}
 });
+
+// let stdnts = document.querySelectorAll('.students__name')
+// stdnts.forEach(std => {
+// 	let [f , l, p] = std.textContent.split(' ')
+// 	console.log(f)
+// });
