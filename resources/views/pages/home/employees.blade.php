@@ -111,23 +111,55 @@ $array = array_map('str_getcsv', $csv);
 								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfMeeting">
-								<ul class="card__content-meetingResult">
-									<li>
-										<label for="completed">Выполнено:</label>
-										<input type="radio" name="completed">
-									</li>
-									<li>
-										<label for="completed">В работе:</label>
-										<input type="radio" name="completed">
-									</li>
-									<li>
-										<label for="completed">Процесс реализации не запущен:</label>
-										<input type="radio" name="completed">
-									</li>
-								</ul>
+								<table class='card__content-meetingResult'>
+									<tr>
+										<td>Выполнено:</td>
+										<td>В работе:</td>
+										<td>Процесс реализации не запущен:</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="meetingResult" id="completed">
+											<label for="completed" class='card__content-meetingResult-label'>
+												<x-checkicon />
+											</label>
+										</td>
+										<td>
+											<input type="radio" name="meetingResult" id="inProcess">
+											<label for="inProcess" class='card__content-meetingResult-label'>
+												<x-checkicon />
+											</label>
+										</td>
+										<td>
+											<input type="radio" name="meetingResult" id="didntStart">
+											<label for="didntStart" class='card__content-meetingResult-label'>
+												<x-checkicon />
+											</label>
+										</td>
+									</tr>
+								</table>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfPrevMeeting">
-								<p>Здесь должна быть таблица</p>
+								<table class='card__feedback-sheet'>
+									<thead>
+										<tr>
+											<td>Выполнено:</td>
+											<td>В работе:</td>
+											<td>Процесс реализации не запущен:</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="card__feedback-check">
+													<x-checkIcon />
+												</div>
+											</td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
 							</li>
 						</ul>
 					</div>
@@ -140,6 +172,7 @@ $array = array_map('str_getcsv', $csv);
 	@vite([
 		"resources/js/pages/employees/search.js",
 		"resources/js/pages/employees/modal.js",
-		"resources/js/pages/employees/tabs.js"
+		"resources/js/pages/employees/tabs.js",
+		"resources/js/pages/employees/radioBtn.js"
 	])
 @stop

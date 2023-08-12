@@ -291,7 +291,7 @@ button {
   color: rgb(2, 221, 217);
 }
 
-.card__feedback-sheet, .card__volunteering-company-sheet, .card__achivments-company-sheet, .card__mode-abilities-sheet, .card__mode-achivments-sheet, .card__checkbox-sheet {
+.card__feedback-sheet, .employees__main .modal__content .card__content-meetingResult, .card__volunteering-company-sheet, .card__achivments-company-sheet, .card__mode-abilities-sheet, .card__mode-achivments-sheet, .card__checkbox-sheet {
   text-decoration: none;
   border-collapse: collapse;
   width: 100%;
@@ -299,7 +299,7 @@ button {
   background-color: white;
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.05);
 }
-.card__feedback-sheet td, .card__volunteering-company-sheet td, .card__achivments-company-sheet td, .card__mode-abilities-sheet td, .card__mode-achivments-sheet td, .card__checkbox-sheet td, .card__feedback-sheet th, .card__volunteering-company-sheet th, .card__achivments-company-sheet th, .card__mode-abilities-sheet th, .card__mode-achivments-sheet th, .card__checkbox-sheet th {
+.card__feedback-sheet td, .employees__main .modal__content .card__content-meetingResult td, .card__volunteering-company-sheet td, .card__achivments-company-sheet td, .card__mode-abilities-sheet td, .card__mode-achivments-sheet td, .card__checkbox-sheet td, .card__feedback-sheet th, .employees__main .modal__content .card__content-meetingResult th, .card__volunteering-company-sheet th, .card__achivments-company-sheet th, .card__mode-abilities-sheet th, .card__mode-achivments-sheet th, .card__checkbox-sheet th {
   padding: 10px 15px;
   border: 1px solid rgb(2, 221, 217);
 }
@@ -507,6 +507,22 @@ button {
 .employees__main .modal__content .card__header-btn.active {
   color: rgb(2, 221, 217);
   background-color: #EFEFEF;
+}
+.employees__main .modal__content .card__content-meetingResult td {
+  width: 33.3%;
+}
+.employees__main .modal__content .card__content-meetingResult td input {
+  display: none;
+}
+.employees__main .modal__content .card__content-meetingResult td label {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.employees__main .modal__content .card__content-meetingResult td label svg:last-child {
+  display: none;
+  position: absolute;
 }
 
 #directorForm {

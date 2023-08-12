@@ -194,6 +194,23 @@
 					&-btn.active
 						color: $blue
 						background-color: $white
+				&__content
+					&-meetingResult
+						@extend %sheet
+						& td
+							width: 33.3%
+							& input
+								display: none
+							& label
+								display: flex
+								position: relative
+								justify-content: center
+								align-items: center
+								& svg:last-child
+									display: none
+									position: absolute
+
+
 
 #directorForm
 	display: flex
