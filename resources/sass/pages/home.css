@@ -343,6 +343,39 @@ button {
   color: rgb(2, 221, 217);
 }
 
+.studentMovement__sheet table, .actionPlan__sheet {
+  text-decoration: none;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.05);
+}
+.studentMovement__sheet table th, .actionPlan__sheet th {
+  font-weight: normal;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #354251;
+}
+.studentMovement__sheet table td, .actionPlan__sheet td {
+  font-size: 13px;
+  color: #354251;
+}
+.studentMovement__sheet table td, .actionPlan__sheet td, .studentMovement__sheet table th, .actionPlan__sheet th {
+  white-space: pre-wrap;
+  padding: 10px 5px;
+  line-height: 13px;
+  vertical-align: middle;
+  border: 1px solid rgb(0, 177, 174);
+}
+.studentMovement__sheet table tr:hover, .actionPlan__sheet tr:hover {
+  background-color: #f9fafb;
+}
+.studentMovement__sheet table tr:hover td, .actionPlan__sheet tr:hover td {
+  color: #354251;
+  cursor: default;
+}
+
 .home .container {
   background-color: rgb(246, 246, 246);
   display: grid;
@@ -390,38 +423,6 @@ button {
 }
 .actionPlan h1 {
   text-align: center;
-}
-.actionPlan__sheet {
-  text-decoration: none;
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-  background-color: white;
-  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.05);
-}
-.actionPlan__sheet th {
-  font-weight: normal;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #354251;
-}
-.actionPlan__sheet td {
-  font-size: 13px;
-  color: #354251;
-}
-.actionPlan__sheet td, .actionPlan__sheet th {
-  white-space: pre-wrap;
-  padding: 10px 5px;
-  line-height: 13px;
-  vertical-align: middle;
-  border: 1px solid rgb(0, 177, 174);
-}
-.actionPlan__sheet tr:hover {
-  background-color: #f9fafb;
-}
-.actionPlan__sheet tr:hover td {
-  color: #354251;
-  cursor: default;
 }
 .studentList {
   text-align: left;
@@ -670,4 +671,12 @@ button {
 }
 .information__list-documents-do {
   display: flex;
+}
+
+.studentMovement {
+  display: flex;
+  width: 100%;
+}
+.studentMovement__sheet {
+  width: 100%;
 }/*# sourceMappingURL=home.css.map */
