@@ -1,3 +1,5 @@
+"use strict";
+
 import Alert from "../classes/Alert.js";
 
 const alert = new Alert();

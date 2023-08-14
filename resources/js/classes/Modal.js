@@ -1,3 +1,5 @@
+"use strict";
+
 class Modal {
 	constructor() {
 		this.modalElement = document.querySelector(".modal");

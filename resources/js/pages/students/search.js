@@ -1,3 +1,5 @@
+"use strict";
+
 function search(){
 	const input = document.querySelector('.students__search')
 	let filter = input.value.toLowerCase().replaceAll(' ', '');

@@ -1,3 +1,5 @@
+"use strict";
+
 import Loader from "../../classes/Loader";
 import Request from "../../classes/Request";
 import Utils from "../../classes/Utils";

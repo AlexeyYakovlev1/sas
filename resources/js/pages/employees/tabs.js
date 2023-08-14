@@ -1,3 +1,5 @@
+"use strict";
+
 const cardHeaderBtn = document.querySelectorAll(".card__header-btn");
 const cardContentItem = document.querySelectorAll(".card__content-item");
 

@@ -1,4 +1,6 @@
-function search(){
+"use strict";
+
+function search() {
 	const input = document.querySelector('.employees__search')
 	let filter = input.value.toLowerCase().replaceAll(' ', '');
 	const students = document.querySelectorAll('.empoyees__name')
