@@ -120,13 +120,13 @@ $array = array_map('str_getcsv', $csv);
 										</tr>
 										<tr>
 											<td>
-												<input type="text" name="meetingResult">
+												<input type="text" name="meetingResult" contenteditable="true">
 											</td>
 											<td>
-												<input type="text" name="meetingResult">
+												<input type="text" name="meetingResult" contenteditable="true">
 											</td>
 											<td>
-												<input type="text" name="meetingResult">
+												<input type="text" name="meetingResult" contenteditable="true">
 											</td>
 										</tr>
 									</table>
