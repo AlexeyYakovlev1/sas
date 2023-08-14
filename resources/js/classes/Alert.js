@@ -1,3 +1,5 @@
+"use strict";
+
 class Alert {
 	constructor() {
 		this.alertElement = document.querySelector(".alert");

@@ -1,3 +1,5 @@
+"use strict";
+
 class Loader {
 	constructor() {
 		this.loaderElement = document.querySelector(".loader__wrapper");

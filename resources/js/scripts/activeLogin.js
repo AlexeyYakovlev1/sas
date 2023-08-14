@@ -1,3 +1,5 @@
+"use strict";
+
 const loginCharacters = document.querySelectorAll(".login__character");
 
 loginCharacters.forEach((character) => {

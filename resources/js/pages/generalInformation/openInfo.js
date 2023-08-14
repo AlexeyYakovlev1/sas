@@ -1,3 +1,5 @@
+"use strict";
+
 const informationListHeader = document.querySelectorAll(".information__list-header");
 const informationListContent = document.querySelectorAll(".information__list-content");
 const informationListArrow = document.querySelectorAll(".information__list-arrow");

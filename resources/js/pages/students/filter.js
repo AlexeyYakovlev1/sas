@@ -1,3 +1,5 @@
+"use strict";
+
 const studentsBtnFilter = document.querySelector(".students__btn-filter");
 const studentsFilters = document.querySelector(".students__filters");
 

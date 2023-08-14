@@ -1,3 +1,5 @@
+"use strict";
+
 import Modal from "../../classes/Modal";
 
 const modal = new Modal();
