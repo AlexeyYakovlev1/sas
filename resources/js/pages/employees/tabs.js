@@ -1,14 +1,5 @@
 "use strict";
 
-const cardHeaderBtn = document.querySelectorAll(".card__header-btn");
-const cardContentItem = document.querySelectorAll(".card__content-item");
+import Tabs from "../../classes/Tabs.js";
 
-cardHeaderBtn.forEach((btn, idx) => {
-	btn.addEventListener("click", () => {
-		cardHeaderBtn.forEach((item) => item.classList.remove("active"));
-		cardContentItem.forEach((content) => content.classList.add("hidden"));
-
-		cardContentItem[idx].classList.remove("hidden");
-		btn.classList.add("active");
-	});
-});
+new Tabs(".card__header-btn", ".card__content-item").clickButtons();
