@@ -51,17 +51,16 @@ $array = array_map('str_getcsv', $csv);
 				<div class="modal__content" id="student-modal-content">
 					<div class="card">
 						<div class="students__card-header card__header">
-							<button class="card__header-btn btn__primary">Главная</button>
-							<button class="card__header-btn btn__primary">Сотрудник</button>
-							<button class="card__header-btn btn__primary">Студент</button>
-							<button class="card__header-btn btn__primary">Документы</button>
-							<button class="card__header-btn btn__primary">Служба режима</button>
-							<button class="card__header-btn btn__primary">Достижения</button>
-							<button class="card__header-btn btn__primary">Волонтерство</button>
+							<button class="students__card-btn btn__primary active">Главная</button>
+							<button class="students__card-btn btn__primary">Сотрудник</button>
+							<button class="students__card-btn btn__primary">Студент</button>
+							<button class="students__card-btn btn__primary">Документы</button>
+							<button class="students__card-btn btn__primary">Служба режима</button>
+							<button class="students__card-btn btn__primary">Достижения</button>
+							<button class="students__card-btn btn__primary">Волонтерство</button>
 						</div>
 						<div class="card__content">
 							<section class="card__section">
-								<h2 class="card__section-title">Главная</h2>
 								<div class="card__main-top">
 									<img
 										src="https://corp.synergy.ru/upload/main/600/ad_1662235951.jpg"
@@ -112,7 +111,6 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 							</section>
 							<section class="card__employee card__section hidden">
-								<h2 class="card__section-title">Сотрудник</h2>
 								<div class="card__section-content">
 									<ul class="card__employee-job">
 										<li>Группа верстки;</li>
@@ -186,7 +184,6 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 							</section>
 							<section class="card__student card__section hidden">
-								<h2 class="card__section-title">Студент</h2>
 								<div class="card__section-content">
 									<div class="card__student-programs">
 										<h4>Программы обучения</h4>
@@ -244,7 +241,6 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 							</section>
 							<section class="card__documents card__section hidden">
-								<h2 class="card__section-title">Документы</h2>
 								<div class="card__section-content">
 									<div class="card__section-content">
 										<div class="card__documents-passport">
@@ -260,7 +256,6 @@ $array = array_map('str_getcsv', $csv);
 
 							</section>
 							<section class="card__mode card__section hidden">
-								<h2 class="card__section-title">Служба режима</h2>
 								<div class="card__section-content">
 									<div class="card__mode-description">
 										<h4>Характеристика от службы режима</h4>
@@ -314,7 +309,6 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 							</section>
 							<section class="card__achivments card__section hidden">
-								<h2 class="card__section-title">Достижения</h2>
 								<div class="card__section-content">
 									<div class="card__achivments-company">
 										<h4>В рамках корпорации</h4>
@@ -336,7 +330,6 @@ $array = array_map('str_getcsv', $csv);
 								</div>
 							</section>
 							<section class="card__volunteering card__section hidden">
-								<h2 class="card__section-title">Волонтерство</h2>
 								<div class="card__section-content">
 									<div class="card__volunteering-company">
 										<h4>Участие во внеучебной деятельности</h4>

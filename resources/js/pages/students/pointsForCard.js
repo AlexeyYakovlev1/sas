@@ -1,12 +1,13 @@
 "use strict";
 
-const cardHeaderBtns = document.querySelectorAll(".card__header-btn");
+const studentsCardBtns = document.querySelectorAll(".students__card-btn");
 const cardSections = document.querySelectorAll(".card__section");
 
-cardHeaderBtns.forEach((btn, idx) => {
+studentsCardBtns.forEach((btn, idx) => {
 	btn.addEventListener("click", () => {
+		studentsCardBtns.forEach((item) => item.classList.remove("active"));
 		cardSections.forEach((section) => section.classList.add("hidden"));
-		console.log(idx);
 		cardSections[idx].classList.remove("hidden");
+		btn.classList.add("active");
 	});
 });
