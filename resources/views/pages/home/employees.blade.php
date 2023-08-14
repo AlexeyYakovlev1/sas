@@ -111,33 +111,27 @@ $array = array_map('str_getcsv', $csv);
 								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfMeeting">
-								<table class='card__content-meetingResult'>
-									<tr>
-										<td>Выполнено:</td>
-										<td>В работе:</td>
-										<td>Процесс реализации не запущен:</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="radio" name="meetingResult" id="completed">
-											<label for="completed" class='card__content-meetingResult-label'>
-												<x-checkicon />
-											</label>
-										</td>
-										<td>
-											<input type="radio" name="meetingResult" id="inProcess">
-											<label for="inProcess" class='card__content-meetingResult-label'>
-												<x-checkicon />
-											</label>
-										</td>
-										<td>
-											<input type="radio" name="meetingResult" id="didntStart">
-											<label for="didntStart" class='card__content-meetingResult-label'>
-												<x-checkicon />
-											</label>
-										</td>
-									</tr>
-								</table>
+								<form action="" class='card__content-meetingResult-form'>
+									<table class='card__content-meetingResult-sheet'>
+										<tr>
+											<td>Выполнено:</td>
+											<td>В работе:</td>
+											<td>Процесс реализации не запущен:</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="text" name="meetingResult">
+											</td>
+											<td>
+												<input type="text" name="meetingResult">
+											</td>
+											<td>
+												<input type="text" name="meetingResult">
+											</td>
+										</tr>
+									</table>
+									<button type="submit" class='card__content-meetingResult-btn'>Сохранить</button>
+								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfPrevMeeting">
 								<table class='card__feedback-sheet'>
@@ -151,12 +145,14 @@ $array = array_map('str_getcsv', $csv);
 									<tbody>
 										<tr>
 											<td>
-												<div class="card__feedback-check">
-													<x-checkIcon />
-												</div>
+												<span>a</span>
 											</td>
-											<td></td>
-											<td></td>
+											<td>
+												<span>a</span>
+											</td>
+											<td>
+												<span>a</span>
+											</td>
 										</tr>
 									</tbody>
 								</table>

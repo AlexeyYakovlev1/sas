@@ -73,7 +73,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   border: 6px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
@@ -278,7 +278,7 @@ button {
   line-height: 22px;
 }
 
-.actionPlan__link {
+.employees__main .modal__content .card__content-meetingResult-btn, .actionPlan__link {
   width: -moz-fit-content;
   width: fit-content;
   padding: 10px 15px;
@@ -287,11 +287,11 @@ button {
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.05);
   cursor: pointer;
 }
-.actionPlan__link:hover {
+.employees__main .modal__content .card__content-meetingResult-btn:hover, .actionPlan__link:hover {
   color: rgb(2, 221, 217);
 }
 
-.card__feedback-sheet, .employees__main .modal__content .card__content-meetingResult, .card__volunteering-company-sheet, .card__achivments-company-sheet, .card__mode-abilities-sheet, .card__mode-achivments-sheet, .card__checkbox-sheet {
+.card__feedback-sheet, .employees__main .modal__content .card__content-meetingResult-sheet, .card__volunteering-company-sheet, .card__achivments-company-sheet, .card__mode-abilities-sheet, .card__mode-achivments-sheet, .card__checkbox-sheet {
   text-decoration: none;
   border-collapse: collapse;
   width: 100%;
@@ -299,7 +299,7 @@ button {
   background-color: white;
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.05);
 }
-.card__feedback-sheet td, .employees__main .modal__content .card__content-meetingResult td, .card__volunteering-company-sheet td, .card__achivments-company-sheet td, .card__mode-abilities-sheet td, .card__mode-achivments-sheet td, .card__checkbox-sheet td, .card__feedback-sheet th, .employees__main .modal__content .card__content-meetingResult th, .card__volunteering-company-sheet th, .card__achivments-company-sheet th, .card__mode-abilities-sheet th, .card__mode-achivments-sheet th, .card__checkbox-sheet th {
+.card__feedback-sheet td, .employees__main .modal__content .card__content-meetingResult-sheet td, .card__volunteering-company-sheet td, .card__achivments-company-sheet td, .card__mode-abilities-sheet td, .card__mode-achivments-sheet td, .card__checkbox-sheet td, .card__feedback-sheet th, .employees__main .modal__content .card__content-meetingResult-sheet th, .card__volunteering-company-sheet th, .card__achivments-company-sheet th, .card__mode-abilities-sheet th, .card__mode-achivments-sheet th, .card__checkbox-sheet th {
   padding: 10px 15px;
   border: 1px solid rgb(2, 221, 217);
 }
@@ -509,21 +509,22 @@ button {
   color: rgb(2, 221, 217);
   background-color: #EFEFEF;
 }
-.employees__main .modal__content .card__content-meetingResult td {
+.employees__main .modal__content .card__content-meetingResult-sheet input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 15px 20px;
+}
+.employees__main .modal__content .card__content-meetingResult-sheet td {
   width: 33.3%;
 }
-.employees__main .modal__content .card__content-meetingResult td input {
-  display: none;
+.employees__main .modal__content .card__content-meetingResult-sheet tr:last-child td {
+  padding: 0;
 }
-.employees__main .modal__content .card__content-meetingResult td label {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-.employees__main .modal__content .card__content-meetingResult td label svg:last-child {
-  display: none;
-  position: absolute;
+.employees__main .modal__content .card__content-meetingResult-btn {
+  margin-top: 20px;
+  padding: 15px 20px;
+  font-size: 16px;
 }
 
 #directorForm {

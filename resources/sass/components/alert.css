@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap");
+.alert {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px;
+  border-radius: 3px;
+  max-width: 400px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.alert__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alert__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
+  padding-right: 30px;
+}
+.alert.success {
+  background-color: #DEF2D5;
+  color: #617658;
+  border-color: #617658;
+}
+.alert.error {
+  background-color: #EBC7C3;
+  color: #AC6363;
+  border-color: #AC6363;
+}
+.alert__close {
+  position: absolute;
+  top: 14px;
+  right: 8px;
+  font-size: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.alert__description {
+  font-size: 15px;
+  line-height: 22px;
+}/*# sourceMappingURL=alert.css.map */
