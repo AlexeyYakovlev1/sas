@@ -7,6 +7,7 @@ studentsCardBtns.forEach((btn, idx) => {
 	btn.addEventListener("click", () => {
 		studentsCardBtns.forEach((item) => item.classList.remove("active"));
 		cardSections.forEach((section) => section.classList.add("hidden"));
+
 		cardSections[idx].classList.remove("hidden");
 		btn.classList.add("active");
 	});

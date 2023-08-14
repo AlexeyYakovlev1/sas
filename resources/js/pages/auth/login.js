@@ -51,6 +51,6 @@ loginForm.addEventListener("submit", (event) => {
 		})
 		.catch((error) => {
 			loader.close();
-			console.error(error.message);
+			alert.show(false, error.message || "Ошибка сервера");
 		});
 });
