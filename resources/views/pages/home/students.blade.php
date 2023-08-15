@@ -273,7 +273,10 @@ $array = array_map('str_getcsv', $csv);
 										<p>Что-то здесь должно быть</p>
 									</div>
 									<div class="card__mode-achivments">
-										<h4>Спортивные достижения</h4>
+										<div class="card__mode-achivments-header">
+											<h4>Спортивные достижения</h4>
+											<button class="card__mode-achivments-btn">Добавить строку</button>
+										</div>
 										<table class='card__mode-achivments-sheet'>
 											<thead>
 												<tr>
@@ -290,7 +293,10 @@ $array = array_map('str_getcsv', $csv);
 										</table>
 									</div>
 									<div class="card__mode-abilities">
-										<h4>Творческие способности</h4>
+										<div class="card__mode-abilities-header">
+											<h4>Творческие способности</h4>
+											<button class='card__mode-abilities-btn'>Добавить строку</button>
+										</div>
 										<table class='card__mode-abilities-sheet'>
 											<thead>
 												<tr>
@@ -311,7 +317,10 @@ $array = array_map('str_getcsv', $csv);
 							<section class="card__achivments card__section hidden">
 								<div class="card__section-content">
 									<div class="card__achivments-company">
-										<h4>В рамках корпорации</h4>
+										<div class="card__achivments-company-header">
+											<h4>В рамках корпорации</h4>
+											<button class='card__achivmetns-company-btn'>Добавить строку</button>
+										</div>
 										<table class='card__achivments-company-sheet'>
 											<thead>
 												<tr>
@@ -332,7 +341,10 @@ $array = array_map('str_getcsv', $csv);
 							<section class="card__volunteering card__section hidden">
 								<div class="card__section-content">
 									<div class="card__volunteering-company">
-										<h4>Участие во внеучебной деятельности</h4>
+										<div class="card__volunteering-company-header">
+											<h4>Участие во внеучебной деятельности</h4>
+											<button class='card__volunteering-company-btn'>Добавить строку</button>
+										</div>
 										<table class='card__volunteering-company-sheet'>
 											<thead>
 												<tr>
@@ -363,6 +375,7 @@ $array = array_map('str_getcsv', $csv);
 		"resources/js/pages/students/filter.js",
 		"resources/js/pages/students/modal.js",
 		"resources/js/pages/students/search.js",
-		"resources/js/pages/students/pointsForCard.js"
+		"resources/js/pages/students/pointsForCard.js",
+		"resources/js/pages/students/addLine.js"
 	])
 @stop

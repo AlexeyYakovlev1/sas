@@ -80,6 +80,19 @@
 	& tr:hover td
 		color: #354251
 		cursor: default
+%tableName
+	display: flex
+	gap: 40px
+	align-items: center
+	margin-bottom: 10px
+	& h4
+		margin: 0 !important
+	& button
+		@extend %button
+
+.red
+	background-color: rgb(255, 171, 182)
+	color: rgb(168, 0, 0) !important
 
 .home
 	& .container
@@ -223,7 +236,7 @@
 								padding: 15px 20px
 							& td
 								width: 33.3%
-							& tr:last-child td
+							& tr>td
 								padding: 0
 						&-btn
 							margin-top: 20px
@@ -296,6 +309,9 @@
 			@extend %sheet
 			& td, & th
 				width: 33.3%
+			& thead
+				& tr>td
+					padding: 3px 0
 		&-check
 			position: relative
 			display: flex
@@ -309,19 +325,33 @@
 			& td, & th
 				width: 33.3%
 	&__mode
-		&-achivments
+		&-achivments, &-abilities
+			&-header
+				@extend %tableName
+				font-size: 16px
+
 			&-sheet
 				@extend %sheetInput
+				max-height: 84px
+				overflow: hidden
+				& input, & textarea
+					font-size: 16px
 		&-abilities
+			&-header
+				@extend %tableName
 			&-sheet
 				@extend %sheetInput
 
 	&__achivments
 		&-company
+			&-header
+				@extend %tableName
 			&-sheet
 				@extend %sheetInput
 	&__volunteering
 		&-company
+			&-header
+				@extend %tableName
 			&-sheet
 				@extend %sheetInput
 
@@ -330,6 +360,12 @@
 		margin-top: 20px
 		display: flex
 		flex-direction: column
+		&-fileDo
+			display: flex
+			flex-wrap: wrap
+			justify-content: flex-end
+			align-items: center
+			gap: 0 10px
 		&-arrow
 			transition: all .2s ease
 			&.rotate

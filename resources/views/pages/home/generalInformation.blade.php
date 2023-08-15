@@ -22,7 +22,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -36,7 +36,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -50,7 +50,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -64,7 +64,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -76,7 +76,7 @@
 							<tr>
 								<td>Договор СЗ на скидку</td>
 								<td><input type="file" name="passport" /></td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -102,7 +102,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -116,7 +116,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -130,7 +130,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -144,7 +144,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -156,7 +156,7 @@
 							<tr>
 								<td>Договор СЗ на скидку</td>
 								<td><input type="file" name="passport" /></td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -182,7 +182,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -196,7 +196,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -210,7 +210,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -224,7 +224,7 @@
 								<td>
 									<input type="file" name="passport" />
 								</td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
@@ -236,7 +236,7 @@
 							<tr>
 								<td>Договор СЗ на скидку</td>
 								<td><input type="file" name="passport" /></td>
-								<td>
+								<td class="information__list-fileDo">
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>

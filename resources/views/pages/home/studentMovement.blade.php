@@ -46,7 +46,11 @@ $array = array_map('str_getcsv', $csv);
 						$i++;
 						$html = '<tr>';
 						foreach ($item as $value) {
-								$html .= '<td scope="row">'.$value.'</td>';
+								if($value>=0){
+									$html .= '<td scope="row">'.$value.'</td>';
+								}else{
+									$html .= '<td scope="row" class="red">'.$value.'</td>';
+								}
 							}
 						$html .= '</tr>';
 						echo $html;
