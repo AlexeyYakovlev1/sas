@@ -130,7 +130,11 @@ $array = array_map('str_getcsv', $csv);
 											</td>
 										</tr>
 									</table>
-									<button type="submit" class='card__content-meetingResult-btn'>Сохранить</button>
+									<div class="card__content-meetingResult-btns">
+										<button type="submit" class='card__content-meetingResult-saveBtn'>Сохранить</button>
+										<button type="button"  class='card__content-meetingResult-addBtn'>Добавить строку</button>
+									</div>
+
 								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfPrevMeeting">
@@ -169,6 +173,7 @@ $array = array_map('str_getcsv', $csv);
 		"resources/js/pages/employees/search.js",
 		"resources/js/pages/employees/modal.js",
 		"resources/js/pages/employees/tabs.js",
-		"resources/js/pages/employees/radioBtn.js"
+		"resources/js/pages/employees/radioBtn.js",
+		"resources/js/pages/employees/addLine.js"
 	])
 @stop
