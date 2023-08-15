@@ -6,10 +6,10 @@ class Tabs {
 		this.contents = document.querySelectorAll(contentsSelector);
 	}
 	
-	//	Добавляет класс ко всем html элементам
+	//	Добавляет класс ко всем html элементам (items)
 	_addClass(items, cls) { items.forEach((item) => item.classList.add(cls)); };
 	
-	//	Убирает класс у всех html элементам
+	//	Убирает класс у всех html элементов (items)
 	_removeClass(items, cls) { items.forEach((item) => item.classList.remove(cls)); };
 	
 	// Показать/Скрыть контент при нажатии на кнопку

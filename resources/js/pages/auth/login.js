@@ -4,6 +4,7 @@ import Loader from "../../classes/Loader";
 import Request from "../../classes/Request";
 import Utils from "../../classes/Utils";
 import Alert from "../../classes/Alert";
+import * as Validator from 'validatorjs';
 
 const loader = new Loader();
 const request = new Request();

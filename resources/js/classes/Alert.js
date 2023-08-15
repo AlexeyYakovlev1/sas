@@ -5,6 +5,7 @@ class Alert {
 		this.alertElement = document.querySelector(".alert");
 	}
 
+	// Показать оповещение
 	show(success, message) {
 		this.alertElement.style.display = "block";
 		this.alertElement.className = `alert ${success ? "success" : "error"}`;
@@ -18,6 +19,7 @@ class Alert {
 		`;
 	}
 
+	// Закрыть оповещение
 	close() {
 		this.alertElement.style.display = "none";
 		this.alertElement.className = "alert";

@@ -10,6 +10,7 @@ class Request {
 		this.csrf = utils.getCsrf();
 	}
 
+	// POST запрос
 	post(url, params) {
 		const allHeaders = Object.assign(params.headers || {}, {
 			"Content-Type": "application/json",

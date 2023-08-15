@@ -29,6 +29,7 @@
 								class="input__primary"
 								placeholder="Введите логин"
 								data-name="login"
+								name="login"
 							>
                         </div>
                         <div class="form__item">
@@ -38,6 +39,7 @@
 								class="input__primary"
 								placeholder="Введите пароль"
 								data-name="password"
+								name="password"
 							>
                         </div>
                         <button type="submit" class='btn__primary'>Отправить</button>

@@ -14,12 +14,6 @@
 		<p class="content__description">
 			Либо что-то пошло не так, либо страница больше не существует
 		</p>
-		<a
-			class="content__link"
-			href="/home/general_information"
-		>
-			Перейти на домашнюю страницу
-		</a>
 	</div>
 </body>
 </html>

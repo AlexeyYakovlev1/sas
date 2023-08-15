@@ -130,7 +130,7 @@ $array = array_map('str_getcsv', $csv);
 											</td>
 										</tr>
 									</table>
-									<button type="submit" class='card__content-meetingResult-btn'>Сохранить</button>
+									<button type="submit" class='card__content-meetingResult-btn btn__primary'>Сохранить</button>
 								</form>
 							</li>
 							<li class="card__content-item hidden" id="resultsOfPrevMeeting">

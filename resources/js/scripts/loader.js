@@ -6,4 +6,4 @@ const loader = new Loader();
 
 loader.show();
 
-window.addEventListener("DOMContentLoaded", () => loader.close());
+window.addEventListener("load", () => loader.close());
