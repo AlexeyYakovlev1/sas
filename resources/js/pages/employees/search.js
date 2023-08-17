@@ -5,7 +5,7 @@ const input = document.querySelector('.employees__search');
 function search() {
 	if (input.value.length < 3) return;
 
-	const filter = input.value.toLowerCase().trim();
+	const filter = input.value.toLowerCase().replaceAll(' ', '');
 	const students = document.querySelectorAll('.empoyees__name');
 
 	students.forEach(student => {
