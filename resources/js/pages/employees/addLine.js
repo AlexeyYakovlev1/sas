@@ -1,9 +1,21 @@
 "use strict";
 
 const meetingAddBtn = document.querySelector('.card__content-meetingResult-addBtn');
-const meetingTable = document.querySelector('.card__content-meetingResult-sheet');
+const meetingDelBtn = document.querySelector('.card__content-meetingResult-delBtn')
+const meetingTable = {obj: document.querySelector('.card__content-meetingResult-sheet'), count: 0};
 
-meetingAddBtn.addEventListener('click', () => createLine(meetingTable));
+meetingAddBtn.addEventListener('click', () => {
+	createLine(meetingTable.obj);
+	meetingTable.count++;
+});
+meetingDelBtn.addEventListener('click', () => {
+	try {
+		deleteLine(meetingTable.obj);
+		meetingTable.count--;
+	} catch (error) {
+		alert("Вы удалили все строчки");
+	}
+})
 
 function createLine(sheet) {
 	const line = document.createElement('tr');
@@ -20,5 +32,9 @@ function createLine(sheet) {
 		line.appendChild(column);
 	}
 
-	sheet.lastChild.appendChild(line);
+	sheet.lastElementChild.appendChild(line);
+}
+
+function deleteLine(sheet){
+	sheet.lastElementChild.lastElementChild.remove();
 }

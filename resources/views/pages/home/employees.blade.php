@@ -113,26 +113,31 @@ $array = array_map('str_getcsv', $csv);
 							<li class="card__content-item hidden" id="resultsOfMeeting">
 								<form action="" class='card__content-meetingResult-form'>
 									<table class='card__content-meetingResult-sheet'>
-										<tr>
-											<td>Выполнено:</td>
-											<td>В работе:</td>
-											<td>Процесс реализации не запущен:</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="text" name="meetingResult" contenteditable="true">
-											</td>
-											<td>
-												<input type="text" name="meetingResult" contenteditable="true">
-											</td>
-											<td>
-												<input type="text" name="meetingResult" contenteditable="true">
-											</td>
-										</tr>
+										<thead>
+											<tr>
+												<td>Выполнено:</td>
+												<td>В работе:</td>
+												<td>Процесс реализации не запущен:</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<input type="text" name="meetingResult" contenteditable="true">
+												</td>
+												<td>
+													<input type="text" name="meetingResult" contenteditable="true">
+												</td>
+												<td>
+													<input type="text" name="meetingResult" contenteditable="true">
+												</td>
+											</tr>
+										</tbody>
 									</table>
 									<div class="card__content-meetingResult-btns">
 										<button type="submit" id="meetingResult-saveBtn" class='card__content-meetingResult-btn btn__primary'>Сохранить</button>
-										<button type="button" id="meetingResult-addBtn" class='card__content-meetingResult-btn btn__primary'>Добавить строку</button>
+										<button type="button" id="meetingResult-addBtn" class='card__content-meetingResult-addBtn btn__primary'>Добавить строку</button>
+										<button type="button" class="card__content-meetingResult-delBtn btn__primary">Удалить строку</button>
 									</div>
 								</form>
 							</li>
