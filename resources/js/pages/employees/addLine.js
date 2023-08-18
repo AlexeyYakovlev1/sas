@@ -1,7 +1,11 @@
 "use strict";
 
+import Alert from "../../classes/Alert";
+
+const alert = new Alert();
+
 const meetingAddBtn = document.querySelector('.card__content-meetingResult-addBtn');
-const meetingDelBtn = document.querySelector('.card__content-meetingResult-delBtn')
+const meetingDelBtn = document.querySelector('.card__content-meetingResult-delBtn');
 const meetingTable = { obj: document.querySelector('.card__content-meetingResult-sheet'), count: 0 };
 
 meetingAddBtn.addEventListener('click', () => {
@@ -13,9 +17,9 @@ meetingDelBtn.addEventListener('click', () => {
 		deleteLine(meetingTable.obj);
 		meetingTable.count--;
 	} catch (error) {
-		alert("Вы удалили все строчки");
+		alert.show(false, "Вы удалили все строчки");
 	}
-})
+});
 
 function createLine(sheet) {
 	const line = document.createElement('tr');

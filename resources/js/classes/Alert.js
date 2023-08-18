@@ -10,11 +10,11 @@ class Alert {
 		this.alertElement.style.display = "block";
 		this.alertElement.className = `alert ${success ? "success" : "error"}`;
 
-		let imgClass = success ? "success" : "error";
+		const imgClass = success ? "success" : "error";
 
 		document.querySelector(`.alert__${imgClass}-img`).classList.remove("hidden");
 		document.querySelector(".alert__description").innerHTML = `
-			<span class="alert__status">${success ? "Успех:" : "Ошибка:"}:</span>
+			<span class="alert__status">${success ? "Успех:" : "Ошибка:"}</span>
 			${message}
 		`;
 	}

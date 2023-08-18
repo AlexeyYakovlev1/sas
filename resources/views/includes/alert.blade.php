@@ -1,6 +1,6 @@
 <div class="alert success">
 	<div class="alert__content">
-		<span class="alert__success-img alert__img">
+		<span class="alert__success-img alert__img hidden">
 			<x-successIcon />
 		</span>
 		<span class="alert__error-img alert__img hidden">

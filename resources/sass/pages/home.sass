@@ -119,6 +119,11 @@
 				&.logout
 					margin-top: 50px
 					color: red
+					transition: all .2s ease
+					&:hover
+						background-color: $alertRed
+					&:active
+						background-color: $alertRed
 	&__sections
 		border-right: 1px solid $blue
 		height: 100%
@@ -165,9 +170,12 @@
 			flex-wrap: wrap
 			gap: 10px
 			align-items: center
-			background-color: $background
+			background-color: $white
 			position: sticky
 			top: 0
+			z-index: 99
+			padding-bottom: 10px
+			border-bottom: 1px solid $gray
 		&-btn
 			&.active
 				background-color: $background

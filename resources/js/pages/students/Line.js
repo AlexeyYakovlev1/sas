@@ -1,17 +1,21 @@
 "use strict";
 
+import Alert from "../../classes/Alert";
+
+const alert = new Alert();
+
 const achivAddBtn = document.querySelector('.card__mode-achivments-addBtn');
 const achivDelBtn = document.querySelector('.card__mode-achivments-delBtn')
-const achivTable = {obj: document.querySelector('.card__mode-achivments-sheet'), count:1};
+const achivTable = { obj: document.querySelector('.card__mode-achivments-sheet'), count: 1 };
 const abilitiesAddBtn = document.querySelector('.card__mode-abilities-addBtn');
 const abilitiesDelBtn = document.querySelector('.card__mode-abilities-delBtn');
-const abilitiesTable = {obj: document.querySelector('.card__mode-abilities-sheet'), count:1};
+const abilitiesTable = { obj: document.querySelector('.card__mode-abilities-sheet'), count: 1 };
 const compAchivAddBtn = document.querySelector('.card__achivments-company-addBtn');
 const compAchivDelBtn = document.querySelector('.card__achivments-company-delBtn');
-const compAchivTable = {obj: document.querySelector('.card__achivments-company-sheet'), count:1};
+const compAchivTable = { obj: document.querySelector('.card__achivments-company-sheet'), count: 1 };
 const volunAddBtn = document.querySelector('.card__volunteering-company-addBtn');
 const volunDelBtn = document.querySelector('.card__volunteering-company-delBtn');
-const volunTable = {obj: document.querySelector('.card__volunteering-company-sheet'), count:1};
+const volunTable = { obj: document.querySelector('.card__volunteering-company-sheet'), count: 1 };
 
 achivAddBtn.addEventListener('click', () => {
 	createLine(achivTable.obj);
@@ -22,7 +26,7 @@ achivDelBtn.addEventListener('click', () => {
 		deleteLine(achivTable.obj);
 		achivTable.count--;
 	} catch (error) {
-		alert('Вы удалили все строчки');
+		alert.show(false, 'Вы удалили все строчки');
 	}
 });
 abilitiesAddBtn.addEventListener('click', () => {
@@ -34,7 +38,7 @@ abilitiesDelBtn.addEventListener('click', () => {
 		deleteLine(abilitiesTable.obj);
 		abilitiesTable.count--;
 	} catch (error) {
-		alert('Вы удалили все строчки');
+		alert.show(false, 'Вы удалили все строчки');
 	}
 
 });
@@ -47,7 +51,7 @@ compAchivDelBtn.addEventListener('click', () => {
 		deleteLine(compAchivTable.obj);
 		compAchivTable.count--;
 	} catch (error) {
-		alert('Вы удалили все строчки');
+		alert.show(false, 'Вы удалили все строчки');
 	}
 });
 volunAddBtn.addEventListener('click', () => {
@@ -59,7 +63,7 @@ volunDelBtn.addEventListener('click', () => {
 		deleteLine(volunTable.obj);
 		volunTable.count--;
 	} catch (error) {
-		alert('Вы удалили все строчки');
+		alert.show(false, 'Вы удалили все строчки');
 	}
 });
 
@@ -85,6 +89,6 @@ function createLine(sheet) {
 
 
 
-function deleteLine(sheet){
+function deleteLine(sheet) {
 	sheet.lastElementChild.lastElementChild.remove();
 }
