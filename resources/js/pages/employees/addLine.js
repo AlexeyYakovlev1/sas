@@ -1,6 +1,6 @@
 "use strict";
 
-const meetingAddBtn = document.querySelector('.card__content-meetingResult-addBtn');
+const meetingAddBtn = document.querySelector('#meetingResult-addBtn');
 const meetingTable = document.querySelector('.card__content-meetingResult-sheet');
 
 meetingAddBtn.addEventListener('click', () => createLine(meetingTable));
