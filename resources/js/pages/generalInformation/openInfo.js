@@ -8,5 +8,5 @@ informationListHeader.forEach((header, idx) => {
 	header.addEventListener("click", () => {
 		informationListContent[idx].classList.toggle("hidden");
 		informationListArrow[idx].classList.toggle("rotate");
-	})
-})
+	});
+});

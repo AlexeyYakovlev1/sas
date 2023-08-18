@@ -10,7 +10,10 @@ const informationButton = document.querySelector(".information__button");
 const informationUpload = document.querySelector(".information__upload");
 const informationList = document.querySelector(".information__list");
 
+// Нажатие на кнопку для запуска инпута
 informationButton.addEventListener("click", () => informationUpload.click());
+
+// Запуск инпута
 informationUpload.addEventListener("change", (event) => {
 	const files = event.target.files;
 
@@ -18,6 +21,7 @@ informationUpload.addEventListener("change", (event) => {
 		return;
 	}
 
+	// Работа с каждым выбранным файлом
 	Object.keys(files).forEach((idx) => {
 		const file = files[idx];
 
@@ -39,7 +43,7 @@ informationUpload.addEventListener("change", (event) => {
 });
 
 function renderFilesToList(obj) {
-	const { file: { name }, size } = obj;
+	const { file: { name } } = obj;
 
 	const type = name.split(".").at(-1).toUpperCase();
 	const correctName = name.substring(0, name.indexOf("."));

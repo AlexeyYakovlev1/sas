@@ -25,6 +25,20 @@ class Request {
 		})
 			.then((response) => response.json());
 	}
+
+	// GET запрос
+	get(url, params) {
+		const allHeaders = Object.assign(params.headers || {}, {
+			"X-Requested-With": "XMLHttpRequest",
+			"X-CSRF-TOKEN": this.csrf
+		});
+
+		return fetch(`${this.host}${url}`, {
+			method: "GET",
+			headers: allHeaders
+		})
+			.then((response) => response.json());
+	}
 }
 
 export default Request;
