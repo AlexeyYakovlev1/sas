@@ -1,6 +1,8 @@
-Student Accounting System (sas)
+# Student Accounting System (sas)
 
-Laravel
-Javascript
-Sass
-GoogleSheet
+## Что было использовано?
+
+-   Laravel
+-   Javascript
+-   SASS
+-	GoogleSheet
