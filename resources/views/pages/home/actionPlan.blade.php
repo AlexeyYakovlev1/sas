@@ -32,16 +32,22 @@ $array = array_map('str_getcsv', $csv);
 			<tbody>
 				<?php
 				$i = 0;
+				
 				unset($array[0]);
 				unset($array[1]);
+			
 				foreach ($array as $item) {
 					$i++;
 					$html = '<tr>';
 					$html .= '<td scope="row">'.$i.'</td>';
+		
 					foreach ($item as $value) {
 						$html .= '<td scope="row">'.$value.'</td>';
 					}
+		
+					
 					$html .= '</tr>';
+		
 					echo $html;
 				}
 				?>
@@ -49,7 +55,12 @@ $array = array_map('str_getcsv', $csv);
 		</table>
 		@if (in_array($person, ["director", "employee"]))
 			<div class="actionPlan__link">
-				<a href="https://docs.google.com/spreadsheets/d/1AFTg4a4GzITr0MVj_YU36WRr1PFuu_2hMGJ3DFJkabM/edit?hl=ru#gid=0" target="_blank">Перейти в GoogleSheet</a>
+				<a
+					href="https://docs.google.com/spreadsheets/d/1AFTg4a4GzITr0MVj_YU36WRr1PFuu_2hMGJ3DFJkabM/edit?hl=ru#gid=0"
+					target="_blank"
+				>
+					Перейти в GoogleSheet
+				</a>
 			</div>
 		@endif
     </div>

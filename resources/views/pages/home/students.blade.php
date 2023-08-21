@@ -34,14 +34,18 @@ $array = array_map('str_getcsv', $csv);
 			<ul class="students__list">
 				<?php
 				$i = 0;
+				
 				foreach ($array as $item) {
 					$i++;
 					$id = $i - 1;
 					$html = "<li data-id='$id'>";
+					
 					$html .= '<span>'.$i.'</span>';
+					
 					foreach ($item as $value) {
 						$html .= "<span class='students__name'>".$value."</span>";
 					}
+					
 					$html .= '</li>';
 					echo $html;
 				}

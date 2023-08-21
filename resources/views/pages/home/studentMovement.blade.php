@@ -5,6 +5,7 @@ $csv = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id.'/export?
 $csv = explode("\r\n", $csv);
 $array = array_map('str_getcsv', $csv);
 ?>
+
 @extends("layouts.home")
 @section("title")
 	Движение студентов
@@ -42,19 +43,22 @@ $array = array_map('str_getcsv', $csv);
 				<tbody>
 					<?php
 					$i = 0;
-						foreach ($array as $item) {
+
+					foreach ($array as $item) {
 						$i++;
 						$html = '<tr>';
+					
 						foreach ($item as $value) {
-								if($value>=0){
-									$html .= '<td scope="row">'.$value.'</td>';
-								}else{
-									$html .= '<td scope="row" class="red">'.$value.'</td>';
-								}
+							if($value>=0){
+								$html .= '<td scope="row">'.$value.'</td>';
+							} else {
+								$html .= '<td scope="row" class="red">'.$value.'</td>';
 							}
+						}
+						
 						$html .= '</tr>';
 						echo $html;
-						}
+					}
 					?>
 				</tbody>
 			</table>
