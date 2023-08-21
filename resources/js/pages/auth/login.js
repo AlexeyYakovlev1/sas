@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", (event) => {
 	});
 
 	// Отправляем данные
-	request.post("/auth/login", { data: JSON.stringify(data) })
+	request.post("/auth/login", { data: JSON.stringify(data), headers: { "Content-Type": "application/json" } })
 		.then((data) => {
 			const { success, person, message } = data;
 

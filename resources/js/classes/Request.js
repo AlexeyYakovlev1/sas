@@ -10,13 +10,17 @@ class Request {
 		this.csrf = utils.getCsrf();
 	}
 
-	// POST запрос
-	post(url, params) {
-		const allHeaders = Object.assign(params.headers || {}, {
-			"Content-Type": "application/json",
+	// Объединение заголовков
+	_assignHeaders(headers = {}) {
+		return Object.assign(headers || {}, {
 			"X-Requested-With": "XMLHttpRequest",
 			"X-CSRF-TOKEN": this.csrf
 		});
+	}
+
+	// POST запрос
+	post(url, params) {
+		const allHeaders = this._assignHeaders(params.headers);
 
 		return fetch(`${this.host}${url}`, {
 			method: "POST",
@@ -28,10 +32,7 @@ class Request {
 
 	// GET запрос
 	get(url, params) {
-		const allHeaders = Object.assign(params.headers || {}, {
-			"X-Requested-With": "XMLHttpRequest",
-			"X-CSRF-TOKEN": this.csrf
-		});
+		const allHeaders = this._assignHeaders(params.headers);
 
 		return fetch(`${this.host}${url}`, {
 			method: "GET",

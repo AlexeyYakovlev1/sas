@@ -38,8 +38,8 @@ $array = array_map('str_getcsv', $csv);
 				foreach ($array as $item) {
 					$i++;
 					$id = $i - 1;
+
 					$html = "<li data-id='$id'>";
-					
 					$html .= '<span>'.$i.'</span>';
 					
 					foreach ($item as $value) {
@@ -47,6 +47,7 @@ $array = array_map('str_getcsv', $csv);
 					}
 					
 					$html .= '</li>';
+					
 					echo $html;
 				}
 				?>
