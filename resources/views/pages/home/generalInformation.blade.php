@@ -26,7 +26,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -40,7 +40,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -54,7 +54,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -68,7 +68,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -80,7 +80,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -106,7 +106,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -120,7 +120,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -134,7 +134,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -148,7 +148,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -160,7 +160,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -186,7 +186,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -200,7 +200,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -214,7 +214,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -228,7 +228,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
@@ -240,7 +240,7 @@
 									<button class="btn__primary">
 										<a href="/">Скачать файл</a>
 									</button>
-									<button class="btn__primary">
+									<button class="btn__primary red">
 										<a href="/">Удалить файл</a>
 									</button>
 								</td>
