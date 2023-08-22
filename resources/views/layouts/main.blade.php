@@ -16,6 +16,7 @@
 </head>
 <body>
 	@include("../includes/loader")
+	@include("../includes/alert")
 	
 	<main class="main">
 		<div class="container">
@@ -24,5 +25,6 @@
 	</main>
 	
 	@yield("scripts")
+	@vite(["resources/js/scripts/closeAlert.js"])
 </body>
 </html>

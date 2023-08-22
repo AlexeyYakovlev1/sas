@@ -87,8 +87,6 @@
 	margin-bottom: 10px
 	& h4
 		margin: 0 !important
-	& button
-		@extend %button
 
 .red
 	background-color: rgb(255, 171, 182)
@@ -185,7 +183,6 @@
 	&__header
 		position: sticky
 		top: 10px
-		background-color: rgba($white, .6)
 		backdrop-filter: blur(2px)
 		display: grid
 		grid-template-columns: minmax(auto, 60%) auto
@@ -196,6 +193,7 @@
 	&__btn-filter
 		width: 100%
 	&__search
+		background-color: $background
 		font-size: 17px
 	&__content
 		margin-top: 10px
@@ -341,7 +339,6 @@
 			&-header
 				@extend %tableName
 				font-size: 16px
-
 			&-sheet
 				@extend %sheetInput
 				max-height: 84px

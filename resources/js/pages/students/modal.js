@@ -22,3 +22,12 @@ studentsListItem.forEach((item) => {
 studentsModal.addEventListener("click", () => modal.close());
 
 modal.propagationForContent();
+
+window.addEventListener("keydown", (event) => {
+	if (
+		!studentsModal.classList.contains("hidden") &&
+		event.code === "Escape"
+	) {
+		modal.close();
+	}
+});

@@ -1,7 +1,21 @@
 "use strict";
 
+import Validate from "../../classes/Validate";
+import validator from "validator";
+
+const validate = new Validate();
+
 const studentsBtnFilter = document.querySelector(".students__btn-filter");
 const studentsFilters = document.querySelector(".students__filters");
+const studentsFiltersForm = document.querySelector(".students__filters-form");
+const studentsFiltersReset = document.querySelector(".students__filters-reset");
+const studentsFiltersCheckbox = document.querySelectorAll(".students__filters-checkbox");
+
+// Очистить фильтр
+studentsFiltersReset.addEventListener("click", () => {
+	studentsFiltersForm.reset();
+	studentsFiltersCheckbox.forEach((checkbox) => checkbox.labels[0].classList.remove("active"));
+});
 
 // Открыть/Закрыть фильтры
 studentsBtnFilter.addEventListener("click", () => {
@@ -15,8 +29,6 @@ studentsBtnFilter.addEventListener("click", () => {
 });
 
 // Визуализация активных checkbox
-const studentsFiltersCheckbox = document.querySelectorAll(".students__filters-checkbox");
-
 studentsFiltersCheckbox.forEach((checkbox) => {
 	checkbox.addEventListener("change", () => {
 		checkbox.labels[0].classList.remove("active");
@@ -27,4 +39,22 @@ studentsFiltersCheckbox.forEach((checkbox) => {
 	});
 });
 
-// Работа с данными фильтра
+// Отправка данных формы
+studentsFiltersForm.addEventListener("submit", (event) => {
+	event.preventDefault();
+
+	const fd = new FormData(studentsFiltersForm);
+	const yearOfAdmission = fd.get("yearOfAdmission");
+
+	// Валидация данных
+	const valid = validate.init([
+		{
+			valid: validator.isNumeric(yearOfAdmission) && +yearOfAdmission === Math.abs(yearOfAdmission),
+			message: "Год поступления должен содержать только положительные числа"
+		}
+	]);
+
+	if (!valid) return;
+
+	// Работа с данными фильтра
+});

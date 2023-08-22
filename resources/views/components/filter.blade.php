@@ -58,4 +58,9 @@
 							Применить
 						</button>
 					</form>
+					<button
+						class="btn__primary students__filters-reset red"
+					>
+						Очистить
+					</button>
 				</div>

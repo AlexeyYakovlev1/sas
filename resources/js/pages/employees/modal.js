@@ -21,3 +21,12 @@ employeesListItems.forEach((item) => {
 employeeModal.addEventListener("click", () => modal.close());
 
 employeeModalContent.addEventListener("click", (event) => event.stopPropagation());
+
+window.addEventListener("keydown", (event) => {
+	if (
+		!employeeModal.classList.contains("hidden") &&
+		event.code === "Escape"
+	) {
+		modal.close();
+	}
+});

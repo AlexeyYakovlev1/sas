@@ -22,6 +22,10 @@ class AuthController extends Controller
 	public function login(Request $request)
 	{
 		$person = $request->input("person");
+		
+		// Проверка пользователя через апи битрикса
+		// ...
+
 		$payload = [
 			"exp" => time() + 10,
     		"iss" => "localhost",

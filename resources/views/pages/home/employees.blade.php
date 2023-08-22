@@ -137,7 +137,7 @@ $array = array_map('str_getcsv', $csv);
 									<div class="card__content-meetingResult-btns">
 										<button type="submit" id="meetingResult-saveBtn" class='card__content-meetingResult-btn btn__primary'>Готово</button>
 										<button type="button" id="meetingResult-addBtn" class='card__content-meetingResult-addBtn btn__primary'>Добавить строку</button>
-										<button type="button" class="card__content-meetingResult-delBtn btn__primary">Удалить строку</button>
+										<button type="button" class="card__content-meetingResult-delBtn btn__primary red">Удалить строку</button>
 									</div>
 								</form>
 							</li>

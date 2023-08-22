@@ -280,8 +280,8 @@ $array = array_map('str_getcsv', $csv);
 									<div class="card__mode-achivments">
 										<div class="card__mode-achivments-header">
 											<h4>Спортивные достижения</h4>
-											<button class="card__mode-achivments-addBtn">Добавить строку</button>
-											<button class='card__mode-achivments-delBtn'>Удалить строку</button>
+											<button class="card__mode-achivments-addBtn btn__primary">Добавить строку</button>
+											<button class='card__mode-achivments-delBtn btn__primary red'>Удалить строку</button>
 										</div>
 										<table class='card__mode-achivments-sheet'>
 											<thead>
@@ -301,8 +301,8 @@ $array = array_map('str_getcsv', $csv);
 									<div class="card__mode-abilities">
 										<div class="card__mode-abilities-header">
 											<h4>Творческие способности</h4>
-											<button class='card__mode-abilities-addBtn'>Добавить строку</button>
-											<button class='card__mode-abilities-delBtn'>Удалить строку</button>
+											<button class='card__mode-abilities-addBtn btn__primary'>Добавить строку</button>
+											<button class='card__mode-abilities-delBtn btn__primary red'>Удалить строку</button>
 										</div>
 										<table class='card__mode-abilities-sheet'>
 											<thead>
@@ -326,8 +326,8 @@ $array = array_map('str_getcsv', $csv);
 									<div class="card__achivments-company">
 										<div class="card__achivments-company-header">
 											<h4>В рамках корпорации</h4>
-											<button class='card__achivments-company-addBtn'>Добавить строку</button>
-											<button class='card__achivments-company-delBtn'>Удалить строку</button>
+											<button class='card__achivments-company-addBtn btn__primary'>Добавить строку</button>
+											<button class='card__achivments-company-delBtn btn__primary red'>Удалить строку</button>
 										</div>
 										<table class='card__achivments-company-sheet'>
 											<thead>
@@ -351,8 +351,8 @@ $array = array_map('str_getcsv', $csv);
 									<div class="card__volunteering-company">
 										<div class="card__volunteering-company-header">
 											<h4>Участие во внеучебной деятельности</h4>
-											<button class='card__volunteering-company-addBtn'>Добавить строку</button>
-											<button class='card__volunteering-company-delBtn'>Удалить строку</button>
+											<button class='card__volunteering-company-addBtn btn__primary'>Добавить строку</button>
+											<button class='card__volunteering-company-delBtn btn__primary red'>Удалить строку</button>
 										</div>
 										<table class='card__volunteering-company-sheet'>
 											<thead>
