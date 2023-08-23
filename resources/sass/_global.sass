@@ -100,14 +100,19 @@ button
 		padding: 10px
 		transition: all .2s ease
 		border-radius: 6px
+		&:disabled
+			cursor: default
+			background-color: rgba($blue, .7)
+			&:hover
+				background-color: rgba($blue, .7)
 		&:hover
 			background-color: rgba($blue-dark, .7)
 		&.red
-			background-color: $orange
+			background-color: #df8274
 			color: $white !important
 			border: none
 			&:hover
-				background-color: rgba($orange, .7)
+				background-color: rgba(#df8274, .7)
 
 .input
 	&__primary
@@ -120,6 +125,8 @@ button
 		&:focus
 			background-color: $dark
 			padding: 10px
+		&.error
+			border-bottom: 1px solid $orange
 
 .title
 	&__primary

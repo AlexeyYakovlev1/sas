@@ -3,7 +3,7 @@
 import Validate from "../../classes/Validate";
 import validator from "validator";
 
-const validate = new Validate();
+const validate = new Validate(".students__filters-checkbox");
 
 const studentsBtnFilter = document.querySelector(".students__btn-filter");
 const studentsFilters = document.querySelector(".students__filters");
@@ -50,7 +50,8 @@ studentsFiltersForm.addEventListener("submit", (event) => {
 	const valid = validate.init([
 		{
 			valid: validator.isNumeric(yearOfAdmission) && +yearOfAdmission === Math.abs(yearOfAdmission),
-			message: "Год поступления должен содержать только положительные числа"
+			message: "Год поступления должен содержать только положительные числа",
+			name: "yearOfAdmission"
 		}
 	]);
 

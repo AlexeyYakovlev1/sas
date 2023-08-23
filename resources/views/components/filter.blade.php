@@ -3,7 +3,7 @@
 						<label class="column">
 							Год поступления
 							<input
-								class="checkbox__primary students__filters-checkbox"
+								class="input__primary students__filters-checkbox"
 								type="number"
 								name="yearOfAdmission"
 							/>

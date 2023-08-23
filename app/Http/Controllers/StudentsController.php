@@ -25,4 +25,14 @@ class StudentsController extends Controller
 
 		return view("pages.home.studentList", $request->payload);
 	}
+
+	public function create_list(Request $request)
+	{
+		$data = $request->validate(
+			[
+				""
+			],
+			[]
+		);
+	}
 }

@@ -20,13 +20,13 @@
                         <span>Руководитель</span>
                     </li>
                 </ul>
-                <form action="" method="post" class='login__form'>
+                <form class='login__form'>
                     <div class="form__container">
                         <div class="form__item">
                             <label for="">Логин</label>
                             <input
 								type="text"
-								class="input__primary"
+								class="input__primary form__input"
 								placeholder="Введите логин"
 								data-name="login"
 								name="login"
@@ -36,13 +36,13 @@
                             <label for="">Пароль</label>
                             <input
 								type="password"
-								class="input__primary"
+								class="input__primary form__input"
 								placeholder="Введите пароль"
 								data-name="password"
 								name="password"
 							>
                         </div>
-                        <button type="submit" class='btn__primary'>Отправить</button>
+                        <button type="submit" class='btn__primary form__submit' disabled="true">Отправить</button>
                     </div>
                 </form>
             </div>

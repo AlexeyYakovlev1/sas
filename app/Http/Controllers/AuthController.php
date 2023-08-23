@@ -22,6 +22,26 @@ class AuthController extends Controller
 	public function login(Request $request)
 	{
 		$person = $request->input("person");
+
+		$data = $request->validate([
+			"login" => "required|string|min:8|max:12",
+			"password" => "required|string|min:8|max:16",
+			"person" => "required|string"
+		],
+		[
+			"login.required" => "Логин обязателен для заполнения",
+			"login.string" => "Логин должен быть строкой",
+			"login.min" => "Минимальная длина логина 8 символов",
+			"login.max" => "Максимальная длина логина 12 символов",
+
+			"password.required" => "Пароль обязателен для заполнения",
+			"password.string" => "Пароль должен быть строкой",
+			"password.min" => "Минимальная длина пароля 8 символов",
+			"password.max" => "Максимальная длина пароля 16 символов",
+
+			"person.required" => "Выбор роли обязателен",
+			"person.string" => "Роль должна быть строкой"
+		]);
 		
 		// Проверка пользователя через апи битрикса
 		// ...

@@ -1,14 +1,9 @@
 "use strict";
 
-import Loader from "./Loader";
-import Alert from "./Alert";
-
-const loader = new Loader();
-const alert = new Alert();
-
 class Validate {
-	constructor() {
-		this.rules = []; // [{ rule: validator.<method>, message: "some string" }]
+	constructor(inputSelector) {
+		this.rules = []; // [{ rule: validator.<method>, message: "some string", name: <name> }]
+		this.inputSelector = inputSelector;
 	}
 
 	_isValid() {
@@ -18,14 +13,12 @@ class Validate {
 	init(rules) {
 		this.rules = rules;
 
-		alert.close();
+		document.querySelectorAll(this.inputSelector).forEach((item) => item.classList.remove("error"));
 
 		if (!this._isValid()) {
-			loader.close();
+			const { name } = this.rules.find((rule) => !rule.valid);
 
-			const { message } = this.rules.find((rule) => !rule.valid);
-
-			alert.show(false, message);
+			document.querySelector(`${this.inputSelector}[name=${name}]`).classList.add("error");
 
 			return false;
 		}
