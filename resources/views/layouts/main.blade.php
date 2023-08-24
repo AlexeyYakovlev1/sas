@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@yield("title")</title>
+
+	<link rel="icon" type="image/png" href="/images/favic.png"/>
 	
 	@vite(["resources/sass/_global.sass"])
 	@vite(["resources/js/scripts/loader.js"])

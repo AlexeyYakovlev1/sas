@@ -22,6 +22,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@yield("title")</title>
 
+	<link rel="icon" type="image/png" href="/images/favic.png"/>
+
 	@vite(["resources/sass/pages/home.sass"])
 	@vite(["resources/js/scripts/loader.js"])
 

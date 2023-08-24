@@ -2,7 +2,7 @@
 
 class Validate {
 	constructor(inputSelector) {
-		this.rules = []; // [{ rule: validator.<method>, message: "some string", name: <name> }]
+		this.rules = []; // [{ rule: validator.<method>, message: <message>, name: <name> }]
 		this.inputSelector = inputSelector;
 	}
 
