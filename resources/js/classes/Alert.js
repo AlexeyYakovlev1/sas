@@ -7,6 +7,8 @@ class Alert {
 
 	// Показать оповещение
 	show(success, message) {
+		this.close();
+
 		this.alertElement.style.display = "block";
 		this.alertElement.className = `alert ${success ? "success" : "error"}`;
 

@@ -4,6 +4,7 @@ $gid = 0;
 $csv = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id.'/export?format=csv&gid='.$gid);
 $csv = explode("\r\n", $csv);
 $array = array_map('str_getcsv', $csv);
+$employee_id = $employee["id"];
 ?>
 @extends("layouts.home")
 @section("title")
@@ -25,21 +26,34 @@ $array = array_map('str_getcsv', $csv);
 			<ul class="employees__list">
 				<?php
 				$i = 0;
+
 				foreach ($array as $item) {
 					$i++;
 					$id = $i - 1;
+					
 					$html = "<li data-id='$id'>";
+					$html .= "<a class='employees__link' hidden href='/home/employees?employee_id=$i'></a>";
 					$html .= '<span>'.$i.'</span>';
+					
 					foreach ($item as $value) {
 						$html .= "<span class='empoyees__name'>".$value."</span>";
 					}
+					
 					$html .= '</li>';
 					echo $html;
 				}
 				?>
 			</ul>
-			<article class="modal hidden" id="employee-modal">
-				<div class="modal__content" id="employee-modal-content">
+			<article
+				class="modal
+				<?php if (!isset($openModal) || !$openModal) echo "hidden" ?>"
+				id="employee-modal"
+			>
+				<div
+					class="modal__content"
+					id="employee-modal-content"
+					data-employee="<?php if (isset($openModal) && isset($employee)) echo "$employee_id" ?>"
+				>
 					<div class="card">
 						<div class="card__header">
 							<button class="btn__primary card__header-btn active">
@@ -175,8 +189,9 @@ $array = array_map('str_getcsv', $csv);
 @section("scripts")
 	@vite([
 		"resources/js/pages/employees/search.js",
-		"resources/js/pages/employees/modal.js",
+		"resources/js/pages/employees/renderEmployees.js",
 		"resources/js/pages/employees/tabs.js",
+
 		"resources/js/pages/employees/radioBtn.js",
 		"resources/js/pages/employees/addLine.js"
 	])

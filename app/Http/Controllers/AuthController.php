@@ -21,8 +21,6 @@ class AuthController extends Controller
 
 	public function login(Request $request)
 	{
-		$person = $request->input("person");
-
 		$data = $request->validate([
 			"login" => "required|string|min:8|max:12",
 			"password" => "required|string|min:8|max:16",
@@ -49,7 +47,7 @@ class AuthController extends Controller
 		$payload = [
 			"exp" => time() + 10,
     		"iss" => "localhost",
-			"person" => $person
+			"person" => $data["person"]
 		];
 		$token = Token::customPayload(
 			$payload,
@@ -61,7 +59,7 @@ class AuthController extends Controller
 		return response(
 			[
 				"success" => true,
-				"person" => $person
+				"person" => $data["person"]
 			],
 			200
 		)

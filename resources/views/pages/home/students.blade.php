@@ -4,6 +4,7 @@ $gid = 0;
 $csv = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id.'/export?format=csv&gid='.$gid);
 $csv = explode("\r\n", $csv);
 $array = array_map('str_getcsv', $csv);
+$student_id = $student["id"];
 ?>
 
 @extends("layouts.home")
@@ -41,6 +42,7 @@ $array = array_map('str_getcsv', $csv);
 
 					$html = "<li data-id='$id'>";
 					$html .= '<span>'.$i.'</span>';
+					$html .= "<a hidden class='student__link' href='/home/students?student_id=$i'></a>";
 					
 					foreach ($item as $value) {
 						$html .= "<span class='students__name'>".$value."</span>";
@@ -52,8 +54,16 @@ $array = array_map('str_getcsv', $csv);
 				}
 				?>
 			</ul>
-			<article class="modal hidden" id="student-modal">
-				<div class="modal__content" id="student-modal-content">
+			<article
+				class="modal
+				<?php if (!isset($openModal) || !$openModal) echo "hidden" ?>"
+				id="student-modal"
+			>
+				<div
+					class="modal__content"
+					id="student-modal-content"
+					data-student="<?php if (isset($openModal) && isset($student)) echo "$student_id" ?>"
+				>
 					<div class="card">
 						<div class="students__card-header card__header">
 							<button class="students__card-btn btn__primary active">Главная</button>
@@ -382,7 +392,8 @@ $array = array_map('str_getcsv', $csv);
 @section("scripts")
 	@vite([
 		"resources/js/pages/students/filter.js",
-		"resources/js/pages/students/modal.js",
+		"resources/js/pages/students/renderStudents.js",
+		
 		"resources/js/pages/students/search.js",
 		"resources/js/pages/students/pointsForCard.js",
 		"resources/js/pages/students/Line.js"

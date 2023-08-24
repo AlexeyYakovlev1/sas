@@ -24,11 +24,13 @@
 
 	@vite(["resources/sass/pages/home.sass"])
 	@vite(["resources/js/scripts/loader.js"])
+
 	@yield("styles")
 </head>
 <body>
 	@include("../includes/loader")
 	@include("../includes/alert")
+
 	<main class="home">
 		<div class="container">
 			<aside class="home__sections">
@@ -36,42 +38,42 @@
 					<ul class="home__nav-list">
 						@if ($general_information)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "general_information") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "general_information")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/general_information">Общая информация</a>
 							</li>
 						@endif
 						@if ($action_plan)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "action_plan") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "action_plan")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/action_plan">План мероприятий</a>
 							</li>
 						@endif
 						@if ($student_movement)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "student_movement") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "student_movement")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/student_movement">Движение студентов</a>
 							</li>
 						@endif
 						@if ($employees)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "employees") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "employees")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/employees">Сотрудники</a>
 							</li>
 						@endif
 						@if ($students)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "students") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "students")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/students">Студенты</a>
 							</li>
 						@endif
 						@if ($student_list)
 							<li
-								class="home__nav-list-item <?php if ($current_page === "list") echo "active"; else echo ""; ?>"
+								class="home__nav-list-item <?php if (str_contains($current_page, "list")) echo "active"; else echo ""; ?>"
 							>
 								<a href="/home/students/list">Аттестационный лист</a>
 							</li>

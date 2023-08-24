@@ -28,6 +28,17 @@ studentsBtnFilter.addEventListener("click", () => {
 	studentsFilters.classList.toggle("hidden");
 });
 
+window.addEventListener("click", (event) => {
+	const { target } = event;
+
+	if (target.classList.contains("students__btn-filter")) return;
+
+	if (!target.closest(".students__filters")) {
+		studentsBtnFilter.textContent = "Открыть фильтры";
+		studentsFilters.classList.add("hidden");
+	}
+});
+
 // Визуализация активных checkbox
 studentsFiltersCheckbox.forEach((checkbox) => {
 	checkbox.addEventListener("change", () => {
