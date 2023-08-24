@@ -1,5 +1,9 @@
 "use strict";
 
+import Request from "./Request";
+
+const request = new Request();
+
 class Modal {
 	constructor() {
 		this.modalElement = document.querySelector(".modal");
@@ -14,13 +18,28 @@ class Modal {
 
 	// Закрыть модальное окно
 	close() {
-		this.modalElement.classList.add("hidden");
-		document.body.style.overflow = "visible";
+		const urlObj = new URL(window.location.href);
+
+		urlObj.search = "";
+
+		window.location.href = urlObj.toString();
 	}
 
 	// При клике на контент модального окна не срабатывало закрытие
 	propagationForContent() {
 		this.modalContentElement.addEventListener("click", (event) => event.stopPropagation());
+	}
+
+	getInformation(url, query, headers = {}) {
+		const params = new URLSearchParams(window.location.search);
+		const id = params.get(query);
+		const obj = {};
+
+		obj[query] = id;
+
+		const urlReq = `/api${url}?${new URLSearchParams(obj)}`;
+
+		return request.get(urlReq, { headers });
 	}
 }
 

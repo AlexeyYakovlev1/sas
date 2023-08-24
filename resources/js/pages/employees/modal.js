@@ -1,35 +1,16 @@
 "use strict";
 
 import Modal from "../../classes/Modal";
-import Request from "../../classes/Request";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
 
 const modal = new Modal();
-const request = new Request();
 const alert = new Alert();
 const loader = new Loader();
 
-const closeModal = () => {
-	loader.show();
-
-	const urlObj = new URL(window.location.href);
-
-	urlObj.search = "";
-
-	modal.close();
-	loader.close();
-
-	window.location.href = urlObj.toString();
-};
-
+// Получение информации для карточки
 const renderInformation = () => {
-	const params = new URLSearchParams(window.location.search);
-	const id = params.get("employee_id");
-
-	const url = `/api/employees/get_card_info?${new URLSearchParams({ employee_id: id })}`;
-
-	request.get(url, { headers: {} })
+	modal.getInformation("/employees/get_card_info", "employee_id")
 		.then((data) => {
 			const { success, message, data: dataFromServer } = data;
 
@@ -61,7 +42,7 @@ const openCard = (employeesListItems, employeeModal,) => {
 		});
 	});
 
-	employeeModal.addEventListener("click", () => closeModal());
+	employeeModal.addEventListener("click", () => modal.close());
 
 	modal.propagationForContent();
 
@@ -70,7 +51,7 @@ const openCard = (employeesListItems, employeeModal,) => {
 			!employeeModal.classList.contains("hidden") &&
 			event.code === "Escape"
 		) {
-			closeModal();
+			modal.close();
 		}
 	});
 };

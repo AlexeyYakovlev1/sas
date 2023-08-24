@@ -1,3 +1,5 @@
+"use strict";
+
 function checkQuery(query) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const q = urlParams.get(query);

@@ -49,11 +49,11 @@ class StudentsController extends Controller
 
 	public function card_info(Request $request)
 	{
-		$find_person = $request->student_id;
+		$student_id = $request->student_id;
+		$find_student = ["id" => $student_id];
 
 		$main = [];
 		$employee = [];
-		$student = [];
 		$docs = [];
 		$mode_service = [];
 		$achivments = [];
@@ -62,12 +62,12 @@ class StudentsController extends Controller
 		$data = [
 			"main" => $main,
 			"employee" => $employee,
-			"student" => $student,
 			"docs" => $docs,
 			"mode_service" => $mode_service,
 			"achivments" => $achivments,
 			"volunteering" => $volunteering,
-			"personId" => $find_person
+			"student" => $find_student,
+			"personId" => $student_id
 		];
 
 		return response(

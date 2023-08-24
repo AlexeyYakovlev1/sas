@@ -2,36 +2,15 @@
 
 import Modal from "../../classes/Modal";
 import Loader from "../../classes/Loader";
-import Request from "../../classes/Request";
 import Alert from "../../classes/Alert";
 
 const modal = new Modal();
 const loader = new Loader();
-const request = new Request();
 const alert = new Alert();
-
-// Закрытие карточки студента
-const closeModal = () => {
-	loader.show();
-
-	const urlObj = new URL(window.location.href);
-
-	urlObj.search = "";
-
-	modal.close();
-	loader.close();
-
-	window.location.href = urlObj.toString();
-};
 
 // Получение информации для карточки
 const renderInformation = () => {
-	const params = new URLSearchParams(window.location.search);
-	const id = params.get("student_id");
-
-	const url = `/api/students/get_card_info?${new URLSearchParams({ student_id: id })}`;
-
-	request.get(url, { headers: {} })
+	modal.getInformation("/students/get_card_info", "student_id")
 		.then((data) => {
 			const { success, message, data: dataFromServer } = data;
 
@@ -65,7 +44,7 @@ const openCard = (studentsListItem, studentsModal) => {
 	});
 
 	// При клике на задний фон скрываем окно с информацией
-	studentsModal.addEventListener("click", () => closeModal());
+	studentsModal.addEventListener("click", () => modal.close());
 
 	modal.propagationForContent();
 
@@ -74,7 +53,7 @@ const openCard = (studentsListItem, studentsModal) => {
 			!studentsModal.classList.contains("hidden") &&
 			event.code === "Escape"
 		) {
-			closeModal();
+			modal.close();
 		}
 	});
 };
