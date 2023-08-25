@@ -3,13 +3,20 @@
 import Modal from "../../classes/Modal";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
+import Tabs from "../../classes/Tabs";
 
 const modal = new Modal();
 const alert = new Alert();
 const loader = new Loader();
+const tabs = new Tabs(".card__header-btn", ".card__content-item");
+
+const renderDataToCard = (data) => {
+	console.log(`Render some information...`);
+	console.log(data);
+};
 
 // Получение информации для карточки
-const renderInformation = () => {
+const getCardData = () => {
 	modal.getInformation("/employees/get_card_info", "employee_id")
 		.then((data) => {
 			const { success, message, data: dataFromServer } = data;
@@ -21,7 +28,8 @@ const renderInformation = () => {
 			}
 
 			loader.close();
-			alert.show(true, `Вы получили данные сотрудника ${dataFromServer.personId}`);
+
+			renderDataToCard(dataFromServer);
 		})
 		.catch((error) => {
 			loader.close();
@@ -32,17 +40,25 @@ const renderInformation = () => {
 		});
 };
 
-const openCard = (employeesListItems, employeeModal,) => {
+// Открытие/закрытие карточки
+const openCard = (employeesListItems, employeeModal) => {
 	// При клике на сотрудника забираем информацию с сервера и рендерим ее в модальном окне
-	employeesListItems.forEach((item, idx) => {
+	employeesListItems.forEach((item) => {
 		item.addEventListener("dblclick", () => {
+			const { id } = item.dataset;
+
 			loader.show();
 
-			document.querySelectorAll(".employees__link")[idx].click();
+			window.history.replaceState(null, null, `?employee_id=${id}#description_from_director`);
+
+			getCardData();
+
+			modal.show();
+			tabs.openCard();
 		});
 	});
 
-	employeeModal.addEventListener("click", () => modal.close());
+	employeeModal.addEventListener("click", () => modal.close("/home/employees"));
 
 	modal.propagationForContent();
 
@@ -51,11 +67,11 @@ const openCard = (employeesListItems, employeeModal,) => {
 			!employeeModal.classList.contains("hidden") &&
 			event.code === "Escape"
 		) {
-			modal.close();
+			modal.close("/home/employees");
 		}
 	});
 };
 
 export {
-	openCard, renderInformation
+	openCard, getCardData
 };

@@ -1,9 +1,16 @@
 <?php
-$id = '1eqb_1u7M78BJgtQSPjhy0SCiQhSW-K4joX0k0Mn3riw';
-$gid = 0;
-$csv = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id.'/export?format=csv&gid='.$gid);
-$csv = explode("\r\n", $csv);
-$array = array_map('str_getcsv', $csv);
+$id_student_info = '1eqb_1u7M78BJgtQSPjhy0SCiQhSW-K4joX0k0Mn3riw';
+$gid_student_info = 0;
+$csv_student_info = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id_student_info.'/export?format=csv&gid='.$gid_student_info);
+$csv_student_info = explode("\r\n", $csv_student_info);
+$array_student_info = array_map('str_getcsv', $csv_student_info);
+
+$id_development_prospects = '1jt4gO_1dn_KgVppss7Y03PUPF0zTuBZmg2X1C67Y_HE';
+$gid_development_prospects = 0;
+$csv_development_prospects = file_get_contents('https://docs.google.com/spreadsheets/d/'.$id_development_prospects.'/export?format=csv&gid='.$gid_development_prospects);
+$csv_development_prospects = explode("\r\n", $csv_development_prospects);
+$array_development_prospects = array_map('str_getcsv', $csv_development_prospects);
+
 $student_id = $student["id"];
 ?>
 
@@ -36,13 +43,12 @@ $student_id = $student["id"];
 				<?php
 				$i = 0;
 				
-				foreach ($array as $item) {
+				foreach ($array_student_info as $item) {
 					$i++;
 					$id = $i - 1;
 
 					$html = "<li data-id='$id'>";
 					$html .= '<span>'.$i.'</span>';
-					$html .= "<a hidden class='student__link' href='/home/students?student_id=$i'></a>";
 					
 					foreach ($item as $value) {
 						$html .= "<span class='students__name'>".$value."</span>";
@@ -54,7 +60,7 @@ $student_id = $student["id"];
 				}
 				?>
 			</ul>
-			<article
+			<div
 				class="modal
 				<?php if (!isset($openModal) || !$openModal) echo "hidden" ?>"
 				id="student-modal"
@@ -66,16 +72,30 @@ $student_id = $student["id"];
 				>
 					<div class="card">
 						<div class="students__card-header card__header">
-							<button class="students__card-btn btn__primary active">Главная</button>
-							<button class="students__card-btn btn__primary">Сотрудник</button>
-							<button class="students__card-btn btn__primary">Студент</button>
-							<button class="students__card-btn btn__primary">Документы</button>
-							<button class="students__card-btn btn__primary">Служба режима</button>
-							<button class="students__card-btn btn__primary">Достижения</button>
-							<button class="students__card-btn btn__primary">Волонтерство</button>
+							<button class="students__card-btn btn__primary active">
+								<a href="#main">Главная</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#employee">Сотрудник</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#student">Студент</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#docs">Документы</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#mode_service">Служба режима</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#achivments">Достижения</a>
+							</button>
+							<button class="students__card-btn btn__primary">
+								<a href="#volunteering">Волонтерство</a>
+							</button>
 						</div>
 						<div class="card__content">
-							<section class="card__section">
+							<section class="card__section" id="main">
 								<div class="card__main-top">
 									<img
 										src="https://corp.synergy.ru/upload/main/600/ad_1662235951.jpg"
@@ -125,7 +145,7 @@ $student_id = $student["id"];
 									</ul>
 								</div>
 							</section>
-							<section class="card__employee card__section hidden">
+							<section class="card__employee card__section hidden" id="employee">
 								<div class="card__section-content">
 									<ul class="card__employee-job">
 										<li>Группа верстки;</li>
@@ -151,7 +171,7 @@ $student_id = $student["id"];
 										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officiis labore nisi, impedit facere repellendus repellat possimus ullam enim suscipit velit odit nostrum perspiciatis debitis iusto. Dicta neque aliquam sunt!</p>
 									</div>
 									<div class="card__feedback">
-										<h4>Обратная связь</h4>
+										<h4>Обратная связь по встрече</h4>
 										<table class='card__feedback-sheet'>
 											<thead>
 												<tr>
@@ -180,25 +200,38 @@ $student_id = $student["id"];
 									<div class="card__checkbox">
 										<h4>Перспективы развития</h4>
 										<table class='card__checkbox-sheet'>
-											<thead>
-												<tr>
-													<td>Направление</td>
-													<td>Подразделение</td>
-													<td>Приоритет сохранения</td>
-												</tr>
-											</thead>
 											<tbody>
-												<tr>
-													<td><input type="text" value='IT'></td>
-													<td><input type="text" value='Web-разработка'></td>
-													<td><input type="text" value="Наивысший"></td>
-												</tr>
+												<?php
+												$i = 0;
+													
+												foreach ($array_development_prospects as $item) {
+													$i++;
+													$html = "<tr>";
+
+													foreach ($item as $value)
+													{
+														$html .= "<td cope='row'>$value</td>";
+													}
+													
+													$html .= "</tr>";
+
+													echo $html;
+												}
+												?>
 											</tbody>
 										</table>
+										<button class="btn__primary" id="open-google-sheet">
+											<a
+												href="https://docs.google.com/spreadsheets/d/1jt4gO_1dn_KgVppss7Y03PUPF0zTuBZmg2X1C67Y_HE/edit#gid=0"
+												target="_blank"
+											>
+												Перейти в GoogleSheet
+											</a>
+										</button>
 									</div>
 								</div>
 							</section>
-							<section class="card__student card__section hidden">
+							<section class="card__student card__section hidden" id="student">
 								<div class="card__section-content">
 									<div class="card__student-programs">
 										<h4>Программы обучения</h4>
@@ -255,7 +288,7 @@ $student_id = $student["id"];
 									</div>
 								</div>
 							</section>
-							<section class="card__documents card__section hidden">
+							<section class="card__documents card__section hidden" id="docs">
 								<div class="card__section-content">
 									<div class="card__section-content">
 										<div class="card__documents-passport">
@@ -270,7 +303,7 @@ $student_id = $student["id"];
 									</div>
 
 							</section>
-							<section class="card__mode card__section hidden">
+							<section class="card__mode card__section hidden" id="mode_service">
 								<div class="card__section-content">
 									<div class="card__mode-description">
 										<h4>Характеристика от службы режима</h4>
@@ -331,7 +364,7 @@ $student_id = $student["id"];
 									</div>
 								</div>
 							</section>
-							<section class="card__achivments card__section hidden">
+							<section class="card__achivments card__section hidden" id="achivments">
 								<div class="card__section-content">
 									<div class="card__achivments-company">
 										<div class="card__achivments-company-header">
@@ -356,7 +389,7 @@ $student_id = $student["id"];
 									</div>
 								</div>
 							</section>
-							<section class="card__volunteering card__section hidden">
+							<section class="card__volunteering card__section hidden" id="volunteering">
 								<div class="card__section-content">
 									<div class="card__volunteering-company">
 										<div class="card__volunteering-company-header">

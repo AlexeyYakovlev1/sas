@@ -21,7 +21,7 @@ class RedirectIfTokenExists
 		}
 
 		$token = $request->cookie("token");
-		$validate_token = Token::validate($token || "", env("SECRET_KEY"));
+		$validate_token = Token::validate($token, env("SECRET_KEY"));
 
 		if (!$validate_token) return $next($request);
 

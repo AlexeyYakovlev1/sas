@@ -3,13 +3,20 @@
 import Modal from "../../classes/Modal";
 import Loader from "../../classes/Loader";
 import Alert from "../../classes/Alert";
+import Tabs from "../../classes/Tabs";
 
 const modal = new Modal();
 const loader = new Loader();
 const alert = new Alert();
+const tabs = new Tabs(".students__card-btn", ".card__section");
+
+const renderDataToCard = (data) => {
+	console.log(`Render some information...`);
+	console.log(data);
+};
 
 // Получение информации для карточки
-const renderInformation = () => {
+const getCardData = () => {
 	modal.getInformation("/students/get_card_info", "student_id")
 		.then((data) => {
 			const { success, message, data: dataFromServer } = data;
@@ -21,7 +28,8 @@ const renderInformation = () => {
 			}
 
 			loader.close();
-			alert.show(true, `Вы получили данные студента ${dataFromServer.personId}`);
+
+			renderDataToCard(dataFromServer);
 		})
 		.catch((error) => {
 			alert.show(false, error.message || "Ошибка при получении данных");
@@ -35,16 +43,23 @@ const renderInformation = () => {
 // Открытие/закрытие карточки
 const openCard = (studentsListItem, studentsModal) => {
 	// При даблклике открываем окно с информацией
-	studentsListItem.forEach((item, idx) => {
+	studentsListItem.forEach((item) => {
 		item.addEventListener("dblclick", () => {
+			const { id } = item.dataset;
+
 			loader.show();
 
-			document.querySelectorAll(".student__link")[idx].click();
+			window.history.replaceState(null, null, `?student_id=${id}#main`);
+
+			getCardData();
+
+			modal.show();
+			tabs.openCard();
 		});
 	});
 
 	// При клике на задний фон скрываем окно с информацией
-	studentsModal.addEventListener("click", () => modal.close());
+	studentsModal.addEventListener("click", () => modal.close("/home/students"));
 
 	modal.propagationForContent();
 
@@ -53,11 +68,11 @@ const openCard = (studentsListItem, studentsModal) => {
 			!studentsModal.classList.contains("hidden") &&
 			event.code === "Escape"
 		) {
-			modal.close();
+			modal.close("/home/students");
 		}
 	});
 };
 
 export {
-	openCard, renderInformation
+	openCard, getCardData
 };

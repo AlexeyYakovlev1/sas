@@ -1,7 +1,7 @@
 import Request from "../../classes/Request";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
-import { openCard, renderInformation } from "./modal";
+import { openCard, getCardData } from "./modal";
 import checkQuery from "../../scripts/checkQuery";
 
 const request = new Request();
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	const studentsListItem = document.querySelectorAll(".students__list li");
 	const studentsModal = document.querySelector("#student-modal");
 
-	if (!studentsModal.classList.contains("hidden")) renderInformation();
+	if (!studentsModal.classList.contains("hidden")) getCardData();
 
 	openCard(
 		studentsListItem,

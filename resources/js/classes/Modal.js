@@ -1,8 +1,10 @@
 "use strict";
 
 import Request from "./Request";
+import Utils from "./Utils";
 
 const request = new Request();
+const utils = new Utils();
 
 class Modal {
 	constructor() {
@@ -17,12 +19,10 @@ class Modal {
 	}
 
 	// Закрыть модальное окно
-	close() {
-		const urlObj = new URL(window.location.href);
-
-		urlObj.search = "";
-
-		window.location.href = urlObj.toString();
+	close(url) {
+		window.history.replaceState({}, document.title, `${utils.getHost()}${url}`);
+		this.modalElement.classList.add("hidden");
+		document.body.style.overflow = "visible";
 	}
 
 	// При клике на контент модального окна не срабатывало закрытие

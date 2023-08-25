@@ -32,7 +32,6 @@ $employee_id = $employee["id"];
 					$id = $i - 1;
 					
 					$html = "<li data-id='$id'>";
-					$html .= "<a class='employees__link' hidden href='/home/employees?employee_id=$i'></a>";
 					$html .= '<span>'.$i.'</span>';
 					
 					foreach ($item as $value) {
@@ -55,19 +54,31 @@ $employee_id = $employee["id"];
 					data-employee="<?php if (isset($openModal) && isset($employee)) echo "$employee_id" ?>"
 				>
 					<div class="card">
-						<div class="card__header">
-							<button class="btn__primary card__header-btn active">
-								Характеристика от руководителя
+						<div class="employees__card-header card__header">
+							<button
+								class="employees__card-btn btn__primary card__header-btn active"
+							>
+								<a href="#description_from_director">
+									Характеристика от руководителя
+								</a>
 							</button>
-							<button class="btn__primary card__header-btn">
-								Итоги встречи
+							<button
+								class="employees__card-btn btn__primary card__header-btn"
+							>
+								<a href="#results_of_meeting">
+									Итоги встречи
+								</a>
 							</button>
-							<button class="btn__primary card__header-btn">
-								Итоги предыдущей встречи
+							<button
+								class="employees__card-btn btn__primary card__header-btn"
+							>
+								<a href="#results_of_prev_meeting">
+									Итоги предыдущей встречи
+								</a>
 							</button>
 						</div>
-						<ul class="card__content">
-							<li class="card__content-item" id="descriptionFromDirector">
+						<div class="card__content">
+							<section class="card__content-item" id="description_from_director">
 								<form class="card__content-item-form" id="directorForm">
 									<label>
 										Дата заполнения (чч.мм.гг.):
@@ -123,8 +134,8 @@ $employee_id = $employee["id"];
 									</label>
 									<button class="btn__primary">Прикрепить</button>
 								</form>
-							</li>
-							<li class="card__content-item hidden" id="resultsOfMeeting">
+							</section>
+							<section class="card__content-item hidden" id="results_of_meeting">
 								<form action="" class='card__content-meetingResult-form'>
 									<table class='card__content-meetingResult-sheet'>
 										<thead>
@@ -154,8 +165,8 @@ $employee_id = $employee["id"];
 										<button type="button" class="card__content-meetingResult-delBtn btn__primary red">Удалить строку</button>
 									</div>
 								</form>
-							</li>
-							<li class="card__content-item hidden" id="resultsOfPrevMeeting">
+							</section>
+							<section class="card__content-item hidden" id="results_of_prev_meeting">
 								<table class='card__feedback-sheet'>
 									<thead>
 										<tr>
@@ -178,8 +189,8 @@ $employee_id = $employee["id"];
 										</tr>
 									</tbody>
 								</table>
-							</li>
-						</ul>
+							</section>
+						</div>
 					</div>
 				</div>
 			</div>
