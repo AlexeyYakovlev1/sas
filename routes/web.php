@@ -29,12 +29,18 @@ Route::prefix("/home")->middleware(["home"])->group(function() {
 
 // Api
 Route::prefix("/api")->group(function() {
-	Route::get("/employees/get_card_info", [EmployeesController::class, "card_info"])->middleware("check_role:director");
-	Route::get("/employees/get_employees", [EmployeesController::class, "employees_info"])->middleware("check_role:director");
+	Route::get("/employees/get_card_info/{content}", [EmployeesController::class, "card_info"])
+		->middleware("check_role:director");
+	Route::get("/employees/get_employees", [EmployeesController::class, "employees_info"]
+		)->middleware("check_role:director");
 
-	Route::get("/general_information/get_docs", [GeneralInformationController::class, "docs_info"])->middleware("check_role:employee");
-	Route::get("/general_information/get_students", [GeneralInformationController::class, "students_info"])->middleware("check_role:employee");
+	Route::get("/general_information/get_docs", [GeneralInformationController::class, "docs_info"])
+		->middleware("check_role:employee");
+	Route::get("/general_information/get_students", [GeneralInformationController::class, "students_info"])
+		->middleware("check_role:employee");
 	
-	Route::get("/students/get_students", [StudentsController::class, "students_info"])->middleware("check_role:employee");
-	Route::get("/students/get_card_info", [StudentsController::class, "card_info"])->middleware("check_role:employee");
+	Route::get("/students/get_students", [StudentsController::class, "students_info"])
+		->middleware("check_role:employee");
+	Route::get("/students/get_card_info/{content}", [StudentsController::class, "card_info"])
+		->middleware("check_role:employee");
 });

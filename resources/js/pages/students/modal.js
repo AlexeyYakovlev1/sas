@@ -17,7 +17,9 @@ const renderDataToCard = (data) => {
 
 // Получение информации для карточки
 const getCardData = () => {
-	modal.getInformation("/students/get_card_info", "student_id")
+	const content = window.location.href.split("#").at(-1);
+
+	modal.getInformation(`/students/get_card_info/${content}`, "student_id")
 		.then((data) => {
 			const { success, message, data: dataFromServer } = data;
 

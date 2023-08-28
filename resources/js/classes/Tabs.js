@@ -1,9 +1,16 @@
 "use strict";
 
+import Utils from "./Utils";
+import Request from "./Request";
+
+const utils = new Utils();
+const request = new Request();
+
 class Tabs {
-	constructor(buttonsSelector, contentsSelector) {
+	constructor(buttonsSelector, contentsSelector, pageUrl) {
 		this.buttons = document.querySelectorAll(buttonsSelector);
 		this.contents = document.querySelectorAll(contentsSelector);
+		this.pageUrl = pageUrl;
 	}
 
 	//	Добавляет класс ко всем html элементам (items)
@@ -12,10 +19,21 @@ class Tabs {
 	//	Убирает класс у всех html элементов (items)
 	_removeClass(items, cls) { items.forEach((item) => item.classList.remove(cls)); };
 
+	_getContentByHash(hash) {
+		const url = `${utils.getHost()}/${this.pageUrl}/get_card_info/${hash}`;
+
+		return request.get(url, { headers: {} });
+	}
+
 	// При открытии карточки
 	openCard(activeClass = "active") {
 		// Забираем hash из url (без начального #)
 		const hash = window.location.hash.slice(1);
+
+		this._getContentByHash(hash)
+			.then((data) => {
+				console.log(data);
+			});
 
 		this._addClass(this.contents, "hidden");
 		this._removeClass(this.buttons, activeClass);

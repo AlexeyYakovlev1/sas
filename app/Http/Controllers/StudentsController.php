@@ -17,6 +17,8 @@ class StudentsController extends Controller
 		$student_id = $request->student_id;
 		$find_student = ["id" => $student_id];
 
+		Log::info("HERE ".$request->fullUrl());
+
 		$payload = array_merge([
 			"student" => $find_student, "openModal" => (bool) $student_id],
 			$request->payload
@@ -48,26 +50,48 @@ class StudentsController extends Controller
 		)->header("Content-Type", "application/json");
 	}
 
-	public function card_info(Request $request)
+	public function card_info(Request $request, string $content)
 	{
 		$student_id = $request->student_id;
 		$find_student = ["id" => $student_id];
 
-		$main = [];
-		$employee = [];
-		$docs = [];
-		$mode_service = [];
-		$achivments = [];
-		$volunteering = [];
+		if (!isset($content) || !$content)
+		{
+			$content = "#main";
+		}
+
+		// Удаляем #
+		$content = substr($content, 0);
+		$data = [];
+
+		// Для определенного контента ищем данные
+		switch($content)
+		{
+			case "main":
+				$data = ["description" => "Main"];	
+				break;
+			case "employee":
+				$data = ["description" => "Employee"];	
+				break;
+			case "docs":
+				$data = ["description" => "Docs"];	
+				break;
+			case "mode_service":
+				$data = ["description" => "Mode service"];	
+				break;
+			case "achivments":
+				$data = ["description" => "Achivments"];	
+				break;
+			case "volunteering":
+				$data = ["description" => "Volunteering"];	
+				break;
+			case "student":
+				$data = ["description" => "Student"];
+				break;
+		}
 
 		$data = [
-			"main" => $main,
-			"employee" => $employee,
-			"docs" => $docs,
-			"mode_service" => $mode_service,
-			"achivments" => $achivments,
-			"volunteering" => $volunteering,
-			"student" => $find_student,
+			"data" => $data,
 			"personId" => $student_id
 		];
 
