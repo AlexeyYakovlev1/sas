@@ -98,7 +98,7 @@ $student_id = $student["id"];
 							<section class="card__section" id="main">
 								<div class="card__main-top">
 									<img
-										src="https://corp.synergy.ru/upload/main/600/ad_1662235951.jpg"
+										src="https://sun9-6.userapi.com/impg/PwurWN2LssvYpW8w-w8kHeqdoMZRvNOTQzoZpQ/4PBjFX2n_Zw.jpg?size=1080x941&quality=95&sign=ed742075906ed4077cdfc7f58a0935a8&c_uniq_tag=OcgD-wwJlj_WFHFO5gxYmIXpDZ6Dw-YBr1jhYHo8748&type=album"
 										alt="studentPhoto"
 									/>
 									<div class="card__main-info">
@@ -168,7 +168,58 @@ $student_id = $student["id"];
 									</div>
 									<div class="card__employee-description">
 										<h4>Характеристика от руководителя</h4>
-										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officiis labore nisi, impedit facere repellendus repellat possimus ullam enim suscipit velit odit nostrum perspiciatis debitis iusto. Dicta neque aliquam sunt!</p>
+										<table class="card__mode-employee-sheet">
+											<tbody>
+												<tr>
+													<td>Дата заполнения</td>
+													<td>28.08.2023</td>
+												</tr>
+												<tr>
+													<td>ФИО студента</td>
+													<td>Яковлев Алексей Николаевич</td>
+												</tr>
+												<tr>
+													<td>Структурное подразделение (Департамент)</td>
+													<td>IT</td>
+												</tr>
+												<tr>
+													<td>Занимаемая студентом должность</td>
+													<td>Веб-разработка</td>
+												</tr>
+												<tr>
+													<td>Период работа по данной позиции</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Основные достижения за время работы</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Сильные стороны и развитые компетенции</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Замечания и упущения в работе</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Проявленные личные качества</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Зоны ближайшего развития</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Компетенции, которые необходимо развить в среднесрочной перспективе</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Карьерные и экспертные перспективы</td>
+													<td>----</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 									<div class="card__feedback">
 										<h4>Обратная связь по встрече</h4>
@@ -284,7 +335,102 @@ $student_id = $student["id"];
 									</div>
 									<div class="card__student-diploma">
 										<h4>Аттестационный лист студента</h4>
-										<p>Здесь должна быть таблица с введенными данными</p>
+										<table class="card__mode-student-sheet">
+											<tbody>
+												<tr>
+													<td>Дата заполнения</td>
+													<td>28.08.2023</td>
+												</tr>
+												<tr>
+													<td>ФИО</td>
+													<td>Яковлев Алексей Николаевич</td>
+												</tr>
+												<tr>
+													<td>Структурное подразделение (Департамент)</td>
+													<td>IT</td>
+												</tr>
+												<tr>
+													<td>Курс</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td>Измеримые достижения за отчетный период</td>
+													<td>Написал сайт</td>
+												</tr>
+												<tr>
+													<td>Какие планы не удалось осуществить и почему</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие компетенции, навыки и умения развивал за отчетный период</td>
+													<td>Практика PHP, Javascript</td>
+												</tr>
+												<tr>
+													<td>Какие компетенции, навыки и умения собирался развивать в будущем периоде</td>
+													<td>Работа с Laravel, Vue</td>
+												</tr>
+												<tr>
+													<td>Наставник</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Чему научился под руководством вашего наставника</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Кого из сокурсников считает лидером, которого можно ставить в пример и равняться на него</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Кто из сокурсников оказался «случайным попутчиком» для программы Кадровый резерв и Корпорации</td>
+													<td>Многие</td>
+												</tr>
+												<tr>
+													<td>Сотрудники Корпорации, от которых получает ценные знания и рекомендации</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Кого из сотрудников Корпорации считает Лидером, которого можно ставить в пример и равняться на него</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие карьерные перспективы перед собой видит</td>
+													<td>Работа в LMS; Разработка как бэкенд, так и фронтенд (Laravel, Node.js, Vue)</td>
+												</tr>
+												<tr>
+													<td>Какие улучшения необходимо сделать в отделе, департаменте и Корпорации в целом для повышения эффективности деятельности</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие новые продукты и услуги Клиентам предлагает создать в Корпорации</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие новые направления бизнеса предлагает открыть в Корпорации</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие улучшения в системе подготовки программы "Кадровый резерв" необходимо осуществить</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Какие направления набора абитуриентов на программу "Кадровый резерв" считает наиболее эффективными</td>
+													<td>----</td>
+												</tr>
+												<tr>
+													<td>Направления, в которых видит свое дальнейшее развитие в Корпорации</td>
+													<td>IT (Фронтенд разработка в LMS на Vue)</td>
+												</tr>
+												<tr>
+													<td>В каком департаменте сможет принести Корпорации ощутимую пользу и результат</td>
+													<td>IT</td>
+												</tr>
+												<tr>
+													<td>Предложения высшему руководству по обеспечению устойчивого развития корпорации</td>
+													<td>----</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</section>
@@ -292,16 +438,65 @@ $student_id = $student["id"];
 								<div class="card__section-content">
 									<div class="card__section-content">
 										<div class="card__documents-passport">
-												<h4>Паспорт</h4>
-												<p>Данные по паспорту</p>
-											</div>
+											<h4>Паспорт</h4>
+											<table class="card__mode-documents-sheet">
+												<tbody>
+													<tr>
+														<td>Серия</td>
+														<td>2718</td>
+													</tr>
+													<tr>
+														<td>Номер</td>
+														<td>284712</td>
+													</tr>
+													<tr>
+														<td>Кем выдан</td>
+														<td>УМВД по городу Москва</td>
+													</tr>
+													<tr>
+														<td>Дата выдачи</td>
+														<td>28.08.2023</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 										<div class="card__documents-passport">
-												<h4>Договоры</h4>
-												<p>трудовой, на оказание платных услуг, ученический, СЗ на скидку</p>
+											<h4>Договоры</h4>
+											<table class="card__mode-documents-sheet">
+												<tbody>
+													<tr>
+														<td>Трудовой</td>
+														<td>
+															<input type="file" hidden />
+															<button class="btn__primary">Скачать</button>
+														</td>
+													</tr>
+													<tr>
+														<td>На окозание платных услуг</td>
+														<td>
+															<input type="file" hidden />
+															<button class="btn__primary">Скачать</button>
+														</td>
+													</tr>
+													<tr>
+														<td>Ученический</td>
+														<td>
+															<input type="file" hidden />
+															<button class="btn__primary">Скачать</button>
+														</td>
+													</tr>
+													<tr>
+														<td>СЗ на скидку</td>
+														<td>
+															<input type="file" hidden />
+															<button class="btn__primary">Скачать</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
-
+								</div>
 							</section>
 							<section class="card__mode card__section hidden" id="mode_service">
 								<div class="card__section-content">

@@ -228,6 +228,7 @@
 				&__header
 					position: sticky
 					top: 0
+					justify-content: unset
 					z-index: 99
 					background-color: $white
 					display: grid
@@ -256,7 +257,11 @@
 								& tr>td
 									padding: 0
 						&-btn
-							margin-top: 20px
+							&s
+								display: flex
+								justify-content: space-between
+								align-items: center
+								margin-top: 20px
 
 #directorForm
 	display: flex
@@ -347,7 +352,7 @@
 			& td, & th
 				width: 33.3%
 	&__mode
-		&-achivments, &-abilities
+		&-achivments, &-abilities, &-documents, &-student, &-employee
 			&-header
 				@extend %tableName
 				font-size: 16px
