@@ -1,16 +1,11 @@
 "use strict";
 
 import Tabs from "../../classes/Tabs.js";
+import { renderModalContent } from "./renderStudents";
 
-window.addEventListener("DOMContentLoaded", () => new Tabs(".students__card-btn", ".card__section").openCard());
+const tabs = new Tabs(".students__card-btn", ".card__section", "students");
 
-const getData = (link, contents) => {
-	const currentPoint = link.split("#").at(-1);
-	const currentContent = [...contents].find((content) => content.getAttribute("id") === currentPoint);
+window.addEventListener("DOMContentLoaded", () => tabs.openCard());
 
-	currentContent.classList.remove("hidden");
-};
-
-new Tabs(".students__card-btn", ".card__section").clickButtons("active", (link, contents) => {
-	getData(link, contents);
-});
+// При клике на кнопки
+tabs.clickButtons("active", (data) => renderModalContent(data));

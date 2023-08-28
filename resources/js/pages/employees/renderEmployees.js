@@ -16,8 +16,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	if (!employeeModal.classList.contains("hidden")) getCardData();
 
-	openCard(
-		employeesListItems,
-		employeeModal
-	);
+	openCard(employeesListItems, employeeModal);
 });
+
+function renderModalContent(data) {
+	const contentName = data.data.description.toLowerCase();
+	const contentParent = document.querySelector(`.card__content-item#${contentName}`);
+
+	if (!contentParent) return;
+
+	contentParent.classList.remove("hidden");
+
+	// Тут будет рендер информации
+	// contentParent.innerHTML = `
+	// 	<p>${data.data.description}</p>
+	// `;
+
+	alert.show(true, `Рендер информации с сервера о сотруднике ${data.employee.id}`);
+}
+
+export { renderModalContent };

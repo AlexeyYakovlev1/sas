@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class EmployeesController extends Controller
 {
@@ -24,24 +25,43 @@ class EmployeesController extends Controller
 		return view("pages.home.employees", $payload);
 	}
 
-	public function card_info(Request $request)
+	public function card_info(Request $request, string $content)
 	{
 		$employee_id = $request->employee_id;
 		$find_employee = ["id" => $employee_id];
+		
+		if (!isset($content) || !$content)
+		{
+			$content = "description_from_director";
+		} 
 
-		$find_description_from_director = [];
-		$result_prev_meet = [];
-		$data = [
-			"result_prev_meet" => $result_prev_meet,
-			"find_description_from_director" => $find_description_from_director,
-			"find_employee" => $find_employee,
-			"personId" => $employee_id
+		// Удаляем #
+		$content = substr($content, 0);
+		$data = [];
+
+		// Для определенного контента ищем данные
+		switch($content)
+		{
+			case "description_from_director":
+				$data = ["description" => "description_from_director"];	
+				break;
+			case "results_of_meeting":
+				$data = ["description" => "results_of_meeting"];	
+				break;
+			case "results_of_prev_meeting":
+				$data = ["description" => "results_of_prev_meeting"];	
+				break;
+		}
+
+		$res = [
+			"data" => $data,
+			"employee" => $find_employee
 		];
 
 		return response(
 			[
 				"success" => true,
-				"data" => $data
+				"res" => $res
 			],
 			200
 		)

@@ -1,12 +1,10 @@
 "use strict";
 
 import Tabs from "../../classes/Tabs.js";
+import { renderModalContent } from "./renderEmployees.js";
 
-window.addEventListener("DOMContentLoaded", () => new Tabs(".card__header-btn", ".card__content-item").openCard());
+const tabs = new Tabs(".card__header-btn", ".card__content-item", "employees");
 
-new Tabs(".card__header-btn", ".card__content-item").clickButtons("active", (link, contents) => {
-	const currentPoint = link.split("#").at(-1);
-	const currentContent = [...contents].find((content) => content.getAttribute("id") === currentPoint);
+window.addEventListener("DOMContentLoaded", () => tabs.openCard());
 
-	currentContent.classList.remove("hidden");
-});
+tabs.clickButtons("active", (data) => renderModalContent(data));

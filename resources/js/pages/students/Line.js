@@ -17,10 +17,10 @@ const volunAddBtn = document.querySelector('.card__volunteering-company-addBtn')
 const volunDelBtn = document.querySelector('.card__volunteering-company-delBtn');
 const volunTable = { obj: document.querySelector('.card__volunteering-company-sheet'), count: 1 };
 
-achivAddBtn.addEventListener('click', () => {
-	createLine(achivTable.obj);
-	achivTable.count++;
-});
+// achivAddBtn.addEventListener('click', () => {
+// 	createLine(achivTable.obj);
+// 	achivTable.count++;
+// });
 achivDelBtn.addEventListener('click', () => {
 	try {
 		deleteLine(achivTable.obj);

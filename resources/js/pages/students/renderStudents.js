@@ -16,8 +16,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	if (!studentsModal.classList.contains("hidden")) getCardData();
 
-	openCard(
-		studentsListItem,
-		studentsModal
-	);
+	openCard(studentsListItem, studentsModal);
 });
+
+function renderModalContent(data) {
+	const contentName = data.data.description.toLowerCase();
+	const contentParent = document.querySelector(`.card__section#${contentName}`);
+
+	if (!contentParent) return;
+
+	contentParent.classList.remove("hidden");
+
+	// Тут будет рендер информации
+	// contentParent.innerHTML = `
+	// 	<p>${data.data.description}</p>
+	// `;
+
+	alert.show(true, `Рендер информации с сервера о студенте ${data.student.id}`);
+}
+
+export { renderModalContent };

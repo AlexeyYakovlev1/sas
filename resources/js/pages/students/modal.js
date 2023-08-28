@@ -4,16 +4,15 @@ import Modal from "../../classes/Modal";
 import Loader from "../../classes/Loader";
 import Alert from "../../classes/Alert";
 import Tabs from "../../classes/Tabs";
+import { renderModalContent } from "./renderStudents";
 
 const modal = new Modal();
 const loader = new Loader();
 const alert = new Alert();
 const tabs = new Tabs(".students__card-btn", ".card__section");
 
-const renderDataToCard = (data) => {
-	console.log(`Render some information...`);
-	console.log(data);
-};
+// При открытии модального окна
+const renderDataToCard = (data) => renderModalContent(data);
 
 // Получение информации для карточки
 const getCardData = () => {
@@ -21,7 +20,7 @@ const getCardData = () => {
 
 	modal.getInformation(`/students/get_card_info/${content}`, "student_id")
 		.then((data) => {
-			const { success, message, data: dataFromServer } = data;
+			const { success, message, res } = data;
 
 			if (message) alert.show(success, message);
 			if (!success) {
@@ -31,7 +30,7 @@ const getCardData = () => {
 
 			loader.close();
 
-			renderDataToCard(dataFromServer);
+			renderDataToCard(res);
 		})
 		.catch((error) => {
 			alert.show(false, error.message || "Ошибка при получении данных");
@@ -75,6 +74,4 @@ const openCard = (studentsListItem, studentsModal) => {
 	});
 };
 
-export {
-	openCard, getCardData
-};
+export { openCard, getCardData };

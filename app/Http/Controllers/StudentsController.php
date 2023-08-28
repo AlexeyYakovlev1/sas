@@ -57,7 +57,7 @@ class StudentsController extends Controller
 
 		if (!isset($content) || !$content)
 		{
-			$content = "#main";
+			$content = "main";
 		}
 
 		// Удаляем #
@@ -77,7 +77,7 @@ class StudentsController extends Controller
 				$data = ["description" => "Docs"];	
 				break;
 			case "mode_service":
-				$data = ["description" => "Mode service"];	
+				$data = ["description" => "Mode_service"];	
 				break;
 			case "achivments":
 				$data = ["description" => "Achivments"];	
@@ -90,15 +90,15 @@ class StudentsController extends Controller
 				break;
 		}
 
-		$data = [
+		$res = [
 			"data" => $data,
-			"personId" => $student_id
+			"student" => $find_student
 		];
 
 		return response(
 			[
 				"success" => true,
-				"data" => $data
+				"res" => $res
 			],
 			200
 		)->header("Content-Type", "application/json");

@@ -4,22 +4,22 @@ import Modal from "../../classes/Modal";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
 import Tabs from "../../classes/Tabs";
+import { renderModalContent } from "./renderEmployees";
 
 const modal = new Modal();
 const alert = new Alert();
 const loader = new Loader();
 const tabs = new Tabs(".card__header-btn", ".card__content-item");
 
-const renderDataToCard = (data) => {
-	console.log(`Render some information...`);
-	console.log(data);
-};
+const renderDataToCard = (data) => renderModalContent(data);
 
 // Получение информации для карточки
 const getCardData = () => {
-	modal.getInformation("/employees/get_card_info", "employee_id")
+	const content = window.location.href.split("#").at(-1);
+
+	modal.getInformation(`/employees/get_card_info/${content}`, "employee_id")
 		.then((data) => {
-			const { success, message, data: dataFromServer } = data;
+			const { success, message, res } = data;
 
 			if (message) alert.show(success, message);
 			if (!success) {
@@ -29,7 +29,7 @@ const getCardData = () => {
 
 			loader.close();
 
-			renderDataToCard(dataFromServer);
+			renderDataToCard(res);
 		})
 		.catch((error) => {
 			loader.close();
@@ -58,6 +58,7 @@ const openCard = (employeesListItems, employeeModal) => {
 		});
 	});
 
+	// При клике на задний фон скрываем окно с информацией
 	employeeModal.addEventListener("click", () => modal.close("/home/employees"));
 
 	modal.propagationForContent();
@@ -72,6 +73,4 @@ const openCard = (employeesListItems, employeeModal) => {
 	});
 };
 
-export {
-	openCard, getCardData
-};
+export { openCard, getCardData };
