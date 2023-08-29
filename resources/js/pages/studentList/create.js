@@ -2,6 +2,8 @@ import Request from "../../classes/Request";
 import Loader from "../../classes/Loader";
 import Alert from "../../classes/Alert";
 import Validate from "../../classes/Validate";
+import Utils from "../../classes/Utils";
+
 import validator from "validator";
 import { validation } from "../../data.js";
 
@@ -19,6 +21,8 @@ const {
 const request = new Request();
 const loader = new Loader();
 const alert = new Alert();
+const utils = new Utils();
+
 const validate = new Validate(".input__primary");
 
 const inputPrimary = document.querySelectorAll(".input__primary");
@@ -160,7 +164,7 @@ inputPrimary.forEach((input) => {
 studentListForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 
-	const fd = new FormData(studentListForm);
+	const data = utils.getDataFromForm(".input__primary");
 
-	console.log(fd);
+	console.log(data);
 });

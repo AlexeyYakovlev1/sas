@@ -62,15 +62,7 @@ loginForm.addEventListener("submit", (event) => {
 	const { person } = document.querySelector(".login__character.btn-active").dataset;
 
 	// Конечные данные для отправки (payload)
-	const data = { person };
-
-	// Заносим значения инпутов в data
-	document.querySelectorAll(".form__item").forEach((formItem) => {
-		// Забираем только input-ы
-		formItem.childNodes.forEach((child) => {
-			if (child.nodeName === "INPUT") data[child.dataset.name] = child.value;
-		});
-	});
+	const data = { person, ...utils.getDataFromForm(".form__input") };
 
 	const params = {
 		data: JSON.stringify(data),
