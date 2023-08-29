@@ -10,7 +10,11 @@ class Request {
 		this.csrf = utils.getCsrf();
 	}
 
-	// Объединение заголовков
+	/**
+	 * Объединение заголовков
+	 * @param {object} headers Дополнительные заголовки
+	 * @private
+	 */
 	_assignHeaders(headers = {}) {
 		return Object.assign(headers || {}, {
 			"X-Requested-With": "XMLHttpRequest",
@@ -18,7 +22,12 @@ class Request {
 		});
 	}
 
-	// POST запрос
+	/**
+	 * POST запрос
+	 * @param {string} url Ссылка для получения информации
+	 * @param {object} params Параметры запроса
+	 * @public
+	 */
 	post(url, params) {
 		const allHeaders = this._assignHeaders(params.headers);
 
@@ -30,7 +39,12 @@ class Request {
 			.then((response) => response.json());
 	}
 
-	// GET запрос
+	/**
+	 * GET запрос
+	 * @param {string} url Ссылка для получения информации
+	 * @param {object} params Параметры запроса
+	 * @public
+	 */
 	get(url, params) {
 		const allHeaders = this._assignHeaders(params.headers);
 

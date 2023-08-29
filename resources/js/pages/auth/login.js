@@ -25,6 +25,7 @@ const activeLoginCharacter = document.querySelector(".login__character.btn-activ
 // Валидация данных
 formInput.forEach((input) => {
 	input.addEventListener("input", () => {
+		// Правила для каждого поля
 		const valid = validate.init([
 			{
 				valid: !validator.isEmpty(activeLoginCharacter.dataset.person, { ignore_whitespace: false }),
@@ -43,11 +44,13 @@ formInput.forEach((input) => {
 			}
 		]);
 
+		// Disabled для кнопки submit
 		if (!valid) formSubmit.setAttribute("disabled", "true");
 		else formSubmit.removeAttribute("disabled");
 	});
 });
 
+// Работа с формой
 loginForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 
@@ -55,17 +58,25 @@ loginForm.addEventListener("submit", (event) => {
 	alert.close();
 
 	const { person } = document.querySelector(".login__character.btn-active").dataset;
+
+	// Конечные данные для отправки (payload)
 	const data = { person };
 
 	// Заносим значения инпутов в data
 	document.querySelectorAll(".form__item").forEach((formItem) => {
+		// Забираем только input-ы
 		formItem.childNodes.forEach((child) => {
 			if (child.nodeName === "INPUT") data[child.dataset.name] = child.value;
 		});
 	});
 
+	const params = {
+		data: JSON.stringify(data),
+		headers: { "Content-Type": "application/json" }
+	};
+
 	// Отправляем данные
-	request.post("/auth/login", { data: JSON.stringify(data), headers: { "Content-Type": "application/json" } })
+	request.post("/auth/login", params)
 		.then((data) => {
 			const { success, person, message } = data;
 
@@ -73,6 +84,7 @@ loginForm.addEventListener("submit", (event) => {
 
 			loader.close();
 
+			// Редирект для конкретной роли
 			switch (person) {
 				case "student":
 					window.location.href = `${utils.getHost()}/home/students/list`;

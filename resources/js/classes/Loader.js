@@ -5,10 +5,16 @@ class Loader {
 		this.loaderElement = document.querySelector(".loader__wrapper");
 	}
 
-	// Показать загрузчик
+	/**
+	 * Показать загрузчик
+	 * @public
+	 */
 	show() { this.loaderElement.style.display = "block"; }
 
-	// Закрыть загрузчик
+	/**
+	 * Закрыть загрузчик
+	 * @public
+	 */
 	close() { this.loaderElement.style.display = "none"; }
 }
 

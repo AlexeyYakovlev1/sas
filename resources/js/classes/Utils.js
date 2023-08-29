@@ -1,15 +1,19 @@
 "use strict";
 
-class Utils {
-	// Получение хоста
-	getHost() {
-		return "http://127.0.0.1:8000";
-	}
+import { CSRF, HOST } from "../data.js";
 
-	// Получение csrf токена
-	getCsrf() {
-		return document.querySelector("meta[name=csrf-token]").content;
-	}
+class Utils {
+	/**
+	 * Получение хоста
+	 * @public
+	 */
+	getHost() { return HOST; };
+
+	/**
+	 * Получение csrf токена
+	 * @public
+	 */
+	getCsrf() { return CSRF; };
 }
 
 export default Utils;

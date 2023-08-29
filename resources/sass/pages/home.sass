@@ -158,6 +158,10 @@
 		max-width: 250px
 		margin: 0 auto
 
+.employees
+	&__card-btn
+		width: auto !important
+
 .students, .employees
 	display: grid
 	grid-template-rows: auto 1fr
@@ -165,7 +169,6 @@
 	&__card
 		&-header
 			display: flex
-			justify-content: space-between
 			flex-wrap: wrap
 			padding: 10px 0
 			gap: 10px
@@ -177,6 +180,7 @@
 			border-bottom: 1px solid $gray
 		&-btn
 			padding: 0 !important
+			width: 19%
 			&.active
 				background-color: $background
 				color: $blue

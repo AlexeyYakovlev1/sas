@@ -5,7 +5,12 @@ class Alert {
 		this.alertElement = document.querySelector(".alert");
 	}
 
-	// Показать оповещение
+	/**
+	 * Показать оповещение
+	 * @param {boolean} success Тип сообщения (успех, ошибка)
+	 * @param {string} message Сообщение
+	 * @public
+	 */
 	show(success, message) {
 		this.close();
 
@@ -21,7 +26,10 @@ class Alert {
 		`;
 	}
 
-	// Закрыть оповещение
+	/**
+	 * Закрыть оповещение
+	 * @public
+	 */
 	close() {
 		this.alertElement.style.display = "none";
 		this.alertElement.className = "alert";

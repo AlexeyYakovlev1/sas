@@ -14,19 +14,33 @@ class Tabs {
 		this.pageUrl = pageUrl;
 	}
 
-	//	Добавляет класс ко всем html элементам (items)
+	/**
+	 * Добавляет класс ко всем html элементам (items)
+	 * @param {HTMLCollection | NodeList} items HTML список элементов, которым нужно добавить класс
+	 * @param {string} cls CSS класс
+	 * @private
+	 */
 	_addClass(items, cls) { items.forEach((item) => item.classList.add(cls)); };
 
-	//	Убирает класс у всех html элементов (items)
+	/**
+	 * Убирает класс у всех html элементов (items)
+	 * @param {HTMLCollection | NodeList} items HTML список элементов, которым нужно убрать класс
+	 * @param {string} cls CSS класс
+	 * @private
+	 */
 	_removeClass(items, cls) { items.forEach((item) => item.classList.remove(cls)); };
 
-	// Получение информации относительно хеша в ссылке
+	/**
+	 * Получение информации относительно хеша в ссылке
+	 * @param {string} hash Хеш с ссылки (#main, #docs, ...)
+	 * @private
+	 */
 	_getContentByHash(hash) {
 		const params = new URLSearchParams(window.location.search);
-		const query = window.location.href // student_id; employee_id, ...
+		const query = window.location.href
 			.split("?")[1]
 			.split("#")[0]
-			.split("=")[0];
+			.split("=")[0]; // student_id; employee_id, ...
 		const id = params.get(query);
 		const obj = {};
 
@@ -37,11 +51,17 @@ class Tabs {
 		return request.get(url, { headers: {} });
 	}
 
-	// При открытии карточки
+	/**
+	 * Срабатывает при открытии карточки
+	 * @param {string} activeClass CSS класс, для кнопок
+	 * @public
+	 */
 	openCard(activeClass = "active") {
-		const hash = window.location.hash.slice(1);
+		const hash = window.location.hash.slice(1); // main, docs, ...
 
+		// Скрываем все блоки с контентом
 		this._addClass(this.contents, "hidden");
+		// Делаем все кнопки неактивными
 		this._removeClass(this.buttons, activeClass);
 
 		// Находим контент, у которого id совпадает с hash
@@ -50,6 +70,7 @@ class Tabs {
 			// У кнопки ищем ссылку, у которой часть href совпадает с hash
 			const link = [...button.childNodes].find(({ nodeName }) => nodeName === "A").href;
 
+			// У ссылки забираем хеш и проверям его с текущим
 			return link.split("#").at(-1) === hash;
 		});
 
@@ -60,7 +81,11 @@ class Tabs {
 		findBtn.classList.add(activeClass);
 	}
 
-	// Показать/Скрыть контент при нажатии на кнопку
+	/**
+	 * Показать/Скрыть контент при нажатии на кнопку
+	 * @param {string} activeClass CSS класс, для кнопок
+	 * @public
+	 */
 	clickButtons(activeClass = "active", callback = function () { }) {
 		this.buttons.forEach((btn) => {
 			btn.addEventListener("click", () => {
@@ -76,7 +101,7 @@ class Tabs {
 					.find(({ nodeName }) => nodeName === "A").href
 					.split("#")
 					.at(-1)
-					.slice(0);
+					.slice(0); // main, docs, ...
 
 				// Получаем данные для конкретного хеша (ссылки #)
 				this._getContentByHash(currentHash)
