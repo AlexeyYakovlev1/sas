@@ -6,10 +6,12 @@ import Utils from "../../classes/Utils";
 import Alert from "../../classes/Alert";
 import validator from "validator";
 import Validate from "../../classes/Validate";
-import {
+import { validation } from "../../data";
+
+const {
 	MIN_LENGTH_LOGIN, MIN_LENGTH_PASSWORD,
 	MAX_LENGTH_LOGIN, MAX_LENGTH_PASSWORD
-} from "../../data";
+} = validation;
 
 const loader = new Loader();
 const request = new Request();

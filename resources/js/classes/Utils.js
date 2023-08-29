@@ -1,6 +1,8 @@
 "use strict";
 
-import { CSRF, HOST } from "../data.js";
+import { general } from "../data.js";
+
+const { HOST, CSRF } = general;
 
 class Utils {
 	/**

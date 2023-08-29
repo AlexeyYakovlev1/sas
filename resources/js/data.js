@@ -1,19 +1,29 @@
-const MAX_LENGTH_PASSWORD = 16;
-const MIN_LENGTH_PASSWORD = 8;
+// General
+const general = {
+	HOST: "http://127.0.0.1:8000",
+	CSRF: document.querySelector("meta[name=csrf-token]").content
+};
+// General end
 
-const MAX_LENGTH_LOGIN = 12;
-const MIN_LENGTH_LOGIN = 8;
+// Validation
+const validation = {
+	MAX_LENGTH_PASSWORD: 16,
+	MIN_LENGTH_PASSWORD: 8,
 
-const HOST = "http://127.0.0.1:8000";
-const CSRF = document.querySelector("meta[name=csrf-token]").content;
+	MAX_LENGTH_LOGIN: 12,
+	MIN_LENGTH_LOGIN: 8,
+
+	MAX_LENGTH_FULLNAME: 50,
+	MIN_LENGTH_FULLNAME: 10,
+
+	MAX_LENGTH_DIVISION: 20,
+	MIN_LENGTH_DIVISION: 2,
+
+	MIN_LENGTH_INPUT_LIST: 10
+};
+// Validation end
 
 export {
-	MAX_LENGTH_LOGIN,
-	MIN_LENGTH_LOGIN,
-
-	MAX_LENGTH_PASSWORD,
-	MIN_LENGTH_PASSWORD,
-
-	HOST,
-	CSRF
+	validation,
+	general
 };

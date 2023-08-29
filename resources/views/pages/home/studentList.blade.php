@@ -108,5 +108,5 @@
 	</div>
 @stop
 @section("scripts")
-
+	@vite(["resources/js/pages/studentList/create.js"])
 @stop

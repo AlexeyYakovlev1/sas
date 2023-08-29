@@ -1,5 +1,6 @@
 @import "./_vars"
 @import "./components/loader.sass"
+@import "./components/scroll.sass"
 
 *, *::after, *::before
 	padding: 0
@@ -12,20 +13,6 @@ body
 	font-family: $fontOpenSans
 	font-weight: 400
 	height: 100vh
-
-::-webkit-scrollbar
-	cursor: grab !important
-	width: 8px
-	background-color: transparent
-
-::-webkit-scrollbar
-	cursor: grab !important
-	background-color: $dark
-
-::-webkit-scrollbar-thumb
-	cursor: grab
-	background-color: $blue
-	border: 6px solid rgba(0, 0, 0, 0)
 
 main, .container
 	min-height: 100vh
@@ -129,6 +116,7 @@ button
 			padding: 10px
 		&.error
 			border-bottom: 1px solid $orange
+			background-color: $dark
 
 .title
 	&__primary
