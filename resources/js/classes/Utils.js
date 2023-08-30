@@ -38,6 +38,7 @@ class Utils {
 	 * @param {HTMLElement} html HTML элемент 
 	 */
 	isHTMLList(html) {
+		// Если html элемент наследуется от коллекции или нод листа
 		return html instanceof HTMLCollection || html instanceof NodeList;
 	}
 

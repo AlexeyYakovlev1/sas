@@ -132,7 +132,13 @@ $employee_id = $employee["id"];
 										Карьерные и экспертные перспективы:
 										<input class="input__primary" type="text" name="careerProspects" />
 									</label>
-									<button class="btn__primary">Прикрепить</button>
+									<button
+										id="description-from-director-submit"
+										class="btn__primary"
+										disabled="true"
+									>
+										Прикрепить
+									</button>
 								</form>
 							</section>
 							<section class="card__content-item hidden" id="results_of_meeting">
@@ -204,6 +210,7 @@ $employee_id = $employee["id"];
 		"resources/js/pages/employees/search.js",
 		"resources/js/pages/employees/renderEmployees.js",
 		"resources/js/pages/employees/tabs.js",
+		"resources/js/pages/employees/descriptionFromDirector.js",
 
 		"resources/js/pages/employees/radioBtn.js",
 		"resources/js/pages/employees/addLine.js"
