@@ -2,33 +2,20 @@
 
 import Request from "./Request";
 import Loader from "./Loader";
+import Utils from "./Utils";
 
 const request = new Request();
 const loader = new Loader();
 
-class Tabs {
+class Tabs extends Utils {
 	constructor(buttonsSelector, contentsSelector, pageUrl) {
+		super();
+
 		this.buttons = document.querySelectorAll(buttonsSelector);
 		this.contents = document.querySelectorAll(contentsSelector);
 		this.contentsSelector = contentsSelector;
 		this.pageUrl = pageUrl;
 	}
-
-	/**
-	 * Добавляет класс ко всем html элементам (items)
-	 * @param {HTMLCollection | NodeList} items HTML список элементов, которым нужно добавить класс
-	 * @param {string} cls CSS класс
-	 * @private
-	 */
-	_addClass(items, cls) { items.forEach((item) => item.classList.add(cls)); };
-
-	/**
-	 * Убирает класс у всех html элементов (items)
-	 * @param {HTMLCollection | NodeList} items HTML список элементов, которым нужно убрать класс
-	 * @param {string} cls CSS класс
-	 * @private
-	 */
-	_removeClass(items, cls) { items.forEach((item) => item.classList.remove(cls)); };
 
 	/**
 	 * Получение информации относительно хеша в ссылке
@@ -46,7 +33,8 @@ class Tabs {
 
 		obj[query] = id;
 
-		const url = `/api/${this.pageUrl}/get_card_info/${hash}?${new URLSearchParams(obj)}`;
+		const finishQuery = new URLSearchParams(obj); // query=id
+		const url = `/api/${this.pageUrl}/get_card_info/${hash}?${finishQuery}`;
 
 		return request.get(url, { headers: {} });
 	}
@@ -60,9 +48,9 @@ class Tabs {
 		const hash = window.location.hash.slice(1); // main, docs, ...
 
 		// Скрываем все блоки с контентом
-		this._addClass(this.contents, "hidden");
+		this.addClass(this.contents, "hidden");
 		// Делаем все кнопки неактивными
-		this._removeClass(this.buttons, activeClass);
+		this.removeClass(this.buttons, activeClass);
 
 		// Находим контент, у которого id совпадает с hash
 		const findContent = [...this.contents].find((content) => content.getAttribute("id") === hash);
@@ -77,8 +65,8 @@ class Tabs {
 		if (!findContent || !findBtn) return;
 
 		// Отрисовываем определенный контент и добавляем activeClass кнопке
-		findContent.classList.remove("hidden");
-		findBtn.classList.add(activeClass);
+		this.removeClass(findContent, "hidden");
+		this.addClass(findBtn, activeClass);
 	}
 
 	/**
@@ -92,10 +80,10 @@ class Tabs {
 				loader.show();
 
 				// Для всего контента добавляем класс hidden, чтобы скрыть его
-				this._addClass(this.contents, "hidden");
+				this.addClass(this.contents, "hidden");
 
 				// У всех кнопок убираем класс active
-				this._removeClass(this.buttons, activeClass);
+				this.removeClass(this.buttons, activeClass);
 
 				const currentHash = [...btn.childNodes]
 					.find(({ nodeName }) => nodeName === "A").href
@@ -114,7 +102,7 @@ class Tabs {
 					});
 
 				// Для текущей кнопки добавляем класс active
-				btn.classList.add(activeClass);
+				this.addClass(btn, activeClass);
 			});
 		});
 	}

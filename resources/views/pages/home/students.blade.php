@@ -246,7 +246,7 @@ $student_id = $student["id"];
 									</div>
 									<div class="card__checkbox">
 										<h4>Чек бокс</h4>
-										<p>Вообще хз что тут должно быть</p>
+										<p>--------</p>
 									</div>
 									<div class="card__checkbox">
 										<h4>Перспективы развития</h4>

@@ -4,10 +4,11 @@ import Request from "./Request";
 import Utils from "./Utils";
 
 const request = new Request();
-const utils = new Utils();
 
-class Modal {
+class Modal extends Utils {
 	constructor() {
+		super();
+
 		this.modalElement = document.querySelector(".modal");
 		this.modalContentElement = document.querySelector(".modal__content");
 	}
@@ -27,13 +28,16 @@ class Modal {
 	 * @public
 	 */
 	close(url) {
-		window.history.replaceState({}, document.title, `${utils.getHost()}${url}`);
+		const repUrl = `${this.getHost()}${url}`;
+
+		window.history.replaceState({}, document.title, repUrl);
+
 		this.modalElement.classList.add("hidden");
 		document.body.style.overflow = "visible";
 	}
 
 	/**
-	 * При клике на контент модального окна не срабатывало закрытие
+	 * При клике на контент модального окна не срабатывает закрытие
 	 * @public
 	 */
 	propagationForContent() {
@@ -54,7 +58,8 @@ class Modal {
 
 		obj[query] = id;
 
-		const urlReq = `/api${url}?${new URLSearchParams(obj)}`;
+		const finishQuery = new URLSearchParams(obj);
+		const urlReq = `/api${url}?${finishQuery}`;
 
 		return request.get(urlReq, { headers });
 	}

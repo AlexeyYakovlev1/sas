@@ -2,12 +2,12 @@
 
 import Utils from "./Utils";
 
-const utils = new Utils();
-
-class Request {
+class Request extends Utils {
 	constructor() {
-		this.host = utils.getHost();
-		this.csrf = utils.getCsrf();
+		super();
+
+		this.host = this.getHost();
+		this.csrf = this.getCsrf();
 	}
 
 	/**
@@ -16,7 +16,7 @@ class Request {
 	 * @private
 	 */
 	_assignHeaders(headers = {}) {
-		return Object.assign(headers || {}, {
+		return Object.assign(headers, {
 			"X-Requested-With": "XMLHttpRequest",
 			"X-CSRF-TOKEN": this.csrf
 		});
@@ -30,8 +30,9 @@ class Request {
 	 */
 	post(url, params) {
 		const allHeaders = this._assignHeaders(params.headers);
+		const finishUrl = `${this.host}${url}`;
 
-		return fetch(`${this.host}${url}`, {
+		return fetch(finishUrl, {
 			method: "POST",
 			headers: allHeaders,
 			body: params.data
@@ -47,8 +48,9 @@ class Request {
 	 */
 	get(url, params) {
 		const allHeaders = this._assignHeaders(params.headers);
+		const finishUrl = `${this.host}${url}`;
 
-		return fetch(`${this.host}${url}`, {
+		return fetch(finishUrl, {
 			method: "GET",
 			headers: allHeaders
 		})
