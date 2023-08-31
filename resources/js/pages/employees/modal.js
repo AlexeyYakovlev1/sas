@@ -4,18 +4,27 @@ import Modal from "../../classes/Modal";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
 import Tabs from "../../classes/Tabs";
+import Utils from "../../classes/Utils";
+
 import { renderModalContent } from "./renderEmployees";
+import { general } from "../../data";
 
 const modal = new Modal();
 const alert = new Alert();
 const loader = new Loader();
 const tabs = new Tabs(".card__header-btn", ".card__content-item");
+const utils = new Utils();
 
+const { DEFAULT_TITLE_OF_EMPLOYEES } = general;
+
+// При открытии модального окна
 const renderDataToCard = (data) => renderModalContent(data);
 
 // Получение информации для карточки
 const getCardData = () => {
-	const content = window.location.href.split("#").at(-1);
+	const content = window.location.href
+		.split("#")
+		.at(-1); // main, docs, ...
 
 	modal.getInformation(`/employees/get_card_info/${content}`, "employee_id")
 		.then((data) => {
@@ -28,6 +37,8 @@ const getCardData = () => {
 			}
 
 			loader.close();
+
+			utils.setTitle(res.employee.id); // Здесь должно быть ФИО
 
 			renderDataToCard(res);
 		})
@@ -49,7 +60,9 @@ const openCard = (employeesListItems, employeeModal) => {
 
 			loader.show();
 
-			window.history.replaceState(null, null, `?employee_id=${id}#description_from_director`);
+			const urlOfQuery = `?employee_id=${id}#description_from_director`;
+
+			window.history.replaceState(null, null, urlOfQuery);
 
 			getCardData();
 
@@ -59,7 +72,10 @@ const openCard = (employeesListItems, employeeModal) => {
 	});
 
 	// При клике на задний фон скрываем окно с информацией
-	employeeModal.addEventListener("click", () => modal.close("/home/employees"));
+	employeeModal.addEventListener("click", () => {
+		modal.close("/home/employees");
+		utils.setTitle(DEFAULT_TITLE_OF_EMPLOYEES);
+	});
 
 	modal.propagationForContent();
 
@@ -69,6 +85,7 @@ const openCard = (employeesListItems, employeeModal) => {
 			event.code === "Escape"
 		) {
 			modal.close("/home/employees");
+			utils.setTitle(DEFAULT_TITLE_OF_EMPLOYEES);
 		}
 	});
 };

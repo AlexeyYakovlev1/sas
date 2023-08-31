@@ -71,6 +71,14 @@ class Utils {
 
 		items.classList.add(cls);
 	};
+
+	/**
+	 * @param {string} title Заголовок для страницы
+	 * @public
+	 */
+	setTitle(title) {
+		document.title = title;
+	}
 }
 
 export default Utils;
