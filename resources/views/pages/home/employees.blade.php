@@ -152,7 +152,7 @@ $employee_id = $employee["id"];
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
+											<tr class="new-row results-of-meeting">
 												<td>
 													<input type="text" name="meetingResult" contenteditable="true">
 												</td>
@@ -211,8 +211,6 @@ $employee_id = $employee["id"];
 		"resources/js/pages/employees/renderEmployees.js",
 		"resources/js/pages/employees/tabs.js",
 		"resources/js/pages/employees/descriptionFromDirector.js",
-
-		"resources/js/pages/employees/radioBtn.js",
 		"resources/js/pages/employees/addLine.js"
 	])
 @stop

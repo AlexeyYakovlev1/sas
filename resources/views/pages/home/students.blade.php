@@ -529,7 +529,7 @@ $student_id = $student["id"];
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
+												<tr class="new-row sport-achivments">
 													<td><input type="text"></td>
 													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
 												</tr>
@@ -550,7 +550,7 @@ $student_id = $student["id"];
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
+												<tr class="new-row creative-skills">
 													<td><input type="text"></td>
 													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
 												</tr>
@@ -575,7 +575,7 @@ $student_id = $student["id"];
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
+												<tr class="new-row achivments-company">
 													<td><input type="text"></td>
 													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
 												</tr>
@@ -600,7 +600,7 @@ $student_id = $student["id"];
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
+												<tr class="new-row volunteering">
 													<td><input type="text"></td>
 													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
 												</tr>

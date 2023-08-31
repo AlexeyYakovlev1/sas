@@ -32,8 +32,6 @@ function renderModalContent(data) {
 	// contentParent.innerHTML = `
 	// 	<p>${data.data.description}</p>
 	// `;
-
-	alert.show(true, `Рендер информации с сервера о студенте ${data.student.id}`);
 }
 
 export { renderModalContent };

@@ -1,44 +1,25 @@
 "use strict";
 
-import Alert from "../../classes/Alert";
+import Table from "../../classes/Table";
 
-const alert = new Alert();
+const table = new Table(
+	".card__content-meetingResult-addBtn",
+	".card__content-meetingResult-delBtn",
+	".card__content-meetingResult-sheet"
+);
+const identClsMeeting = "results-of-meeting";
 
-const meetingAddBtn = document.querySelector('.card__content-meetingResult-addBtn');
-const meetingDelBtn = document.querySelector('.card__content-meetingResult-delBtn');
-const meetingTable = { obj: document.querySelector('.card__content-meetingResult-sheet'), count: 0 };
-
-meetingAddBtn.addEventListener('click', () => {
-	createLine(meetingTable.obj);
-	meetingTable.count++;
-});
-meetingDelBtn.addEventListener('click', () => {
-	try {
-		deleteLine(meetingTable.obj);
-		meetingTable.count--;
-	} catch (error) {
-		alert.show(false, "Вы удалили все строчки");
-	}
-});
-
-function createLine(sheet) {
-	const line = document.createElement('tr');
-
-	for (let i = 0; i < 3; i++) {
-		const column = document.createElement('td');
-		const input = document.createElement('input');
-
-		input.type = 'text';
-		input.contentEditable = true;
-		input.name = 'meetingResult';
-
-		column.appendChild(input);
-		line.appendChild(column);
-	}
-
-	sheet.lastElementChild.appendChild(line);
-}
-
-function deleteLine(sheet) {
-	sheet.lastElementChild.lastElementChild.remove();
-}
+table.add(`
+	<tr class="new-row ${identClsMeeting}">
+		<td>
+			<input type="text" contenteditable="true" name="meetingResult">
+		</td>
+		<td>
+			<input type="text" contenteditable="true" name="meetingResult">
+		</td>
+		<td>
+			<input type="text" contenteditable="true" name="meetingResult">
+		</td>
+	</tr>
+`, identClsMeeting);
+table.remove(identClsMeeting);

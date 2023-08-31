@@ -1,94 +1,91 @@
 "use strict";
 
-import Alert from "../../classes/Alert";
+import Table from "../../classes/Table";
 
-const alert = new Alert();
+// Спортивные достижения
+const identClsSport = "sport-achivments";
+const tableForSportAchivments = new Table(
+	".card__mode-achivments-addBtn",
+	".card__mode-achivments-delBtn",
+	".card__mode-achivments-sheet"
+);
 
-const achivAddBtn = document.querySelector('.card__mode-achivments-addBtn');
-const achivDelBtn = document.querySelector('.card__mode-achivments-delBtn')
-const achivTable = { obj: document.querySelector('.card__mode-achivments-sheet'), count: 1 };
-const abilitiesAddBtn = document.querySelector('.card__mode-abilities-addBtn');
-const abilitiesDelBtn = document.querySelector('.card__mode-abilities-delBtn');
-const abilitiesTable = { obj: document.querySelector('.card__mode-abilities-sheet'), count: 1 };
-const compAchivAddBtn = document.querySelector('.card__achivments-company-addBtn');
-const compAchivDelBtn = document.querySelector('.card__achivments-company-delBtn');
-const compAchivTable = { obj: document.querySelector('.card__achivments-company-sheet'), count: 1 };
-const volunAddBtn = document.querySelector('.card__volunteering-company-addBtn');
-const volunDelBtn = document.querySelector('.card__volunteering-company-delBtn');
-const volunTable = { obj: document.querySelector('.card__volunteering-company-sheet'), count: 1 };
+const htmlRowSport = `
+	<tr class="new-row ${identClsSport}">
+		<td>
+			<input type="text">
+		</td>
+		<td>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</td>
+	</tr>
+`;
 
-// achivAddBtn.addEventListener('click', () => {
-// 	createLine(achivTable.obj);
-// 	achivTable.count++;
-// });
-achivDelBtn.addEventListener('click', () => {
-	try {
-		deleteLine(achivTable.obj);
-		achivTable.count--;
-	} catch (error) {
-		alert.show(false, 'Вы удалили все строчки');
-	}
-});
-abilitiesAddBtn.addEventListener('click', () => {
-	createLine(abilitiesTable.obj)
-	abilitiesTable.count++
-});
-abilitiesDelBtn.addEventListener('click', () => {
-	try {
-		deleteLine(abilitiesTable.obj);
-		abilitiesTable.count--;
-	} catch (error) {
-		alert.show(false, 'Вы удалили все строчки');
-	}
+tableForSportAchivments.add(htmlRowSport, identClsSport);
+tableForSportAchivments.remove(identClsSport);
 
-});
-compAchivAddBtn.addEventListener('click', () => {
-	createLine(compAchivTable.obj);
-	compAchivTable.count++;
-});
-compAchivDelBtn.addEventListener('click', () => {
-	try {
-		deleteLine(compAchivTable.obj);
-		compAchivTable.count--;
-	} catch (error) {
-		alert.show(false, 'Вы удалили все строчки');
-	}
-});
-volunAddBtn.addEventListener('click', () => {
-	createLine(volunTable.obj);
-	volunTable.count++;
-});
-volunDelBtn.addEventListener('click', () => {
-	try {
-		deleteLine(volunTable.obj);
-		volunTable.count--;
-	} catch (error) {
-		alert.show(false, 'Вы удалили все строчки');
-	}
-});
+// Творческие способности
+const identClsCreative = "creative-skills";
+const tableForCreativeSkills = new Table(
+	".card__mode-abilities-addBtn",
+	".card__mode-abilities-delBtn",
+	".card__mode-abilities-sheet"
+);
 
+const htmlRowCreative = `
+	<tr class="new-row ${identClsCreative}">
+		<td>
+			<input type="text">
+		</td>
+		<td>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</td>
+	</tr>
+`;
 
-function createLine(sheet) {
-	const line = document.createElement('tr');
-	const column1 = document.createElement('td');
-	const column2 = document.createElement('td');
-	const input = document.createElement('input');
-	const txtArea = document.createElement('textarea');
+tableForCreativeSkills.add(htmlRowCreative, identClsCreative);
+tableForCreativeSkills.remove(identClsCreative);
 
-	input.type = 'text';
-	txtArea.cols = '30';
-	txtArea.rows = '10';
+// В рамках корпорации
+const identClsCompany = "achivments-company";
+const tableForcardAchivmentsCompany = new Table(
+	".card__achivments-company-addBtn",
+	".card__achivments-company-delBtn",
+	".card__achivments-company-sheet"
+);
 
-	column1.appendChild(input);
-	column2.appendChild(txtArea);
-	line.appendChild(column1);
-	line.appendChild(column2);
+const htmlRowCompany = `
+	<tr class="new-row ${identClsCompany}">
+		<td>
+			<input type="text">
+		</td>
+		<td>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</td>
+	</tr>
+`;
 
-	sheet.lastElementChild.appendChild(line);
-}
+tableForcardAchivmentsCompany.add(htmlRowCompany, identClsCompany);
+tableForcardAchivmentsCompany.remove(identClsCompany);
 
+// Участие во внеучебной деятельности
+const identClsVolunteering = "volunteering";
+const tableForcardVolunteering = new Table(
+	".card__volunteering-company-addBtn",
+	".card__volunteering-company-delBtn",
+	".card__volunteering-company-sheet"
+);
 
+const htmlRowVolunteering = `
+	<tr class="new-row ${identClsVolunteering}">
+		<td>
+			<input type="text">
+		</td>
+		<td>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</td>
+	</tr>
+`;
 
-function deleteLine(sheet) {
-	sheet.lastElementChild.lastElementChild.remove();
-}
+tableForcardVolunteering.add(htmlRowVolunteering, identClsVolunteering);
+tableForcardVolunteering.remove(identClsVolunteering);

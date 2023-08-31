@@ -33,8 +33,6 @@ function renderModalContent(data) {
 	// contentParent.innerHTML = `
 	// 	<p>${data.data.description}</p>
 	// `;
-
-	alert.show(true, `Рендер информации с сервера о сотруднике ${data.employee.id}`);
 }
 
 export { renderModalContent };
