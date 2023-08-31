@@ -1,14 +1,16 @@
 import Request from "../../classes/Request";
 import Alert from "../../classes/Alert";
 import Loader from "../../classes/Loader";
+import Utils from "../../classes/Utils";
+
 import { openCard, getCardData } from "./modal";
-import checkQuery from "../../scripts/checkQuery";
 
 const request = new Request();
 const alert = new Alert();
 const loader = new Loader();
+const utils = new Utils();
 
-checkQuery("employee_id");
+utils.checkQuery("employee_id");
 
 window.addEventListener("DOMContentLoaded", () => {
 	const employeesListItems = document.querySelectorAll(".employees__list li");

@@ -78,6 +78,18 @@ class Utils {
 	 */
 	setTitle(title) {
 		document.title = title;
+	};
+
+	/**
+	 * Проверка query для модальных окон (чтобы убрать скролл)
+	 * @param {string} query Параметр, который нужно получить из ссылки
+	   * @public
+	 */
+	checkQuery(query) {
+		const urlParams = new URLSearchParams(window.location.search);
+		const q = urlParams.get(query);
+
+		if (q) document.body.style.overflow = "hidden";
 	}
 }
 
