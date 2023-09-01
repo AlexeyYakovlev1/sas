@@ -1,8 +1,12 @@
 "use strict";
 
 import Alert from "./Alert";
+import Request from "./Request";
+import Loader from "./Loader";
 
 const alert = new Alert();
+const request = new Request();
+const loader = new Loader();
 
 class Table {
 	constructor(btnAddSelector, btnDeleteSelector, tableSelector) {
@@ -58,6 +62,63 @@ class Table {
 			}
 
 			newRows[newRows.length - 1].remove();
+
+			// Обращение к серверу для удаления столбца
+			// ...
+		});
+	}
+
+	/**
+	 * Получение данных из таблицы
+	 * @param {string} inputSelector Селектор для input-ов таблицы
+	 * @private
+	 */
+	_getData(inputSelector) {
+		const res = {};
+
+		const thead = this.table.firstElementChild;
+		const tds = thead.querySelectorAll("td");
+
+		tds.forEach((td) => {
+			res[td.className] = [...this.table.querySelectorAll(`${inputSelector}.${td.className}`)]
+				.map((item) => item.value);
+		});
+
+		return res;
+	}
+
+	/**
+	 * Отправка данных с таблицы
+	 * @param {HTMLElement} submit HTML кнопка  
+	 * @param {string} tableName Название таблицы
+	 * @param {string} inputSelector Селектор для input-ов
+	 * @param {string} columnSelector Селектор для колонок таблицы
+	 * @param {Function} callback Функция, которая выполнится при отправке запроса
+	 * @public
+	 */
+	submitData(submit, tableName, inputSelector, callback) {
+		submit.addEventListener("click", () => {
+			loader.show();
+
+			const finishUrl = `/api/students${tableName}/update`;
+			const params = {
+				data: JSON.stringify(this._getData(inputSelector)),
+				headers: { "Content-Type": "application/json" }
+			};
+
+			request.post(finishUrl, params)
+				.then((dataFromServ) => {
+					const { success, message } = dataFromServ;
+
+					if (message) alert.show(success, message);
+					if (!success) {
+						loader.close();
+						return;
+					}
+
+					callback(dataFromServ);
+					loader.close();
+				});
 		});
 	}
 }

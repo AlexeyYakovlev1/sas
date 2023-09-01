@@ -103,4 +103,36 @@ class StudentsController extends Controller
 			200
 		)->header("Content-Type", "application/json");
 	}
+
+	public function update_table(Request $request, string $table)
+	{
+		// Ищем нужную таблицу, с которой в дальнейшем будем работать
+		$find_table = ["name" => $table, "id" => 21];
+		$data = $request->all();
+
+		return response(
+			[
+				"success" => true,
+				"message" => "Данные добавлены",
+				"data" => $data,
+				"table" => $find_table
+			]
+		)
+			->header("Content-Type", "application/json");
+	}
+
+	public function get_table(Request $request, string $table)
+	{
+		$find_table = ["name" => $table, "id" => 341];
+		$data = $request->all();
+
+		return response(
+			[
+				"success" => true,
+				"data" => $data,
+				"table" => $find_table
+			]
+		)
+			->header("Content-Type", "application/json");
+	}
 }

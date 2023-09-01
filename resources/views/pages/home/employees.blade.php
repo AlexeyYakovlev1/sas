@@ -142,37 +142,65 @@ $employee_id = $employee["id"];
 								</form>
 							</section>
 							<section class="card__content-item hidden" id="results_of_meeting">
-								<form action="" class='card__content-meetingResult-form'>
+								<div class='card__content-meetingResult-form'>
 									<table class='card__content-meetingResult-sheet'>
 										<thead>
 											<tr>
-												<td>Выполнено:</td>
-												<td>В работе:</td>
-												<td>Процесс реализации не запущен:</td>
+												<td class="done">Выполнено:</td>
+												<td class="in_work">В работе:</td>
+												<td class="implementation_process_not_started">Процесс реализации не запущен:</td>
 											</tr>
 										</thead>
 										<tbody>
 											<tr class="new-row results-of-meeting">
 												<td>
-													<input type="text" name="meetingResult" contenteditable="true">
+													<input
+														class="card__content-meetingResult-input done"
+														type="text"
+														name="meetingResult"
+													>
 												</td>
 												<td>
-													<input type="text" name="meetingResult" contenteditable="true">
+													<input
+														class="card__content-meetingResult-input in_work"
+														type="text"
+														name="meetingResult"
+													>
 												</td>
 												<td>
-													<input type="text" name="meetingResult" contenteditable="true">
+													<input
+														class="card__content-meetingResult-input implementation_process_not_started"
+														type="text"
+														name="meetingResult"
+													>
 												</td>
 											</tr>
 										</tbody>
 									</table>
 									<div class="card__content-meetingResult-btns">
-										<button type="submit" id="meetingResult-saveBtn" class='card__content-meetingResult-btn btn__primary'>Готово</button>
+										<button
+											id="meetingResult-saveBtn"
+											class='card__content-meetingResult-btn btn__primary'
+										>
+											Готово
+										</button>
 										<div>
-											<button type="button" id="meetingResult-addBtn" class='card__content-meetingResult-addBtn btn__primary'>Добавить строку</button>
-											<button type="button" class="card__content-meetingResult-delBtn btn__primary red">Удалить строку</button>
+											<button
+												type="button"
+												id="meetingResult-addBtn"
+												class='card__content-meetingResult-addBtn btn__primary'
+											>
+												Добавить строку
+											</button>
+											<button
+												type="button"
+												class="card__content-meetingResult-delBtn btn__primary red"
+											>
+												Удалить строку
+											</button>
 										</div>
 									</div>
-								</form>
+								</div>
 							</section>
 							<section class="card__content-item hidden" id="results_of_prev_meeting">
 								<table class='card__feedback-sheet'>
@@ -211,6 +239,6 @@ $employee_id = $employee["id"];
 		"resources/js/pages/employees/renderEmployees.js",
 		"resources/js/pages/employees/tabs.js",
 		"resources/js/pages/employees/descriptionFromDirector.js",
-		"resources/js/pages/employees/addLine.js"
+		"resources/js/pages/employees/tables.js"
 	])
 @stop

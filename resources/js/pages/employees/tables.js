@@ -23,3 +23,12 @@ table.add(`
 	</tr>
 `, identClsMeeting);
 table.remove(identClsMeeting);
+table.submitData(
+	document.querySelector("#meetingResult-saveBtn"),
+	"/results_of_meeting",
+	".card__content-meetingResult-input",
+	(data) => {
+		console.log(data);
+		// Обработка ответа...
+	}
+);

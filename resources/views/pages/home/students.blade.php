@@ -524,17 +524,22 @@ $student_id = $student["id"];
 										<table class='card__mode-achivments-sheet'>
 											<thead>
 												<tr>
-													<td>Название мероприятия</td>
-													<td>Результат</td>
+													<td class="name-event">Название мероприятия</td>
+													<td class="result">Результат</td>
 												</tr>
 											</thead>
 											<tbody>
 												<tr class="new-row sport-achivments">
-													<td><input type="text"></td>
-													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+													<td>
+														<input class="sport-achivments__input name-event" type="text">
+													</td>
+													<td>
+														<textarea class="sport-achivments__input result" name="" id="" cols="30" rows="10"></textarea>
+													</td>
 												</tr>
 											</tbody>
 										</table>
+										<button class="btn__primary table-submit sport-achivments__submit">Сохранить</button>
 									</div>
 									<div class="card__mode-abilities">
 										<div class="card__mode-abilities-header">
@@ -545,17 +550,22 @@ $student_id = $student["id"];
 										<table class='card__mode-abilities-sheet'>
 											<thead>
 												<tr>
-													<td>Навыки на момент поступления</td>
-													<td>Развитие на программе</td>
+													<td class="skills">Навыки на момент поступления</td>
+													<td class="development">Развитие на программе</td>
 												</tr>
 											</thead>
 											<tbody>
 												<tr class="new-row creative-skills">
-													<td><input type="text"></td>
-													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+													<td>
+														<input class="creative-skills__input skills" type="text">
+													</td>
+													<td>
+														<textarea class="creative-skills__input development" name="" id="" cols="30" rows="10"></textarea>
+													</td>
 												</tr>
 											</tbody>
 										</table>
+										<button class="btn__primary table-submit creative-skills__submit">Сохранить</button>
 									</div>
 								</div>
 							</section>
@@ -570,17 +580,22 @@ $student_id = $student["id"];
 										<table class='card__achivments-company-sheet'>
 											<thead>
 												<tr>
-													<td>Название</td>
-													<td>Описание</td>
+													<td class="name">Название</td>
+													<td class="description">Описание</td>
 												</tr>
 											</thead>
 											<tbody>
 												<tr class="new-row achivments-company">
-													<td><input type="text"></td>
-													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+													<td>
+														<input class="achivments-company__input name" type="text">
+													</td>
+													<td>
+														<textarea class="achivments-company__input description" id="" cols="30" rows="10"></textarea>
+													</td>
 												</tr>
 											</tbody>
 										</table>
+										<button class="btn__primary table-submit achivments-company__submit">Сохранить</button>
 									</div>
 								</div>
 							</section>
@@ -595,17 +610,22 @@ $student_id = $student["id"];
 										<table class='card__volunteering-company-sheet'>
 											<thead>
 												<tr>
-													<td>Название</td>
-													<td>Описание</td>
+													<td class="name">Название</td>
+													<td class="description">Описание</td>
 												</tr>
 											</thead>
 											<tbody>
 												<tr class="new-row volunteering">
-													<td><input type="text"></td>
-													<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+													<td>
+														<input class="volunteering__input name" type="text">
+													</td>
+													<td>
+														<textarea class="volunteering__input description" name="" cols="30" rows="10"></textarea>
+													</td>
 												</tr>
 											</tbody>
 										</table>
+										<button class="btn__primary table-submit volunteering__submit">Сохранить</button>
 									</div>
 								</div>
 							</section>
@@ -621,9 +641,8 @@ $student_id = $student["id"];
 	@vite([
 		"resources/js/pages/students/filter.js",
 		"resources/js/pages/students/renderStudents.js",
-		
 		"resources/js/pages/students/search.js",
 		"resources/js/pages/students/pointsForCard.js",
-		"resources/js/pages/students/Line.js"
+		"resources/js/pages/students/tables.js"
 	])
 @stop

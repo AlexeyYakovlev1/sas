@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use ReallySimpleJWT\Token;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -17,6 +16,8 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
+		$roles = explode(";", $role);
+		
 		if (!array_key_exists("token", $_COOKIE))
 		{
 			return response(
@@ -46,7 +47,7 @@ class CheckRole
 		
 		$payload = Token::getPayload($token);
 
-		if ($payload["person"] !== $role)
+		if (!in_array($payload["person"], $roles))
 		{
 			return response(
 				[
