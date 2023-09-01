@@ -92,7 +92,6 @@ class Table {
 	 * @param {HTMLElement} submit HTML кнопка  
 	 * @param {string} tableName Название таблицы
 	 * @param {string} inputSelector Селектор для input-ов
-	 * @param {string} columnSelector Селектор для колонок таблицы
 	 * @param {Function} callback Функция, которая выполнится при отправке запроса
 	 * @public
 	 */
