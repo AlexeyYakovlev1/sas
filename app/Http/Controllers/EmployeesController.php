@@ -28,7 +28,7 @@ class EmployeesController extends Controller
 	public function card_info(Request $request, string $content)
 	{
 		$employee_id = $request->employee_id;
-		$find_employee = ["id" => $employee_id];
+		$find_employee = ["id" => $employee_id, "full_name" => "Ковальчук Дмитрий Николаевич"];
 		
 		if (!isset($content) || !$content)
 		{

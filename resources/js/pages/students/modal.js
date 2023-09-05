@@ -38,7 +38,7 @@ const getCardData = () => {
 
 			loader.close();
 
-			utils.setTitle(res.student.id); // Здесь должно быть ФИО
+			utils.setTitle(res.student.full_name);
 
 			renderDataToCard(res);
 		})

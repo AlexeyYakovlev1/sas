@@ -1,12 +1,7 @@
-import Request from "../../classes/Request";
-import Alert from "../../classes/Alert";
-import Loader from "../../classes/Loader";
-import { openCard, getCardData } from "./modal";
 import Utils from "../../classes/Utils";
 
-const request = new Request();
-const alert = new Alert();
-const loader = new Loader();
+import { openCard, getCardData } from "./modal";
+
 const utils = new Utils();
 
 utils.checkQuery("student_id");

@@ -53,7 +53,7 @@ class StudentsController extends Controller
 	public function card_info(Request $request, string $content)
 	{
 		$student_id = $request->student_id;
-		$find_student = ["id" => $student_id];
+		$find_student = ["id" => $student_id, "full_name" => "Ковальчук Дмитрий Николаевич"];
 
 		if (!isset($content) || !$content)
 		{
