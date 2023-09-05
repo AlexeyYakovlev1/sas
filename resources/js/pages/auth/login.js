@@ -57,7 +57,6 @@ loginForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 
 	loader.show();
-	alert.close();
 
 	const { person } = document.querySelector(".login__character.btn-active").dataset;
 

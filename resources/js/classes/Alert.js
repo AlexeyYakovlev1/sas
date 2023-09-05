@@ -24,6 +24,9 @@ class Alert {
 			<span class="alert__status">${success ? "Успех:" : "Ошибка:"}</span>
 			${message}
 		`;
+
+		// После показа закрываем через определенное кол-во времени
+		this._closeThroughTime();
 	}
 
 	/**
@@ -36,6 +39,15 @@ class Alert {
 
 		document.querySelector(".alert__description").innerHTML = "";
 		document.querySelectorAll(".alert__img").forEach((img) => img.classList.add("hidden"));
+	}
+
+	/**
+	 * Закрыть через 10 сек
+	 * @param {number} time Время, через которое закроется оповещение
+	 * @private
+	 */
+	_closeThroughTime(time = 10000) {
+		setTimeout(() => { this.close(); }, time);
 	}
 }
 
