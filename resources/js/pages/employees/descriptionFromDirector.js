@@ -1,3 +1,5 @@
+"use strict";
+
 import Validate from "../../classes/Validate";
 
 import validator from "validator";

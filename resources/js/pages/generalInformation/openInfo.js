@@ -100,7 +100,7 @@ const openInfo = (informationListHeader, informationListContent, informationList
 									</tr>
 								</tbody>
 							</table>
-						`;
+							`;
 
 							header.dataset.open = "true";
 

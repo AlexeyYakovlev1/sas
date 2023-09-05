@@ -1,8 +1,5 @@
 "use strict";
 
-import Request from "../../classes/Request";
-import Loader from "../../classes/Loader";
-import Alert from "../../classes/Alert";
 import Validate from "../../classes/Validate";
 import Utils from "../../classes/Utils";
 
@@ -20,9 +17,6 @@ const {
 
 } = validation;
 
-const request = new Request();
-const loader = new Loader();
-const alert = new Alert();
 const utils = new Utils();
 
 const validate = new Validate(".input__primary");

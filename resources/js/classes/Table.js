@@ -62,9 +62,6 @@ class Table {
 			}
 
 			newRows[newRows.length - 1].remove();
-
-			// Обращение к серверу для удаления столбца
-			// ...
 		});
 	}
 

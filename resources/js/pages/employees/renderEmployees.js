@@ -1,13 +1,9 @@
-import Request from "../../classes/Request";
-import Alert from "../../classes/Alert";
-import Loader from "../../classes/Loader";
+"use strict";
+
 import Utils from "../../classes/Utils";
 
 import { openCard, getCardData } from "./modal";
 
-const request = new Request();
-const alert = new Alert();
-const loader = new Loader();
 const utils = new Utils();
 
 utils.checkQuery("employee_id");

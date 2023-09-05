@@ -1,3 +1,5 @@
+"use strict";
+
 import Utils from "../../classes/Utils";
 
 import { openCard, getCardData } from "./modal";
