@@ -63,6 +63,11 @@ studentsFiltersForm.addEventListener("submit", (event) => {
 			valid: validator.isNumeric(yearOfAdmission) && +yearOfAdmission === Math.abs(yearOfAdmission),
 			message: "Год поступления должен содержать только положительные числа",
 			name: "yearOfAdmission"
+		},
+		{
+			valid: document.querySelector(".input__primary[name=yearOfAdmission]").value.length === 4,
+			message: "Год поступления невалиден",
+			name: "yearOfAdmission"
 		}
 	]);
 
