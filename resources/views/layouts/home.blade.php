@@ -35,6 +35,11 @@
 
 	<main class="home">
 		<div class="container">
+			<button class="menu-mobile__btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 			<aside class="home__sections">
 				<nav class="home__nav">
 					<ul class="home__nav-list">
@@ -93,6 +98,9 @@
 	</main>
 
 	@yield("scripts")
-	@vite(["resources/js/scripts/closeAlert.js"])
+	@vite([
+		"resources/js/scripts/closeAlert.js",
+		"resources/js/scripts/menuMobile.js"
+	])
 </body>
 </html>
