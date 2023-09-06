@@ -1,9 +1,18 @@
 "use strict";
 
 import Validate from "../../classes/Validate";
+import Request from "../../classes/Request";
+import Alert from "../../classes/Alert";
+import Loader from "../../classes/Loader";
+import Utils from "../../classes/Utils";
 
 import validator from "validator";
 import { validation } from "../../data";
+
+const request = new Request();
+const alert = new Alert();
+const loader = new Loader();
+const utils = new Utils();
 
 const validate = new Validate(".input__primary");
 const {
@@ -116,7 +125,36 @@ inputs.forEach((input) => {
 directorForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 
-	const fd = new FormData(directorForm);
+	loader.show();
 
-	console.log(fd);
+	const urlParams = new URLSearchParams(window.location.search);
+	const employeeId = urlParams.get("employee_id");
+	const data = utils.getDataFromForm("label input.input__primary");
+
+	data["departament"] = document.querySelector("select[name=departament]").value;
+
+	const params = {
+		headers: { "Content-Type": "application/json" },
+		data: JSON.stringify(data)
+	};
+
+	request.post(`/api/employees/${employeeId}/description_from_director`, params)
+		.then((data) => {
+			const { success, message, data: dataFromServer } = data;
+
+			if (message) alert.show(success, message);
+			if (!success) {
+				loader.close();
+				return;
+			}
+
+			console.log(data);
+
+			loader.close();
+		})
+		.catch((error) => {
+			loader.close();
+			alert.show(error.message || "Ошибка сервера");
+			throw new Error(error);
+		});
 });

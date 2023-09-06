@@ -34,6 +34,8 @@ Route::prefix("/api")->group(function() {
 		->middleware("check_role:director");
 	Route::get("/employees/get_employees", [EmployeesController::class, "employees_info"]
 		)->middleware("check_role:director");
+	Route::post("/employees/{employee_id}/description_from_director", [EmployeesController::class, "description_from_director"])
+		->middleware("check_role:director");
 
 	// General information
 	Route::get("/general_information/get_docs", [GeneralInformationController::class, "docs_info"])
