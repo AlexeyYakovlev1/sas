@@ -1,0 +1,29 @@
+@import "../../_vars.sass"
+
+.info
+	margin-top: 82px
+	&__header
+		display: grid
+		grid-template-columns: auto minmax(auto, 163px)
+		align-items: center
+		justify-content: space-between
+	&__list
+		margin-top: 52px
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(164px, 1fr))
+		gap: 31px 25px
+		& li
+			flex-basis: 164px
+			& p
+				margin-top: 7px
+				text-align: center
+				& a
+					text-decoration: underline
+	&__file
+		background-color: $lightGray
+		padding: 37px 51px
+		border-radius: 15.3px
+		display: block
+		display: flex
+		align-items: center
+		justify-content: center

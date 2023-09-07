@@ -1,0 +1,32 @@
+@import "../../_vars.sass"
+
+.students
+	margin-top: 120px
+	&__header
+		margin-top: 35px
+		display: grid
+		grid-template-columns: 1fr minmax(auto, 127px) minmax(auto, 257px)
+		justify-content: space-between
+		align-items: center
+		gap: 0 22px
+		&-filter
+			position: relative
+	&__list
+		margin-top: 66px
+		& li
+			width: 100%
+			background-color: $lightGray
+			padding: 18px 32px
+			font-weight: 400
+			font-size: 26px
+			color: $black
+			&:nth-child(2n)
+				background-color: $white
+	&__find-btn
+		font-size: 22px !important
+		padding: 15px 30px !important
+
+.btn__filter
+	display: flex
+	align-items: center
+	justify-content: space-between

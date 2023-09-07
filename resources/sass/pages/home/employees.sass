@@ -1,0 +1,22 @@
+@import "../../_vars.sass"
+
+.employees
+	margin-top: 82px
+	&__header
+		margin-top: 34px
+		display: grid
+		grid-template-columns: 1fr minmax(auto, 127px)
+		gap: 0 22px
+	&__search-btn
+		font-size: 22px !important
+		padding: 16px 32px !important
+	&__list
+		margin-top: 66px
+		& li
+			padding: 18px 32px
+			background-color: $lightGray
+			font-size: 26px
+			font-weight: 400
+			color: $black
+			&:nth-child(2n)
+				background-color: $white

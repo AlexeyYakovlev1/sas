@@ -1,0 +1,16 @@
+@import "../_vars.sass"
+
+.header
+	&.home
+		background-color: $red
+		-webkit-box-shadow: 0px 4px 8px 0px rgba($black, 0.08)
+		-moz-box-shadow: 0px 4px 8px 0px rgba($black, 0.08)
+		box-shadow: 0px 4px 8px 0px rgba($black, 0.08)
+		& .container
+			padding: 20px 44px
+			display: grid
+			align-items: center
+			justify-content: space-between
+			grid-template-columns: 1fr minmax(auto, 172px)
+	&.auth
+		padding: 30px 0

@@ -1,0 +1,47 @@
+@import "../../_vars.sass"
+
+.student
+	margin-top: 82px
+	&__form
+		margin-top: 86.9px
+		display: flex
+		flex-direction: column
+		gap: 60px 0
+		list-style-type: decimal !important
+		justify-content: center
+		width: 100%
+		& label
+			color: $black
+			font-size: 31px
+			font-weight: 600
+			display: flex
+			gap: 0 10px
+			position: relative
+			& ul
+				display: flex
+				flex-wrap: wrap
+				max-width: 290px
+				gap: 23px
+				& li
+					cursor: pointer
+					padding: 8px 19px
+					background-color: #F2F2F2
+					border-radius: 10px
+					color: $black
+					font-weight: 400
+					&.active
+						background-color: $gray
+		&-submit
+			max-width: 295px
+			margin-top: 60px
+		&-footer
+			width: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+
+.input-info
+	display: flex
+	flex-direction: column
+	gap: 25px 0
+	width: 100%

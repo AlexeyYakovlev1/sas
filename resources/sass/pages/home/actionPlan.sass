@@ -1,0 +1,55 @@
+@import "../../_vars.sass"
+
+.plan
+	margin-top: 124px
+	&__header
+		&-down
+			margin-top: 20px
+			display: flex
+			align-items: center
+			gap: 0 48px
+			&-text
+				font-weight: 400
+				font-size: 25px
+				color: $black
+			& select
+				font-size: 19px
+				color: $black
+	&__list
+		margin-top: 51px
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(440px, 1fr))
+		align-items: center
+		gap: 51px
+		& li
+			border: 1px solid $black
+			border-radius: 10px
+	&__item
+		&-header
+			display: flex
+			align-items: center
+			justify-content: space-between
+			color: $white
+			background-color: $red
+			padding: 12px 20px
+			border-radius: 10px 10px 0 0
+			border: 1px solid $red
+		&-title
+			font-size: 27px
+			font-weight: 700
+		&-date
+			font-size: 20px
+			font-weight: 700
+		&-body
+			padding: 13px 19px
+			display: flex
+			flex-direction: column
+			gap: 8px 0
+		&-description
+			font-size: 21px
+			color: $black
+			font-weight: 600
+		&-location
+			font-size: 12px
+			color: $black
+			font-weight: 600
