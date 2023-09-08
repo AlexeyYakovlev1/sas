@@ -20,7 +20,8 @@
 		"resources/sass/pages/home/generalInformation.sass",
 		"resources/sass/pages/home/actionPlan.sass",
 		"resources/sass/pages/home/movementsStudents.sass",
-		"resources/sass/pages/home/students.sass"
+		"resources/sass/pages/home/students.sass",
+		"resources/sass/components/list.sass"
 	])
 @stop
 @section("content")
@@ -231,64 +232,70 @@
 		</table>
 	</section>
 	<section class="students" id="students">
-		<h2 class="title__section">Студенты</h2>
 		<div class="students__header">
-			<input
-				type="text"
-				class="input__primary"
-				placeholder="Поиск студента..."
-			/>
-			<button class="btn__primary red students__find-btn">Поиск</button>
-			<div class="students__header-filter">
-				<button class="btn__primary btn__filter">
-					Фильтровать
-					<img class="btn__filter-arrow" src="/images/arrow.svg" alt="Стрелка">
-				</button>
-				<x-studentFilter />
+			<div class="students__header-top">
+				<h2 class="title__section">Студенты</h2>
+				<button class="btn__primary hidden">Смотреть список</button>
+			</div>
+			<div class="students__header-down">
+				<input
+					type="text"
+					class="input__primary"
+					placeholder="Поиск студента..."
+				/>
+				<button class="btn__primary red students__find-btn">Поиск</button>
+				<div class="students__header-filter">
+					<button class="btn__primary btn__filter">
+						Фильтровать
+						<img class="btn__filter-arrow" src="/images/arrow.svg" alt="Стрелка">
+					</button>
+					<x-studentFilter />
+				</div>
 			</div>
 		</div>
+		<x-student />
 		<ul class="students__list">
-			<li>
-				<a href="#">Аксенова Варвара Вадимовна</a>
+			<li data-student-id="1">
+				<a href="/home/students/1">Аксенова Варвара Вадимовна</a>
 			</li>
-			<li>
-				<a href="#">Алексеева Алиса Артёмовна</a>
+			<li data-student-id="2">
+				<a href="/home/students/2">Алексеева Алиса Артёмовна</a>
 			</li>
-			<li>
-				<a href="#">Беликов Максим Степанович</a>
+			<li data-student-id="3">
+				<a href="/home/students/3">Беликов Максим Степанович</a>
 			</li>
-			<li>
-				<a href="#">Березин Иван Александрович</a>
+			<li data-student-id="4">
+				<a href="/home/students/4">Березин Иван Александрович</a>
 			</li>
-			<li>
-				<a href="#">Бирюков Егор Александрович</a>
+			<li data-student-id="5">
+				<a href="/home/students/5">Бирюков Егор Александрович</a>
 			</li>
-			<li>
-				<a href="#">Волкова Полина Семёновна</a>
+			<li data-student-id="6">
+				<a href="/home/students/6">Волкова Полина Семёновна</a>
 			</li>
-			<li>
-				<a href="#">Греков Даниил Максимович</a>
+			<li data-student-id="7">
+				<a href="/home/students/7">Греков Даниил Максимович</a>
 			</li>
-			<li>
-				<a href="#">Дегтярева Полина Максимовна</a>
+			<li data-student-id="8">
+				<a href="/home/students/8">Дегтярева Полина Максимовна</a>
 			</li>
-			<li>
-				<a href="#">Ермилова Милана Мироновна</a>
+			<li data-student-id="9">
+				<a href="/home/students/9">Ермилова Милана Мироновна</a>
 			</li>
-			<li>
-				<a href="#">Жданова Ева Романовна</a>
+			<li data-student-id="10">
+				<a href="/home/students/10">Жданова Ева Романовна</a>
 			</li>
-			<li>
-				<a href="#">Захаров Андрей Георгиевич</a>
+			<li data-student-id="11">
+				<a href="/home/students/11">Захаров Андрей Георгиевич</a>
 			</li>
-			<li>
-				<a href="#">Иванова Елизавета Руслановна</a>
+			<li data-student-id="12">
+				<a href="/home/students/12">Иванова Елизавета Руслановна</a>
 			</li>
-			<li>
-				<a href="#">Карпов Сергей Павлович</a>
+			<li data-student-id="13">
+				<a href="/home/students/13">Карпов Сергей Павлович</a>
 			</li>
-			<li>
-				<a href="#">Лебедев Егор Николаевич</a>
+			<li data-student-id="14">
+				<a href="/home/students/14">Лебедев Егор Николаевич</a>
 			</li>
 		</ul>
 	</section>

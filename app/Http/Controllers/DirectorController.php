@@ -10,4 +10,9 @@ class DirectorController extends Controller
 	{
 		return view("pages.home.director.employees");
 	}
+
+	public function view_description_from_director(Request $request)
+	{
+		return view("pages.home.director.description");
+	}
 }

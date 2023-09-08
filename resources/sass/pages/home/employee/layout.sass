@@ -1,0 +1,27 @@
+@import "../../../_vars.sass"
+
+.employee
+	margin-top: 82px
+	&__header
+		&-nav ul
+			padding: 17px 40px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			& li
+				padding-bottom: 7px
+				font-size: 23px
+				font-weight: 700
+				color: $black
+				position: relative
+				&.active
+					&::after
+						position: absolute
+						content: ""
+						width: 106px
+						height: 2.45px
+						background-color: $red
+						bottom: -7.45px
+						left: 50%
+						right: 50%
+						transform: translate(-50%, -50%)

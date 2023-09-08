@@ -1,0 +1,108 @@
+@import "../_vars.sass"
+
+.list
+	margin-top: 82px
+	&__content
+		background-color: $white
+		padding: 10px
+		margin-top: 20px
+		display: flex
+		flex-direction: column
+		gap: 100px 0
+		&-title
+			font-weight: 700
+			font-size: 39px
+			color: $black
+			text-align: left
+		&-top
+			display: grid
+			grid-template-columns: minmax(auto, 575px) auto
+			gap: 0 12px
+			align-items: flex-start
+		&-left
+			display: grid
+			grid-template-columns: minmax(auto, 159px) 1fr
+			gap: 0 22px
+			&-name
+				font-size: 31px
+				font-weight: 700
+				color: $black
+			&-info
+				display: flex
+				flex-direction: column
+				gap: 10px 0
+				& ul
+					display: flex
+					flex-direction: column
+					gap: 15px 0
+					& li
+						display: flex
+						flex-wrap: wrap
+						align-items: center
+						gap: 0 5px
+						font-size: 23px
+						&.row
+							flex-direction: column
+							align-items: unset
+							gap: 5px 0
+		&-right
+			margin-top: 50px
+			& ul
+				display: flex
+				flex-direction: column
+				gap: 15px 0
+				& li
+					display: flex
+					flex-wrap: wrap
+					align-items: center
+					gap: 0 5px
+					font-size: 23px
+					&.row
+						flex-direction: column
+						align-items: unset
+						gap: 5px 0
+
+		&-feedback
+			margin-top: 40px
+			text-decoration: none
+			border-collapse: collapse
+			width: 100%
+			text-align: center
+			background-color: white
+			&-table
+				margin-top: 57px
+			& th
+				font-weight: normal
+				font-size: 14px
+				color: #ffffff
+				background-color: #354251
+			& td
+				font-size: 13px
+				color: #354251
+			& td, & th
+				white-space: pre-wrap
+				padding: 10px 5px
+				line-height: 13px
+				vertical-align: middle
+				border: 1px solid $gray
+			& tr:hover
+				background-color: #f9fafb
+			& tr:hover td
+				color: #354251
+				cursor: default
+		&-list
+			display: flex
+			flex-direction: column
+			gap: 60px 0
+			margin-top: 50px
+			& li
+				display: flex
+				flex-direction: column
+				gap: 25px 0
+				font-size: 30px
+				& span
+					background-color: #F2F2F2
+					border-radius: 10px
+					font-weight: 400
+					font-size: 30px
+					padding: 7px 16px

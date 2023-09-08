@@ -4,16 +4,25 @@
 	margin-top: 120px
 	&__header
 		margin-top: 35px
-		display: grid
-		grid-template-columns: 1fr minmax(auto, 127px) minmax(auto, 257px)
-		justify-content: space-between
-		align-items: center
-		gap: 0 22px
+		&-top
+			display: grid
+			grid-template-columns: auto minmax(auto, 168px)
+			& .btn__primary
+				font-size: 16px
+				font-weight: 400
+				padding: 6px 20px
+		&-down
+			margin-top: 34px
+			display: grid
+			grid-template-columns: 1fr minmax(auto, 127px) minmax(auto, 257px)
+			justify-content: space-between
+			align-items: center
+			gap: 0 22px
 		&-filter
 			position: relative
 	&__list
 		margin-top: 66px
-		& li
+		& li[data-student-id]
 			width: 100%
 			background-color: $lightGray
 			padding: 18px 32px

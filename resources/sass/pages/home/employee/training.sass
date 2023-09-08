@@ -1,0 +1,55 @@
+@import "../../../_vars.sass"
+
+.training
+	margin-top: 57px
+	&__table
+		margin-top: 60px
+		& th
+			font-weight: normal
+			font-size: 14px
+			color: #ffffff
+			background-color: #354251
+		& td
+			font-size: 13px
+			color: #354251
+		& td, & th
+			white-space: pre-wrap
+			padding: 10px 5px
+			line-height: 13px
+			vertical-align: middle
+			border: 1px solid $gray
+		& tr:hover
+			background-color: #f9fafb
+		& tr:hover td
+			color: #354251
+			cursor: default
+	&__diploma
+		margin-top: 80px
+		&-header
+			display: grid
+			grid-template-columns: auto minmax(auto, 166px)
+			justify-content: space-between
+			align-items: center
+		&-title
+			font-size: 39px
+			font-weight: 700
+			color: $black
+		&-list
+			margin-top: 56px
+			display: grid
+			grid-template-columns: repeat(auto-fill, minmax(auto, 168px))
+			gap: 30px 25px
+			&-item
+				&-top
+					display: block
+					background-color: $lightGray
+					border-radius: 13.5px
+					padding: 38px 52px
+				& a
+					display: block
+					font-size: 18px
+					font-weight: 400
+					color: $black
+					text-decoration: underline
+					text-align: center
+					margin-top: 7px

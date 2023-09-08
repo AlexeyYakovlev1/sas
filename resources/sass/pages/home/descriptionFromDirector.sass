@@ -1,0 +1,99 @@
+@import "../../_vars.sass"
+
+.description
+	margin-top: 82px
+	& .title__section
+		font-size: 55px
+	&__form
+		margin-top: 71px
+		display: flex
+		flex-direction: column
+		gap: 60px 0
+		list-style-type: decimal !important
+		justify-content: center
+		width: 100%
+		& label
+			color: $black
+			font-size: 31px
+			font-weight: 600
+			display: flex
+			gap: 0 10px
+			position: relative
+			& ul
+				display: flex
+				flex-wrap: wrap
+				max-width: 290px
+				gap: 23px
+				& li
+					cursor: pointer
+					padding: 8px 19px
+					background-color: #F2F2F2
+					border-radius: 10px
+					color: $black
+					font-weight: 400
+					&.active
+						background-color: $gray
+		&-submit
+			max-width: 295px
+			margin-top: 60px
+		&-footer
+			width: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+	&__section
+		margin-top: 100px
+		&-title
+			font-size: 39px
+			font-weight: 700
+			color: $black
+
+.meetingIsDone__wrapper
+	color: $black
+	font-size: 29px
+	font-weight: 700
+	display: flex
+	align-items: center
+	gap: 0 27px
+	margin-top: 60px
+
+.meeting__submit
+	&-wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+	&-btn
+		margin: 0 auto
+		margin-top: 52px
+		font-size: 25px
+		padding: 16px !important
+		max-width: 295px
+
+.meeting__table, .meeting-prev__table, .prospects__table
+	margin-top: 52px
+	& th
+		font-weight: normal
+		font-size: 14px
+		color: #ffffff
+		background-color: #354251
+	& td
+		font-size: 13px
+		color: #354251
+	& td, & th
+		white-space: pre-wrap
+		padding: 10px 5px
+		line-height: 13px
+		vertical-align: middle
+		border: 1px solid $gray
+	& tr:hover
+		background-color: #f9fafb
+	& tr:hover td
+		color: #354251
+		cursor: default
+
+.input-info
+	display: flex
+	flex-direction: column
+	gap: 25px 0
+	width: 100%
