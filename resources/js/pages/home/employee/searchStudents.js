@@ -1,5 +1,7 @@
 "use strict";
 
+import openCard from "../../../scripts/openCard.js";
+
 const studentsSearch = document.querySelector("#students-search");
 const studentsFindBtn = document.querySelector(".students__find-btn");
 const studentInformation = document.querySelector("#student-information");
@@ -28,7 +30,15 @@ function fetchStudentsList() {
 studentsFindBtn.addEventListener("click", () => {
 	if (studentsSearch.value === "") {
 		studentInformation.classList.add("hidden");
+
 		fetchStudentsList();
+
+		openCard(
+			document.querySelectorAll(".students__list li"),
+			"students",
+			"student-id",
+			"main"
+		);
 
 		return;
 	}
