@@ -29,6 +29,7 @@
 			font-weight: 400
 			font-size: 26px
 			color: $black
+			cursor: pointer
 			&:nth-child(2n)
 				background-color: $white
 	&__find-btn
@@ -39,3 +40,8 @@
 	display: flex
 	align-items: center
 	justify-content: space-between
+	& img
+		transition: .2s ease
+	&.rotate-img img
+		&.btn__filter-arrow
+			transform: rotate(180deg)

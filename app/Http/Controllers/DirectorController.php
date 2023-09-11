@@ -11,8 +11,10 @@ class DirectorController extends Controller
 		return view("pages.home.director.employees");
 	}
 
-	public function view_description_from_director(Request $request)
+	public function view_description_from_director(Request $request, string $id)
 	{
+		$find_employee = ["id" => $id];
+		
 		return view("pages.home.director.description");
 	}
 }

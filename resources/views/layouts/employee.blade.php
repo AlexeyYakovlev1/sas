@@ -18,7 +18,7 @@ $current_page = end($link_array);
 
 	@include("../includes/csrf")
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial/home/employee-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@yield("title")</title>
 	
@@ -35,19 +35,19 @@ $current_page = end($link_array);
 			<nav class="employee__header-nav">
 				<ul>
 					<li class="<?php if ($current_page === "main") echo "active" ?>">
-						<a href="/home/employee/1/main">Основное</a>
+						<a href="/home/students/1/main">Основное</a>
 					</li>
 					<li class="<?php if ($current_page === "certification") echo "active" ?>">
-						<a href="/home/employee/1/certification">Аттестация</a>
+						<a href="/home/students/1/certification">Аттестация</a>
 					</li>
 					<li class="<?php if ($current_page === "docs") echo "active" ?>">
-						<a href="/home/employee/1/docs">Документы</a>
+						<a href="/home/students/1/docs">Документы</a>
 					</li>
 					<li class="<?php if ($current_page === "mode_services") echo "active" ?>">
-						<a href="/home/employee/1/mode_services">Служба режима</a>
+						<a href="/home/students/1/mode_services">Служба режима</a>
 					</li>
 					<li class="<?php if ($current_page === "training") echo "active" ?>">
-						<a href="/home/employee/1/training">Обучение</a>
+						<a href="/home/students/1/training">Обучение</a>
 					</li>
 				</ul>
 			</nav>

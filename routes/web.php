@@ -17,13 +17,16 @@ Route::prefix("/home")->group(function() {
 	Route::get("/student_list", [StudentController::class, "view_student_list"]);
 	Route::get("/general_information", [EmployeeController::class, "view_general_information"]);
 	Route::get("/employees", [DirectorController::class, "view_employees"]);
-	Route::get("/description_from_director", [DirectorController::class, "view_description_from_director"]);
 
-	Route::prefix("/employee/{id}")->group(function() {
-		Route::get("/main", [EmployeeController::class, "view_employee_main"]);
-		Route::get("/certification", [EmployeeController::class, "view_employee_certification"]);
-		Route::get("/docs", [EmployeeController::class, "view_employee_docs"]);
-		Route::get("/mode_services", [EmployeeController::class, "view_employee_mode_services"]);
-		Route::get("/training", [EmployeeController::class, "view_employee_training"]);
+	Route::prefix("employees/{id}")->group(function() {
+		Route::get("/description_from_director", [DirectorController::class, "view_description_from_director"]);
+	});
+
+	Route::prefix("/students/{id}")->group(function() {
+		Route::get("/main", [StudentController::class, "view_employee_main"]);
+		Route::get("/certification", [StudentController::class, "view_employee_certification"]);
+		Route::get("/docs", [StudentController::class, "view_employee_docs"]);
+		Route::get("/mode_services", [StudentController::class, "view_employee_mode_services"]);
+		Route::get("/training", [StudentController::class, "view_employee_training"]);
 	});
 });

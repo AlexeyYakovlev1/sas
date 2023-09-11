@@ -239,6 +239,7 @@
 			</div>
 			<div class="students__header-down">
 				<input
+					id="students-search"
 					type="text"
 					class="input__primary"
 					placeholder="Поиск студента..."
@@ -253,51 +254,32 @@
 				</div>
 			</div>
 		</div>
-		<x-student />
+		<div id="student-information" class="hidden">
+			<x-student />
+		</div>
 		<ul class="students__list">
-			<li data-student-id="1">
-				<a href="/home/students/1">Аксенова Варвара Вадимовна</a>
-			</li>
-			<li data-student-id="2">
-				<a href="/home/students/2">Алексеева Алиса Артёмовна</a>
-			</li>
-			<li data-student-id="3">
-				<a href="/home/students/3">Беликов Максим Степанович</a>
-			</li>
-			<li data-student-id="4">
-				<a href="/home/students/4">Березин Иван Александрович</a>
-			</li>
-			<li data-student-id="5">
-				<a href="/home/students/5">Бирюков Егор Александрович</a>
-			</li>
-			<li data-student-id="6">
-				<a href="/home/students/6">Волкова Полина Семёновна</a>
-			</li>
-			<li data-student-id="7">
-				<a href="/home/students/7">Греков Даниил Максимович</a>
-			</li>
-			<li data-student-id="8">
-				<a href="/home/students/8">Дегтярева Полина Максимовна</a>
-			</li>
-			<li data-student-id="9">
-				<a href="/home/students/9">Ермилова Милана Мироновна</a>
-			</li>
-			<li data-student-id="10">
-				<a href="/home/students/10">Жданова Ева Романовна</a>
-			</li>
-			<li data-student-id="11">
-				<a href="/home/students/11">Захаров Андрей Георгиевич</a>
-			</li>
-			<li data-student-id="12">
-				<a href="/home/students/12">Иванова Елизавета Руслановна</a>
-			</li>
-			<li data-student-id="13">
-				<a href="/home/students/13">Карпов Сергей Павлович</a>
-			</li>
-			<li data-student-id="14">
-				<a href="/home/students/14">Лебедев Егор Николаевич</a>
-			</li>
+			<li data-student-id="1">Аксенова Варвара Вадимовна</li>
+			<li data-student-id="2">Алексеева Алиса Артёмовна</li>
+			<li data-student-id="3">Беликов Максим Степанович</li>
+			<li data-student-id="4">Березин Иван Александрович</li>
+			<li data-student-id="5">Бирюков Егор Александрович</li>
+			<li data-student-id="6">Волкова Полина Семёновна</li>
+			<li data-student-id="7">Греков Даниил Максимович</li>
+			<li data-student-id="8">Дегтярева Полина Максимовна</li>
+			<li data-student-id="9">Ермилова Милана Мироновна</li>
+			<li data-student-id="10">Жданова Ева Романовна</li>
+			<li data-student-id="11">Захаров Андрей Георгиевич</li>
+			<li data-student-id="12">Иванова Елизавета Руслановна</li>
+			<li data-student-id="13">Карпов Сергей Павлович</li>
+			<li data-student-id="14">Лебедев Егор Николаевич</li>
 		</ul>
 	</section>
 </article>
+@stop
+@section("scripts")
+@vite([
+	"resources/js/pages/home/employee/filterStudents.js",
+	"resources/js/pages/home/employee/searchStudents.js",
+	"resources/js/pages/home/employee/cardStudents.js"
+])
 @stop
