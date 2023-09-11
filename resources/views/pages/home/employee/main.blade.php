@@ -235,7 +235,7 @@
 		<div class="students__header">
 			<div class="students__header-top">
 				<h2 class="title__section">Студенты</h2>
-				<button class="btn__primary hidden">Смотреть список</button>
+				<button class="btn__primary hidden" id="view-all-btn">Смотреть список</button>
 			</div>
 			<div class="students__header-down">
 				<input
@@ -279,7 +279,6 @@
 @section("scripts")
 @vite([
 	"resources/js/pages/home/employee/filterStudents.js",
-	"resources/js/pages/home/employee/searchStudents.js",
-	"resources/js/pages/home/employee/cardStudents.js"
+	"resources/js/pages/home/employee/searchStudents.js"
 ])
 @stop

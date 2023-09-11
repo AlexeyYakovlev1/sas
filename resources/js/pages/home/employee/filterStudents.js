@@ -1,10 +1,24 @@
 "use strict";
 
+import openCard from "../../../scripts/openCard.js";
+
 const btnFilter = document.querySelector(".btn__filter");
 const filter = document.querySelector(".filter");
 const filterItemLi = document.querySelectorAll(".filter__item li");
 const filterItemStatus = document.querySelectorAll(".filter__item#status span")
 const filterItems = document.querySelectorAll(".filter__item");
+const viewAllBtn = document.querySelector("#view-all-btn");
+const studentInformation = document.querySelector("#student-information");
+const studentsList = document.querySelector(".students__list");
+const students = document.querySelectorAll(".students__list li");
+const studentsSearch = document.querySelector("#students-search");
+
+openCard(
+	students,
+	"students",
+	"studentId",
+	"main"
+);
 
 btnFilter.addEventListener("click", (event) => {
 	event.stopPropagation();
@@ -85,21 +99,52 @@ filterItems.forEach((item) => {
 		if (allowedNamesForChange.includes(child.nodeName)) {
 			child.addEventListener("change", () => {
 				dataFromFilter[child.getAttribute("name")] = child.value;
-				fetchDataFilter(dataFromFilter);
+				viewAllBtn.classList.remove("hidden");
 			});
 		} else {
 			child.addEventListener("click", () => {
 				dataFromFilter[child.dataset.name] = child.dataset.id;
-				fetchDataFilter(dataFromFilter);
+				viewAllBtn.classList.remove("hidden");
 			});
 		}
 	});
 });
+
+viewAllBtn.addEventListener("click", () => { fetchDataFilter(dataFromFilter); });
 
 /**
  * Отправка данных из фильтра на сервер и обработка ответа от него
  * @param {Object} data данные из фильтра
  */
 function fetchDataFilter(data) {
+	studentInformation.classList.add("hidden");
+	studentsList.classList.remove("hidden");
+	studentsSearch.value = "";
+
+	// Работа с сервером...
+	studentsList.innerHTML = `
+		<li data-student-id="1">Аксенова Варвара Вадимовна</li>
+		<li data-student-id="2">Алексеева Алиса Артёмовна</li>
+		<li data-student-id="3">Беликов Максим Степанович</li>
+		<li data-student-id="4">Березин Иван Александрович</li>
+		<li data-student-id="5">Бирюков Егор Александрович</li>
+		<li data-student-id="6">Волкова Полина Семёновна</li>
+		<li data-student-id="7">Греков Даниил Максимович</li>
+		<li data-student-id="8">Дегтярева Полина Максимовна</li>
+		<li data-student-id="9">Ермилова Милана Мироновна</li>
+		<li data-student-id="10">Жданова Ева Романовна</li>
+		<li data-student-id="11">Захаров Андрей Георгиевич</li>
+		<li data-student-id="12">Иванова Елизавета Руслановна</li>
+		<li data-student-id="13">Карпов Сергей Павлович</li>
+		<li data-student-id="14">Лебедев Егор Николаевич</li>
+	`;
+
+	openCard(
+		document.querySelectorAll(".students__list li"),
+		"students",
+		"studentId",
+		"main"
+	);
+
 	console.log(data);
 }
