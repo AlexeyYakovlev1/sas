@@ -244,7 +244,7 @@
 					class="input__primary"
 					placeholder="Поиск студента..."
 				/>
-				<button class="btn__primary red students__find-btn">Поиск</button>
+				<button class="btn__primary red students__find-btn small">Поиск</button>
 				<div class="students__header-filter">
 					<button class="btn__primary btn__filter">
 						Фильтровать

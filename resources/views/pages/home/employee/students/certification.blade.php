@@ -3,7 +3,7 @@
 	Аттестация
 @stop
 @section("styles")
-	@vite(["resources/sass/pages/home/employee/certification.sass"])
+	@vite(["resources/sass/pages/home/students/certification.sass"])
 @stop
 @section("content")
 <section class="certification">

@@ -4,7 +4,7 @@
 @stop
 @section("styles")
 	@vite([
-		"resources/sass/pages/home/employee/mode_services.sass"
+		"resources/sass/pages/home/students/mode_services.sass"
 	])
 @stop
 @section("content")

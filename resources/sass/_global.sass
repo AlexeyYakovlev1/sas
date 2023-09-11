@@ -12,7 +12,7 @@
 	outline: none
 
 body
-	font-family: $fontProxima
+	font-family: $fontProximaRegular
 
 html, body
 	height: 100%
@@ -28,6 +28,13 @@ textarea
 table
 	width: 100%
 
+select
+	font-size: 19px
+	color: $black
+	padding: 10px 12px
+	border-radius: 10px
+	border: none
+
 .hidden
 	display: none
 
@@ -38,12 +45,34 @@ table
 	&.content
 		max-width: 1029px
 
+input[type="checkbox"]
+	border: 2px solid $red
+	-moz-appearance: none
+	-webkit-appearance: none
+	-o-appearance: none
+	width: 13px
+	height: 13px
+	border-radius: 2px
+	background: none
+	position: relative
+	&:checked
+		background-color: $red
+		&::before
+			position: absolute
+			content: "✔"
+			color: $lightGray
+			left: 50%
+			top: 50%
+			-webkit-transform: translate(-50%,-50%)
+			-moz-transform: translate(-50%,-50%)
+			-ms-transform: translate(-50%,-50%)
+			transform: translate(-50%,-50%)
+
 .btn
 	&__primary
 		color: $black
 		border: .8px solid $black
-		font-family: $fontProxima
-		font-weight: 600
+		font-family: $fontProximaBold
 		background: none
 		border-radius: 8.05px
 		padding: 20px
@@ -59,7 +88,10 @@ table
 			background-color: $red
 			border-color: $red
 			color: $white
-			font-weight: 700
+			font-family: $fontProximaBold
+			font-size: 25px
+		&.small
+			padding: 16px
 			font-size: 25px
 
 .input
@@ -70,7 +102,7 @@ table
 		width: 100%
 		font-size: 17.53px
 		&::placeholder
-			font-weight: 600
+			font-family: $fontProximaSemibold
 			color: #B5BBC2
 		&.gray
 			border: none
@@ -85,8 +117,7 @@ table
 
 .title
 	&__section
-		font-weight: 600
+		font-family: $fontProximaSemibold
 		font-size: 57px
 		color: $black
 		max-width: 912px
-		// text-shadow: 0px 4px 4px rgb($black, 0.25)

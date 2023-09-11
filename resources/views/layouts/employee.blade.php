@@ -24,7 +24,7 @@ $current_page = end($link_array);
 	
 	@yield("styles")
 	@vite([
-		"resources/sass/pages/home/employee/layout.sass",
+		"resources/sass/pages/home/students/layout.sass",
 		"resources/sass/_global.sass"
 	])
 </head>

@@ -158,7 +158,7 @@
 			</label>
 			<div class="description__form-footer">
 				<button
-					class="btn__primary red description__form-submit"
+					class="btn__primary red description__form-submit small"
 					type="submit"
 				>
 					Отправить
@@ -194,7 +194,7 @@
 				</tbody>
 			</table>
 			<div class="meeting__submit-wrapper">
-				<button class="btn__primary red meeting__submit-btn">Сохранить</button>
+				<button class="btn__primary red meeting__submit-btn small">Сохранить</button>
 			</div>
 		</section>
 		<section class="meeting-prev description__section" id="resultsOfMeetingPrev">

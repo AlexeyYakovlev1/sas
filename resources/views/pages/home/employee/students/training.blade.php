@@ -3,7 +3,7 @@
 	Обучение
 @stop
 @section("styles")
-	@vite(["resources/sass/pages/home/employee/training.sass"])
+	@vite(["resources/sass/pages/home/students/training.sass"])
 @stop
 @section("content")
 <section class="training">
