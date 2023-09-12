@@ -1,6 +1,9 @@
 "use strict";
 
 import openCard from "../../../scripts/openCard.js";
+import Utils from "../../../classes/Utils.js";
+
+const utils = new Utils();
 
 const btnFilter = document.querySelector(".btn__filter");
 const filter = document.querySelector(".filter");
@@ -30,8 +33,10 @@ btnFilter.addEventListener("click", (event) => {
 filter.addEventListener("click", (event) => event.stopPropagation());
 
 window.addEventListener("click", () => {
-	filter.classList.add("hidden");
-	btnFilter.classList.remove("rotate-img");
+	if (filter.classList.contains("hidden")) return;
+
+	utils.addClass(filter, "hidden");
+	utils.removeClass(btnFilter, "rotate-img");
 });
 
 /**
@@ -42,9 +47,8 @@ window.addEventListener("click", () => {
 function setActive(list, cssCls = "active") {
 	list.forEach((item) => {
 		item.addEventListener("click", () => {
-			list.forEach((el) => el.classList.remove(cssCls));
-
-			item.classList.add(cssCls);
+			utils.removeClass(list, cssCls);
+			utils.addClass(item, cssCls);
 		});
 	});
 }
@@ -99,12 +103,12 @@ filterItems.forEach((item) => {
 		if (allowedNamesForChange.includes(child.nodeName)) {
 			child.addEventListener("change", () => {
 				dataFromFilter[child.getAttribute("name")] = child.value;
-				viewAllBtn.classList.remove("hidden");
+				utils.removeClass(viewAllBtn, "hidden");
 			});
 		} else {
 			child.addEventListener("click", () => {
 				dataFromFilter[child.dataset.name] = child.dataset.id;
-				viewAllBtn.classList.remove("hidden");
+				utils.removeClass(viewAllBtn, "hidden");
 			});
 		}
 	});
@@ -112,7 +116,7 @@ filterItems.forEach((item) => {
 
 viewAllBtn.addEventListener("click", () => {
 	fetchDataFilter(dataFromFilter);
-	viewAllBtn.classList.add("hidden");
+	utils.addClass(viewAllBtn, "hidden");
 });
 
 /**
@@ -120,8 +124,9 @@ viewAllBtn.addEventListener("click", () => {
  * @param {Object} data данные из фильтра
  */
 function fetchDataFilter(data) {
-	studentInformation.classList.add("hidden");
-	studentsList.classList.remove("hidden");
+	utils.addClass(studentInformation, "hidden");
+	utils.removeClass(studentsList, "hidden");
+
 	studentsSearch.value = "";
 
 	// Работа с сервером...

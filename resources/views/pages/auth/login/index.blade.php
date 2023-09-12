@@ -21,12 +21,12 @@
 			</small>
 		</li>
 		<li class="authorization__list-item">
-			<button class="btn__primary">
+			<button class="btn__primary small">
 				<a href="/auth/login/student">Студент</a>
 			</button>
 		</li>
 		<li class="authorization__list-item">
-			<button class="btn__primary">
+			<button class="btn__primary small">
 				<a href="/auth/login/director">Руководитель</a>
 			</button>
 		</li>

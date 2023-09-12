@@ -1,6 +1,9 @@
 "use strict";
 
 import openCard from "../../../scripts/openCard.js";
+import Utils from "../../../classes/Utils.js";
+
+const utils = new Utils();
 
 const studentsSearch = document.querySelector("#students-search");
 const studentsFindBtn = document.querySelector(".students__find-btn");
@@ -29,7 +32,7 @@ function fetchStudentsList() {
 
 studentsFindBtn.addEventListener("click", () => {
 	if (studentsSearch.value === "") {
-		studentInformation.classList.add("hidden");
+		utils.addClass(studentInformation, "hidden");
 
 		fetchStudentsList();
 
@@ -45,7 +48,7 @@ studentsFindBtn.addEventListener("click", () => {
 
 	if (studentsSearch.value.length <= 3) return;
 
-	studentInformation.classList.remove("hidden");
+	utils.removeClass(studentInformation, "hidden");
 	studentsList.innerHTML = "";
 
 	console.log(`Search student by name ${studentsSearch.value}`);

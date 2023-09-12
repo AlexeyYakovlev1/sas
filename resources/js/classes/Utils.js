@@ -18,6 +18,15 @@ class Utils {
 	getCsrf() { return CSRF; };
 
 	/**
+	 * Проверка на HTMLCollection, NodeList
+	 * @param {HTMLElement} html HTML элемент 
+	 */
+	isHTMLList(html) {
+		// Если html элемент наследуется от коллекции или нод листа
+		return html instanceof HTMLCollection || html instanceof NodeList;
+	}
+
+	/**
 	 * Добавляет класс ко всем html элементам (items)
 	 * @param {HTMLCollection | NodeList} items HTML список элементов, которым нужно добавить класс
 	 * @param {string} cls CSS класс
@@ -44,7 +53,7 @@ class Utils {
 			return;
 		}
 
-		items.classList.add(cls);
+		items.classList.remove(cls);
 	};
 
 	/**

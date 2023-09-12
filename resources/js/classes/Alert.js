@@ -1,5 +1,9 @@
 "use strict";
 
+import Utils from "./Utils.js";
+
+const utils = new Utils();
+
 class Alert {
 	constructor() {
 		this.alertElement = document.querySelector(".alert");
@@ -19,7 +23,8 @@ class Alert {
 
 		const imgClass = success ? "success" : "error";
 
-		document.querySelector(`.alert__${imgClass}-img`).classList.remove("hidden");
+		utils.removeClass(document.querySelector(`.alert__${imgClass}-img`), "hidden");
+
 		document.querySelector(".alert__description").innerHTML = `
 			<span class="alert__status">${success ? "Успех:" : "Ошибка:"}</span>
 			${message}
@@ -38,7 +43,7 @@ class Alert {
 		this.alertElement.className = "alert";
 
 		document.querySelector(".alert__description").innerHTML = "";
-		document.querySelectorAll(".alert__img").forEach((img) => img.classList.add("hidden"));
+		utils.addClass(document.querySelectorAll(".alert__img"), "hidden");
 	}
 
 	/**
