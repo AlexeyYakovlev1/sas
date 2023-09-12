@@ -10,6 +10,65 @@
 	$student_lose_csv = file_get_contents('https://docs.google.com/spreadsheets/d/'.$student_lose_id.'/export?format=csv&gid='.$student_lose_gid);
 	$student_lose_csv = explode("\r\n", $student_lose_csv);
 	$student_lose_array = array_map('str_getcsv', $student_lose_csv);
+
+	$students = [
+		[
+			"id" => 1,
+			"name" => "Аксенова Варвара Вадимовна"
+		],
+		[
+			"id" => 2,
+			"name" => "Алексеева Алиса Артёмовна"
+		],
+		[
+			"id" => 3,
+			"name" => "Беликов Максим Степанович"
+		],
+		[
+			"id" => 4,
+			"name" => "Березин Иван Александрович"
+		],
+		[
+			"id" => 5,
+			"name" => "Бирюков Егор Александрович"
+		],
+		[
+			"id" => 6,
+			"name" => "Волкова Полина Семёновна"
+		],
+		[
+			"id" => 7,
+			"name" => "Греков Даниил Максимович"
+		],
+		[
+			"id" => 8,
+			"name" => "Дегтярева Полина Максимовна"
+		],
+		[
+			"id" => 9,
+			"name" => "Ермилова Милана Мироновна"
+		],
+		[
+			"id" => 10,
+			"name" => "Жданова Ева Романовна"
+		],
+		[
+			"id" => 11,
+			"name" => "Захаров Андрей Георгиевич"
+		],
+		[
+			"id" => 12,
+			"name" => "Иванова Елизавета Руслановна"
+		],
+		[
+			"id" => 13,
+			"name" => "Карпов Сергей Павлович"
+		],
+		[
+			"id" => 14,
+			"name" => "Лебедев Егор Николаевич"
+		]
+	];
 ?>
 @extends("layouts.main")
 @section("title")
@@ -258,20 +317,15 @@
 			<x-student />
 		</div>
 		<ul class="students__list">
-			<li data-student-id="1">Аксенова Варвара Вадимовна</li>
-			<li data-student-id="2">Алексеева Алиса Артёмовна</li>
-			<li data-student-id="3">Беликов Максим Степанович</li>
-			<li data-student-id="4">Березин Иван Александрович</li>
-			<li data-student-id="5">Бирюков Егор Александрович</li>
-			<li data-student-id="6">Волкова Полина Семёновна</li>
-			<li data-student-id="7">Греков Даниил Максимович</li>
-			<li data-student-id="8">Дегтярева Полина Максимовна</li>
-			<li data-student-id="9">Ермилова Милана Мироновна</li>
-			<li data-student-id="10">Жданова Ева Романовна</li>
-			<li data-student-id="11">Захаров Андрей Георгиевич</li>
-			<li data-student-id="12">Иванова Елизавета Руслановна</li>
-			<li data-student-id="13">Карпов Сергей Павлович</li>
-			<li data-student-id="14">Лебедев Егор Николаевич</li>
+			<?php
+			foreach($students as $student)
+			{
+				$li = "<li data-student-id=".$student["id"].">";
+				$li .= $student["name"]."</li>";
+
+				echo $li;
+			}
+			?>
 		</ul>
 	</section>
 </article>

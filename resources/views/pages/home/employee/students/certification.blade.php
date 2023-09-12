@@ -1,4 +1,4 @@
-@extends("layouts.employee")
+@extends("layouts.student")
 @section("title")
 	Аттестация
 @stop

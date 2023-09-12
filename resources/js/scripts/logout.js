@@ -1,3 +1,5 @@
+"use strict";
+
 import Cookies from "js-cookie";
 
 const logout = document.querySelector("#logout");

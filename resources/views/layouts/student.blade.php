@@ -8,7 +8,36 @@ $link .= "://";
 $link .= $_SERVER['HTTP_HOST']; 
 $link .= $_SERVER['REQUEST_URI']; 
 $link_array = explode("/", $link);
+$student_id = $link_array[5];
 $current_page = end($link_array);
+
+$nav_items = [
+	[
+		"link" => "/home/students/${student_id}/main",
+		"point" => "main",
+		"name" => "Основное"
+	],
+	[
+		"link" => "/home/students/${student_id}/certification",
+		"point" => "certification",
+		"name" => "Аттестация"
+	],
+	[
+		"link" => "/home/students/${student_id}/docs",
+		"point" => "docs",
+		"name" => "Документы"
+	],
+	[
+		"link" => "/home/students/${student_id}/mode_services",
+		"point" => "mode_services",
+		"name" => "Служба режима"
+	],
+	[
+		"link" => "/home/students/${student_id}/training",
+		"point" => "training",
+		"name" => "Обучение"
+	]
+];
 ?>
 
 <!DOCTYPE html>
@@ -36,21 +65,23 @@ $current_page = end($link_array);
 		<div class="employee__header container content">
 			<nav class="employee__header-nav">
 				<ul>
-					<li class="<?php if ($current_page === "main") echo "active" ?>">
-						<a href="/home/students/1/main">Основное</a>
-					</li>
-					<li class="<?php if ($current_page === "certification") echo "active" ?>">
-						<a href="/home/students/1/certification">Аттестация</a>
-					</li>
-					<li class="<?php if ($current_page === "docs") echo "active" ?>">
-						<a href="/home/students/1/docs">Документы</a>
-					</li>
-					<li class="<?php if ($current_page === "mode_services") echo "active" ?>">
-						<a href="/home/students/1/mode_services">Служба режима</a>
-					</li>
-					<li class="<?php if ($current_page === "training") echo "active" ?>">
-						<a href="/home/students/1/training">Обучение</a>
-					</li>
+					<?php
+					foreach ($nav_items as $item)
+					{
+						$cls = "";
+
+						if ($current_page === $item["point"])
+						{
+							$cls = "active";
+						}
+						
+						$li = "<li class=".$cls.">";
+						$li .= "<a href=".$item["link"].">".$item["name"]."</a>";
+						$li .= "</li>";
+
+						echo $li;
+					}
+					?>
 				</ul>
 			</nav>
 		</div>
