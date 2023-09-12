@@ -1,73 +1,75 @@
 <section class="list">
 	<div class="list__content">
 		<div class="list__content-top">
-			<div class="list__content-left">
-				<span class="list__content-left-avatar">
-					<img src="/images/avatar.svg" alt="Аксенова Варвара Вадимовна" />
-				</span>
-				<div class="list__content-left-info">
-					<h3 class="list__content-left-name">Иванов Иван Иванович</h3>
-					<ul>
-						<li>
-							<strong>Статус:</strong>
-							<span>работает</span>
-						</li>
-						<li>
-							<strong>Дата рождения:</strong>
-							<span>11.11.2001</span>
-						</li>
-						<li class="row">
-							<strong>Номер телефона:</strong>
-							<span>+7 (900) 888 88 88</span>
-							<span>+7 (900) 999 99 99 (внутр.)</span>
-						</li>
-						<li class="row">
-							<strong>Рабочая почта:</strong>
-							<span>example@synergy.ru</span>
-						</li>
-						<li>
-							<strong>Гражданство:</strong>
-							<span>российское</span>
-						</li>
-						<li>
-							<strong>Адрес проживания:</strong>
-							<span>ул. Шишкина, д. 5</span>
-						</li>
-						<li>
-							<strong>Год поступления:</strong>
-							<span>2021</span>
-						</li>
-						<li class="row">
-							<strong>Контактные данные родителей:</strong>
-							<span>Иванова Александра Александровна</span>
-							<span>+7 (900) 888 88 88</span>
-							<span>Иванов Иван Александрович</span>
-							<span>+7 (900) 888 88 88</span>
-						</li>
-						<li>
-							<strong>Город:</strong>
-							<span>Ярославль</span>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<span class="list__content-left">
+				<img src="/images/avatar.svg" alt="Аксенова Варвара Вадимовна" />
+			</span>
 			<div class="list__content-right">
-				<ul>
-					<li>
-						<strong>Подразделение:</strong>
-						<span>ОП1</span>
-					</li>
-					<li>
-						<strong>Должность:</strong>
-						<span>Менеджер продаж</span>
-					</li>
-					<li class="row">
-						<strong>Прямой руководитель:</strong>
-						<span>Александров Александр Александрович</span>
-						<span>+7 (900) 888 88 88</span>
-						<span>+7 (900) 999 99 99 (внутр.)</span>
-					</li>
-				</ul>
+			<h3 class="list__content-left-name">Иванов Иван Иванович</h3>
+				<div class="list__content-main">
+					<div class="list__content-main-left">
+						<ul>
+							<li>
+								<strong>Статус:</strong>
+								<span>работает</span>
+							</li>
+							<li>
+								<strong>Дата рождения:</strong>
+								<span>11.11.2001</span>
+							</li>
+							<li class="row">
+								<strong>Номер телефона:</strong>
+								<span>+7 (900) 888 88 88</span>
+								<span>+7 (900) 999 99 99 (внутр.)</span>
+							</li>
+							<li class="row">
+								<strong>Рабочая почта:</strong>
+								<span>example@synergy.ru</span>
+							</li>
+							<li>
+								<strong>Гражданство:</strong>
+								<span>российское</span>
+							</li>
+							<li>
+								<strong>Адрес проживания:</strong>
+								<span>ул. Шишкина, д. 5</span>
+							</li>
+							<li>
+								<strong>Год поступления:</strong>
+								<span>2021</span>
+							</li>
+							<li class="row">
+								<strong>Контактные данные родителей:</strong>
+								<span>Иванова Александра Александровна</span>
+								<span>+7 (900) 888 88 88</span>
+								<span>Иванов Иван Александрович</span>
+								<span>+7 (900) 888 88 88</span>
+							</li>
+							<li>
+								<strong>Город:</strong>
+								<span>Ярославль</span>
+							</li>
+						</ul>
+					</div>
+					<div class="list__content-main-right">
+						<ul>
+							<li>
+								<strong>Подразделение:</strong>
+								<span>ОП1</span>
+							</li>
+							<li>
+								<strong>Должность:</strong>
+								<span>Менеджер продаж</span>
+							</li>
+							<li class="row">
+								<strong>Прямой руководитель:</strong>
+								<span>Александров Александр Александрович</span>
+								<span>+7 (900) 888 88 88</span>
+								<span>+7 (900) 999 99 99 (внутр.)</span>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="list__content-description">

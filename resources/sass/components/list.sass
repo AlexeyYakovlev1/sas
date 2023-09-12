@@ -9,16 +9,20 @@
 		display: flex
 		flex-direction: column
 		gap: 100px 0
+		&-main
+			display: grid
+			grid-template-columns: repeat(2, auto)
+			gap: 0 7px
+		&-top
+			display: grid
+			grid-template-columns: minmax(auto, 159px) 1fr
+			gap: 0 22px
+			align-items: flex-start
 		&-title
 			font-weight: 700
 			font-size: 39px
 			color: $black
 			text-align: left
-		&-top
-			display: grid
-			grid-template-columns: minmax(auto, 575px) auto
-			gap: 0 12px
-			align-items: flex-start
 		&-left
 			display: grid
 			grid-template-columns: minmax(auto, 159px) 1fr
@@ -46,7 +50,9 @@
 							align-items: unset
 							gap: 5px 0
 		&-right
-			margin-top: 50px
+			display: flex
+			flex-direction: column
+			gap: 9px 0
 			& ul
 				display: flex
 				flex-direction: column
