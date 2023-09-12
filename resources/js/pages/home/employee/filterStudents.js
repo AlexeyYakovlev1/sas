@@ -110,7 +110,10 @@ filterItems.forEach((item) => {
 	});
 });
 
-viewAllBtn.addEventListener("click", () => { fetchDataFilter(dataFromFilter); });
+viewAllBtn.addEventListener("click", () => {
+	fetchDataFilter(dataFromFilter);
+	viewAllBtn.classList.add("hidden");
+});
 
 /**
  * Отправка данных из фильтра на сервер и обработка ответа от него

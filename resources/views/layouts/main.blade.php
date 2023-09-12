@@ -14,11 +14,14 @@
 </head>
 <body>
 	<x-header/>
+	<x-loader/>
+	<x-alert/>
 	<main class="main">
 		@yield("content")
 	</main>
 	<x-footer />
 	
 	@yield("scripts")
+	@vite(["resources/js/scripts/loader.js"])
 </body>
 </html>

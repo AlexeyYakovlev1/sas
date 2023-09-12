@@ -30,6 +30,8 @@ $current_page = end($link_array);
 </head>
 <body>
 	<x-header/>
+	<x-loader/>
+	<x-alert/>
 	<main class="employee" id="employee">
 		<div class="employee__header container content">
 			<nav class="employee__header-nav">
@@ -59,5 +61,6 @@ $current_page = end($link_array);
 	<x-footer />
 	
 	@yield("scripts")
+	@vite(["resources/js/scripts/loader.js"])
 </body>
 </html>

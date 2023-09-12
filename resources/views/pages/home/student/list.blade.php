@@ -302,3 +302,6 @@
 	</div>
 </section>
 @stop
+@section("scripts")
+@vite(["resources/js/pages/home/student/studentList.js"])
+@stop
