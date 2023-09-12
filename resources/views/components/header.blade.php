@@ -7,7 +7,7 @@ $auth = true;
 			<img src="/images/logo-auth.svg" alt="Университет Синергия">
 		@else
 			<img src="/images/logo-home.svg" alt="Университет Синергия">
-			<button class="btn__primary outline small">Выйти</button>
+			<button class="btn__primary outline small" id="logout">Выйти</button>
 		@endif
 	</div>
 </header>

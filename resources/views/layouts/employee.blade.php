@@ -61,6 +61,9 @@ $current_page = end($link_array);
 	<x-footer />
 	
 	@yield("scripts")
-	@vite(["resources/js/scripts/loader.js"])
+	@vite([
+		"resources/js/scripts/loader.js",
+		"resources/js/scripts/logout.js"
+	])
 </body>
 </html>
