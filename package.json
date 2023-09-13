@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "getconfig": "^4.5.0",
-        "js-cookie": "^3.0.5"
+        "js-cookie": "^3.0.5",
+        "validator": "^13.11.0"
     }
 }

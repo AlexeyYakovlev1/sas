@@ -26,7 +26,7 @@
 			name="password"
 			placeholder="Пароль"
 		>
-		<button class="btn__primary red" type="submit">Войти</button>
+		<button class="btn__primary red" disabled type="submit">Войти</button>
 	</form>
 </section>
 @stop

@@ -94,7 +94,8 @@ $nav_items = [
 	@yield("scripts")
 	@vite([
 		"resources/js/scripts/loader.js",
-		"resources/js/scripts/logout.js"
+		"resources/js/scripts/logout.js",
+		"resources/js/scripts/closeAlert.js"
 	])
 </body>
 </html>
