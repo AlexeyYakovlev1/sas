@@ -17,7 +17,7 @@
 		<input
 			class="input__primary"
 			type="text"
-			name="login"
+			name="username"
 			placeholder="Логин"
 		>
 		<input
@@ -29,4 +29,7 @@
 		<button class="btn__primary red" type="submit">Войти</button>
 	</form>
 </section>
+@stop
+@section("scripts")
+@vite(["resources/js/pages/auth/employee.login.js"])
 @stop

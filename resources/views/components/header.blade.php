@@ -1,6 +1,3 @@
-<?php
-$auth = true;
-?>
 <header class="header <?php if ($auth) echo "home"; else echo "auth" ?>">
 	<div class="container">
 		@if (!$auth)

@@ -16,7 +16,7 @@
 		<input
 			class="input__primary"
 			type="text"
-			name="login"
+			name="username"
 			placeholder="Логин"
 		>
 		<input

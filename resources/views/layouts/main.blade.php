@@ -13,7 +13,7 @@
 	@vite(["resources/sass/pages/auth/layout.sass"])
 </head>
 <body>
-	<x-header/>
+	<x-header :auth="$auth" />
 	<x-loader/>
 	<x-alert/>
 	<main class="main">
