@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Utils;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,14 +16,8 @@ class RedirectIfTokenExists
 			return $next($request);
 		}
 
-		$role = "";
-
-		if (isset($_COOKIE["role"]))
-		{
-			$role = $_COOKIE["role"];
-		} else {
-			return $next($request);
-		}
+		$payload = Utils::get_jwt_token();
+		$role = $payload["info"][0]["status"];
 
 		switch($role)
 		{

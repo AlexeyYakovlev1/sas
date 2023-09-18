@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Utils;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,11 @@ class RedirectIfRoleWrong
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-		if ($_COOKIE["role"] !== $role)
+		$payload = Utils::get_jwt_token();
+		
+		$role_from_token = $payload["info"][0]["status"];
+
+		if ($role_from_token !== $role)
 		{
 			return abort(404);
 		}

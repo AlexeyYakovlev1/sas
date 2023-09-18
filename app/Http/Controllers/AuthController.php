@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Utils;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use ReallySimpleJWT\Token;
+
+use function PHPSTORM_META\type;
 
 class AuthController extends Controller
 {
@@ -73,9 +77,12 @@ class AuthController extends Controller
 
 		$response = json_decode($response, JSON_UNESCAPED_UNICODE);
 		$error = json_decode(curl_error($ch));
+		$jwt_token = Token::customPayload($response["data"], env("JWT_KEY"));
+
+		Cookie::make("jwt_token", $jwt_token);
 
 		return response(
-			[$response, $error],
+			[$response, "jwt_token" => $jwt_token, $error],
 			200
 		)
 			->header("Content-Type", "application/json");

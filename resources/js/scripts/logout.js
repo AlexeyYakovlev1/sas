@@ -7,7 +7,8 @@ const logout = document.querySelector("#logout");
 if (logout) {
 	logout.addEventListener("click", () => {
 		Cookies.remove("token");
-		Cookies.remove("role");
+		Cookies.remove("jwt_token");
+
 		window.location.href = "/auth/login/main";
 	});
 } 

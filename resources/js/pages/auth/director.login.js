@@ -72,9 +72,10 @@ contentForm.addEventListener("submit", (event) => {
 		.then((dataFromServer) => {
 			// Обработка данных
 			const { token, data } = dataFromServer["0"];
+			const { jwt_token } = dataFromServer;
 
-			if (dataFromServer["1"] && error !== null) {
-				alert.show(false, error);
+			if (dataFromServer["1"]) {
+				alert.show(false, dataFromServer["1"].error);
 				loader.close();
 				return;
 			}
@@ -86,7 +87,7 @@ contentForm.addEventListener("submit", (event) => {
 			}
 
 			Cookies.set("token", token, data.info[0].dateExpired);
-			Cookies.set("role", data.info[0].status);
+			Cookies.set("jwt_token", jwt_token);
 
 			loader.close();
 
