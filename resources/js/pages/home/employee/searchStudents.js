@@ -2,8 +2,14 @@
 
 import openCard from "../../../scripts/openCard.js";
 import Utils from "../../../classes/Utils.js";
+import Request from "../../../classes/Request.js";
+import Loader from "../../../classes/Loader.js";
+import Alert from "../../../classes/Alert.js";
 
 const utils = new Utils();
+const request = new Request();
+const loader = new Loader();
+const alert = new Alert();
 
 const studentsSearch = document.querySelector("#students-search");
 const studentsFindBtn = document.querySelector(".students__find-btn");
@@ -31,6 +37,8 @@ function fetchStudentsList() {
 }
 
 studentsFindBtn.addEventListener("click", () => {
+	loader.show();
+
 	if (studentsSearch.value === "") {
 		utils.addClass(studentInformation, "hidden");
 
@@ -43,13 +51,31 @@ studentsFindBtn.addEventListener("click", () => {
 			"main"
 		);
 
+		loader.close();
 		return;
 	}
 
-	if (studentsSearch.value.length <= 3) return;
+	if (studentsSearch.value.length <= 3) {
+		loader.close();
+		return;
+	};
 
 	utils.removeClass(studentInformation, "hidden");
 	studentsList.innerHTML = "";
 
-	console.log(`Search student by name ${studentsSearch.value}`);
+	const params = {
+		headers: { "Content-Type": "application/json" },
+		data: JSON.stringify({ "name": studentsSearch.value })
+	};
+
+	request.post("/search/students", params)
+		.then((data) => {
+			console.log(data);
+			loader.close();
+		})
+		.catch((error) => {
+			alert.show(false, error.message || "Ошибка при выполнении запроса");
+			loader.close();
+			throw new Error(error);
+		});
 });

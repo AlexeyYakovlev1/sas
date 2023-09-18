@@ -63,6 +63,22 @@ class Utils {
 	setTitle(title) {
 		document.title = title;
 	};
+
+	/**
+	 * Получение данных из формы
+	 * @param {string} inputsSelector Селектор input-ов
+	 * @public
+	 */
+	getDataFromForm(inputsSelector) {
+		const inputs = document.querySelectorAll(inputsSelector);
+
+		const data = {};
+
+		// Заносим значения инпутов в data
+		inputs.forEach((input) => data[input.getAttribute("name")] = input.value);
+
+		return data;
+	}
 }
 
 export default Utils;

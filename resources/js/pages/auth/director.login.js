@@ -79,8 +79,8 @@ contentForm.addEventListener("submit", (event) => {
 				return;
 			}
 
-			if (data.info[0].status !== "Сотрудник") {
-				alert.show(false, "Вы не являетесь сотрудником");
+			if (data.info[0].status !== "Руководитель") {
+				alert.show(false, "Вы не являетесь руководителем");
 				loader.close();
 				return;
 			}
@@ -90,7 +90,7 @@ contentForm.addEventListener("submit", (event) => {
 
 			loader.close();
 
-			window.location.href = "/home/general_information";
+			window.location.href = "/home/employees";
 		})
 		.catch((error) => {
 			loader.close();

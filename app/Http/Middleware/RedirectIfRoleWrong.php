@@ -5,20 +5,19 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Http\Utils;
 
-class RedirectIfTokenNotExists
+class RedirectIfRoleWrong
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
-		if (!Utils::get_token())
+		if ($_COOKIE["role"] !== $role)
 		{
-			return redirect("/auth/login/main");
+			return abort(404);
 		}
 
         return $next($request);

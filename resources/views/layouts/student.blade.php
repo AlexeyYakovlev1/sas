@@ -49,7 +49,7 @@ $nav_items = [
 
 	<meta name="viewport" content="width=device-width, initial/home/employee-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>@yield("title")</title>
+	<title>@yield("title") | Кадровый Резерв</title>
 	
 	@yield("styles")
 	@vite([
@@ -58,7 +58,7 @@ $nav_items = [
 	])
 </head>
 <body>
-	<x-header/>
+	<x-header :auth="$auth" />
 	<x-loader/>
 	<x-alert/>
 	<main class="employee" id="employee">

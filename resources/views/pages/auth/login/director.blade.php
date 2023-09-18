@@ -25,7 +25,10 @@
 			name="password"
 			placeholder="Пароль"
 		>
-		<button class="btn__primary red" type="submit">Войти</button>
+		<button class="btn__primary red" type="submit" disabled>Войти</button>
 	</form>
 </section>
+@stop
+@section("scripts")
+@vite(["resources/js/pages/auth/director.login.js"])
 @stop

@@ -4,37 +4,34 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
-use ReallySimpleJWT\Token;
 use Symfony\Component\HttpFoundation\Response;
-use App\Http\Utils;
 
 class RedirectIfTokenExists
 {
     public function handle(Request $request, Closure $next): Response
     {
-		if (!Utils::validate_jwt_token())
+		if (!isset($_COOKIE["token"]))
 		{
 			return $next($request);
 		}
 
-		$token = Cookie::get("token");
+		$role = "";
 
-		$payload = Token::getPayload($token);
-
-		$role = $payload["role"];
+		if (isset($_COOKIE["role"]))
+		{
+			$role = $_COOKIE["role"];
+		} else {
+			return $next($request);
+		}
 
 		switch($role)
 		{
-			case "director":
-				redirect("/home/employees");
-				break;
-			case "student":
-				redirect("/home/student_list");
-				break;
-			case "employee":
-				redirect("/home/general_information");
-				break;
+			case "Руководитель":
+				return redirect("/home/employees");
+			case "Студент":
+				return redirect("/home/student_list");
+			case "Сотрудник":
+				return redirect("/home/general_information");
 		}
     }
 }

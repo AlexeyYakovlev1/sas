@@ -9,5 +9,5 @@
 <x-student />
 @stop
 @section("scripts")
-	{{--  --}}
+	@vite(["resources/js/pages/home/student/card/main.js"])
 @stop

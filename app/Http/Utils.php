@@ -2,22 +2,29 @@
 
 namespace App\Http;
 
-use Illuminate\Support\Facades\Cookie;
-use ReallySimpleJWT\Token;
-
-
 class Utils
 {
 	public static function validate_jwt_token()
 	{
-		if (!in_array("token", $_COOKIE))
+		if (!isset($_COOKIE["token"]))
 		{
 			return false;
 		}
 
-		$token = Cookie::get("token", env("JWT_KEY"));
-		$token_validate = Token::validate($token, env("JWT_KEY"));
+		$token = $_COOKIE["token"];
 
-		return !!$token_validate;
+		return !!$token;
+	}
+
+	public static function get_token()
+	{
+		$token = "";
+
+		if (isset($_COOKIE["token"]))
+		{
+			$token = $_COOKIE["token"];
+		}
+
+		return $token;
 	}
 }
